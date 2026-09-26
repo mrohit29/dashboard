@@ -14,6 +14,7 @@ import io
 import json
 import math
 import re
+import time
 import zipfile
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -43,6 +44,8 @@ FII_DII_SECONDARY = [
 ]
 DELIVERY_FULL = "https://nsearchives.nseindia.com/products/content/sec_bhavdata_full_{ddmmyyyy}.csv"
 CDSL_INDEX = "https://www.cdslindia.com/Publications/ForeignPortInvestor.html"
+SCREENER_OWNERSHIP = "https://www.screener.in/screens/1967264/change-in-fii-and-dii/?page={page}"
+SCREENER_NOT_EXTENDED = "https://www.screener.in/screens/2520177/fii-and-dii-change/?page={page}"
 
 
 HEADERS = {
@@ -541,6 +544,199 @@ def fetch_cdsl_latest_sector() -> dict:
 
 
 
+def parse_screener_table(html: str) -> list[dict]:
+    """
+    Parse the public Screener.in table used for the institutional screen.
+    The screen is a secondary source: it reflects the latest reported
+    shareholding period shown by Screener (currently Jun-2026).
+    """
+    tables = pd.read_html(io.StringIO(html))
+    target = None
+    for t in tables:
+        cols = [str(c).strip() for c in t.columns]
+        if "Chg in FII Hold %" in cols and "Chg in DII Hold %" in cols:
+            target = t
+            break
+    if target is None:
+        raise RuntimeError("Screener institutional table not found")
+
+    # Match company rows to the corresponding /company/SYMBOL/ link.
+    soup = BeautifulSoup(html, "html.parser")
+    symbols = []
+    for tr in soup.select("table tbody tr"):
+        a = tr.select_one("td a[href*='/company/']")
+        symbols.append(
+            a["href"].split("/company/")[1].split("/")[0].upper()
+            if a else ""
+        )
+
+    records = []
+    for i, row in target.iterrows():
+        try:
+            def n(name):
+                value = row.get(name)
+                return float(str(value).replace(",", "").replace("%", ""))
+
+            records.append({
+                "symbol": symbols[i] if i < len(symbols) else "",
+                "name": str(row.get("Name", "")).strip(),
+                "price": n("CMP Rs."),
+                "pe": n("P/E"),
+                "market_cap_cr": n("Mar Cap Rs.Cr."),
+                "profit_growth_pct": n("Qtr Profit Var %"),
+                "sales_growth_pct": n("Qtr Sales Var %"),
+                "roce_pct": n("ROCE %"),
+                "fii_qoq": n("Chg in FII Hold %"),
+                "dii_qoq": n("Chg in DII Hold %"),
+                "promoter_qoq": n("Change in Prom Hold %"),
+            })
+        except Exception:
+            continue
+
+    return [r for r in records if r["symbol"]]
+
+
+def fetch_public_screener(url_template: str, max_pages: int = 12) -> list[dict]:
+    rows = []
+    headers = {
+        "User-Agent": HEADERS["User-Agent"],
+        "Accept": "text/html,application/xhtml+xml,*/*",
+        "Referer": "https://www.screener.in/",
+    }
+    for page in range(1, max_pages + 1):
+        url = url_template.format(page=page)
+        r = requests.get(url, timeout=45, headers=headers)
+        if r.status_code == 429:
+            time.sleep(2)
+            r = requests.get(url, timeout=45, headers=headers)
+        r.raise_for_status()
+
+        page_rows = parse_screener_table(r.text)
+        if not page_rows:
+            break
+        rows.extend(page_rows)
+
+        # Small delay to avoid hammering a free public screen.
+        time.sleep(0.35)
+
+        if len(page_rows) < 20:
+            break
+    return rows
+
+
+def fetch_not_extended_symbols() -> set[str]:
+    """
+    Public Screener screen requiring Down from 52w high > 20% and non-SME.
+    This gives a conservative 'not already massively extended' gate.
+    """
+    symbols: set[str] = set()
+    headers = {
+        "User-Agent": HEADERS["User-Agent"],
+        "Accept": "text/html,application/xhtml+xml,*/*",
+        "Referer": "https://www.screener.in/",
+    }
+    for page in range(1, 13):
+        url = SCREENER_NOT_EXTENDED.format(page=page)
+        r = requests.get(url, timeout=45, headers=headers)
+        if r.status_code == 429:
+            time.sleep(2)
+            r = requests.get(url, timeout=45, headers=headers)
+        r.raise_for_status()
+        soup = BeautifulSoup(r.text, "html.parser")
+        page_symbols = {
+            a["href"].split("/company/")[1].split("/")[0].upper()
+            for a in soup.select("table tbody td a[href*='/company/']")
+        }
+        if not page_symbols:
+            break
+        symbols.update(page_symbols)
+        time.sleep(0.35)
+    return symbols
+
+
+def build_stock_screen(delivery_rows: list[dict]) -> dict:
+    rows = fetch_public_screener(SCREENER_OWNERSHIP, max_pages=6)
+    not_extended = fetch_not_extended_symbols()
+
+    delivery_map = {
+        str(r.get("symbol", "")).strip().upper(): r
+        for r in delivery_rows
+    }
+
+    candidates = []
+    for r in rows:
+        # User's core screen:
+        # FII ↑ + DII ↑ + promoter stable/non-decreasing + positive earnings
+        # growth + reasonable PE + price not too close to 52w high.
+        if r["fii_qoq"] < 0.05 or r["dii_qoq"] < 0.05:
+            continue
+        if r["promoter_qoq"] < 0 or r["promoter_qoq"] > 0.50:
+            continue
+        if r["pe"] <= 0 or r["pe"] > 30:
+            continue
+        if r["profit_growth_pct"] <= 0 or r["sales_growth_pct"] <= 0:
+            continue
+        if r["symbol"] not in not_extended:
+            continue
+
+        d = delivery_map.get(r["symbol"], {})
+        delivery_pct = d.get("delivery_pct")
+
+        # Transparent, mechanical score; it is a screening aid, not a rating.
+        score = 0.0
+        score += min(max(r["fii_qoq"], 0) / 2.0, 1.0) * 25
+        score += min(max(r["dii_qoq"], 0) / 2.0, 1.0) * 25
+        score += max(0, 10 - (r["promoter_qoq"] * 10))
+        score += min(max(r["profit_growth_pct"], 0) / 25.0, 1.0) * 15
+        score += min(max(r["sales_growth_pct"], 0) / 20.0, 1.0) * 10
+        if r["pe"] <= 15:
+            score += 10
+        elif r["pe"] <= 22:
+            score += 7
+        else:
+            score += 4
+        if delivery_pct is not None and delivery_pct >= 50:
+            score += 5
+
+        candidates.append({
+            "symbol": r["symbol"],
+            "name": r["name"],
+            "price": r["price"],
+            "fii_qoq": r["fii_qoq"],
+            "dii_qoq": r["dii_qoq"],
+            "promoter_change": r["promoter_qoq"],
+            "profit_growth_pct": r["profit_growth_pct"],
+            "sales_growth_pct": r["sales_growth_pct"],
+            "roce_pct": r["roce_pct"],
+            "pe": r["pe"],
+            "delivery_pct": delivery_pct,
+            "not_extended": True,
+            "score": round(score, 1),
+        })
+
+    candidates.sort(key=lambda x: (x["score"], x["fii_qoq"] + x["dii_qoq"]), reverse=True)
+
+    return {
+        "as_of": "Jun 2026 shareholding / latest available quarterly financial results",
+        "status": "live screen",
+        "screen_logic": {
+            "fii_qoq_min_pct": 0.05,
+            "dii_qoq_min_pct": 0.05,
+            "promoter_change_range_pct": [0, 0.50],
+            "pe_max": 30,
+            "profit_growth_min_pct": 0,
+            "sales_growth_min_pct": 0,
+            "not_extended_rule": "Down from 52w high > 20% and non-SME",
+        },
+        "sources": [
+            "Screener.in public institutional screen #1967264",
+            "Screener.in public not-extended screen #2520177",
+            "NSE security-wise delivery data",
+        ],
+        "items": candidates[:25],
+    }
+
+
 def main() -> None:
     errors: list[str] = []
 
@@ -609,14 +805,20 @@ def main() -> None:
         else:
             errors.append(f"CDSL sector FPI: {exc}")
 
-    # Stock ownership remains isolated until its quarterly filing collector is wired.
-    stock_path = DATA / "stocks.json"
-    stocks = json.loads(stock_path.read_text(encoding="utf-8")) if stock_path.exists() else {"items": []}
-    stocks["meta"] = {
-        "status": "quarterly ownership collector pending; do not treat sample ownership as live",
-        "last_refresh_utc": datetime.utcnow().isoformat() + "Z",
-    }
-    write_json("stocks.json", stocks)
+    # 4) Stock-level institutional accumulation screen
+    try:
+        delivery_state = json.loads((DATA / "delivery.json").read_text(encoding="utf-8"))
+        stock_screen = build_stock_screen(delivery_state.get("items", []))
+        stock_screen["updated_utc"] = datetime.utcnow().isoformat() + "Z"
+        write_json("stocks.json", stock_screen)
+    except Exception as exc:
+        errors.append(f"Stock screen: {exc}")
+        stock_path = DATA / "stocks.json"
+        if stock_path.exists():
+            existing = json.loads(stock_path.read_text(encoding="utf-8"))
+            existing["status"] = "last verified screen retained"
+            existing["warning"] = str(exc)
+            write_json("stocks.json", existing)
 
     warnings = []
     try:
