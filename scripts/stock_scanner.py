@@ -33,7 +33,7 @@ WATCHLIST=[
 
 def market_open():
     n=datetime.now(IST)
-    return n.weekday()<5 and ((9<=n.hour<15) or (n.hour==15 and n.minute<30))
+    return n.weekday()<5 and ((9<=n.hour<14) or (n.hour==14 and n.minute<30))
 
 def regime():
     try:
