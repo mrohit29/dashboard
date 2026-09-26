@@ -12,7 +12,7 @@ async function loadData(){
 
   const results=await Promise.allSettled([
     getJson('data/weekly.json','weekly.json'),
-    getJson('data/sector_fpi.json','sector_fpi.json'),
+    getJson('data/sector_fpi_history.json','sector_fpi_history.json'),
     getJson('data/stocks.json','stocks.json')
   ]);
 
@@ -22,7 +22,7 @@ async function loadData(){
 
   return {
     weekly:weeklyR.value,
-    sector:sectorR.status==='fulfilled' ? sectorR.value : {as_of:null,items:[],warning:'Sector data unavailable'},
+    sectorHistory:sectorR.status==='fulfilled' ? sectorR.value : {snapshots:[]},
     stocks:stocksR.status==='fulfilled' ? stocksR.value : {items:[],meta:{status:'Stock screen unavailable'}}
   };
 }
@@ -40,6 +40,19 @@ function fillWeeks(weekly){
 function selectedWeek(weekly){
   const value=document.getElementById('weekSelect').value || weekly.weeks.at(-1).week_ending;
   return weekly.weeks.find(w=>w.week_ending===value) || weekly.weeks.at(-1);
+}
+
+function fillSectorPeriods(history){
+  const select=document.getElementById('sectorPeriodSelect'); select.innerHTML='';
+  const snapshots=[...(history?.snapshots || [])].sort((a,b)=>String(b.as_of).localeCompare(String(a.as_of)));
+  snapshots.forEach(s=>{ const o=document.createElement('option'); o.value=s.as_of; o.textContent=s.as_of; select.appendChild(o); });
+}
+
+function selectedSector(history){
+  const snapshots=[...(history?.snapshots || [])].sort((a,b)=>String(a.as_of).localeCompare(String(b.as_of)));
+  if(!snapshots.length) return {as_of:null,items:[],warning:'Sector data unavailable'};
+  const value=document.getElementById('sectorPeriodSelect').value || snapshots.at(-1).as_of;
+  return snapshots.find(s=>s.as_of===value) || snapshots.at(-1);
 }
 
 function renderSummary(w){
@@ -144,11 +157,12 @@ function renderStocks(stocks){
   }).join('');
 }
 
-function renderNotes(meta,week){
+function renderNotes(meta,week,sector){
   const status=meta?.status || 'unknown';
   const sources=(meta?.sources || []).join(' · ');
   document.getElementById('notes').innerHTML=`
     <p><b>Week ending:</b> ${week.week_ending}</p>
+    <p><b>Sector FPI period:</b> ${sector?.as_of || '—'}</p>
     <p><b>Official sector-flow cadence:</b> fortnightly. The dashboard does not manufacture weekly sector-FPI numbers.</p>
     <p><b>Daily flow:</b> aggregated into weekly totals from daily FII/FPI and DII observations.</p>
     <p><b>Status:</b> ${status}</p>
@@ -159,12 +173,14 @@ async function render(){
   const data=await loadData();
   fillWeeks(data.weekly);
   const w=selectedWeek(data.weekly);
+  fillSectorPeriods(data.sectorHistory);
+  const sector=selectedSector(data.sectorHistory);
   renderSummary(w);
   renderFlow(w);
   renderTrend(data.weekly);
-  renderSector(data.sector);
+  renderSector(sector);
   renderStocks(data.stocks);
-  renderNotes(data.weekly.meta,w);
+  renderNotes(data.weekly.meta,w,sector);
 }
 
 document.getElementById('refreshBtn').addEventListener('click',render);
@@ -173,6 +189,14 @@ document.getElementById('weekSelect').addEventListener('change',async()=>{
   const w=selectedWeek(d.weekly);
   renderSummary(w);
   renderFlow(w);
+});
+
+document.getElementById('sectorPeriodSelect').addEventListener('change',async()=>{
+  const d=await loadData();
+  const sector=selectedSector(d.sectorHistory);
+  renderSector(sector);
+  const w=selectedWeek(d.weekly);
+  renderNotes(d.weekly.meta,w,sector);
 });
 
 render().catch(e=>{
