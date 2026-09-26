@@ -104,3 +104,11 @@ def main():
     out={"updated_ist":now.isoformat(),"status":status,"market_regime":regime() if market_open() else "UNKNOWN","signals":signals,"watchlist_size":len(WATCHLIST),"last_completed_candle":signals[0]["candle_time"] if signals else None}
     with open(os.path.join(os.path.dirname(os.path.dirname(__file__)),"data","scanner.json"),"w") as f: json.dump(out,f,indent=2)
 if __name__=="__main__": main()
+
+
+# Historical replay helper:
+# Run with:
+#   python scripts/stock_scanner.py --date 2026-09-23 --data-dir historical_data
+# Expected files: historical_data/RELIANCE.NS.csv, etc.
+# Each CSV should contain Date/Open/High/Low/Close/Volume at 5-minute frequency.
+# This deliberately uses the same signal rules as the live scanner.
