@@ -34,8 +34,11 @@ NSE_BHAV = (
 )
 CDSL_SECTOR = (
     "https://www.cdslindia.com/publications/FII/"
-    "FortnightlySecWisePages/{month}%20{day},{year}.html"
+    "FortnightlySecWisePages/{month}%20{day}%2C%20{year}.html"
 )
+
+FII_DII_FALLBACK = "https://chirag127.github.io/fii-dii-activity-api/data/{date}.json"
+
 
 HEADERS = {
     "User-Agent": (
@@ -65,7 +68,61 @@ def nse_session() -> requests.Session:
     return s
 
 
-def fetch_fii_dii() -> list[dict]:
+def fetch_fii_dii_official() -> list[dict]:
+    s = nse_session()
+    r = s.get(NSE_FIIDII, timeout=30)
+    r.raise_for_status()
+    payload = r.json()
+    if not isinstance(payload, list) or not payload:
+        raise RuntimeError("NSE FII/DII returned an unexpected payload")
+    return payload
+
+
+def fetch_fii_dii_fallback(days: int = 45) -> list[dict]:
+    """
+    Fallback for GitHub Actions when NSE blocks the runner.
+    The fallback is a static mirror whose payloads are sourced from NSE/Groww/
+    Moneycontrol; the dashboard labels this source as non-official.
+    """
+    rows: list[dict] = []
+    today = date.today()
+    for i in range(days):
+        d = today - timedelta(days=i)
+        if d.weekday() >= 5:
+            continue
+        url = FII_DII_FALLBACK.format(date=d.isoformat())
+        try:
+            r = requests.get(url, timeout=20)
+            if r.status_code != 200:
+                continue
+            payload = r.json()
+            eq = payload.get("equity", {})
+            rows.append(
+                {
+                    "date": d.strftime("%d-%b-%Y"),
+                    "fiiBuy": eq.get("fii_buy", 0),
+                    "fiiSell": eq.get("fii_sell", 0),
+                    "fiiNet": eq.get("fii_net", 0),
+                    "diiBuy": eq.get("dii_buy", 0),
+                    "diiSell": eq.get("dii_sell", 0),
+                    "diiNet": eq.get("dii_net", 0),
+                }
+            )
+        except Exception:
+            continue
+    if not rows:
+        raise RuntimeError("Fallback FII/DII mirror returned no usable sessions")
+    return rows
+
+
+def fetch_fii_dii() -> tuple[list[dict], str]:
+    try:
+        return normalize_fii_dii(fetch_fii_dii_official()), "NSE official"
+    except Exception as official_error:
+        rows = fetch_fii_dii_fallback()
+        return normalize_fii_dii(rows), f"fallback mirror ({official_error})"
+
+
     s = nse_session()
     r = s.get(NSE_FIIDII, timeout=30)
     r.raise_for_status()
@@ -338,7 +395,7 @@ def main() -> None:
 
     # 1) FII/DII
     try:
-        fii_dii = normalize_fii_dii(fetch_fii_dii())
+        fii_dii, flow_source = fetch_fii_dii()
         weeks = aggregate_weeks(fii_dii)
         if weeks:
             write_json(
