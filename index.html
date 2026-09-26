@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>India Institutional Flow Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>India Institutional Flow Dashboard</h1>
+      <p>FII/FPI, DII, sector rotation, delivery and accumulation signals</p>
+    </div>
+    <div class="controls">
+      <label>Week
+        <select id="weekSelect"></select>
+      </label>
+      <button id="refreshBtn">Refresh data</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cards" id="summaryCards"></section>
+
+    <section class="grid two">
+      <article class="panel">
+        <div class="panel-head"><h2>Weekly FII / DII Flow</h2><span class="muted">₹ crore</span></div>
+        <canvas id="flowChart"></canvas>
+      </article>
+      <article class="panel">
+        <div class="panel-head"><h2>Sector Rotation</h2><span class="muted">latest official sector snapshot</span></div>
+        <canvas id="sectorChart"></canvas>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Institutional Accumulation Candidates</h2>
+        <span class="muted">Transparent rule-based screen; not investment advice</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Stock</th><th>FII QoQ</th><th>DII QoQ</th><th>Promoter</th>
+              <th>Delivery</th><th>RSI</th><th>PE</th><th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="stocksBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <article class="panel">
+        <div class="panel-head"><h2>Weekly FII / DII Trend</h2></div>
+        <canvas id="trendChart"></canvas>
+      </article>
+      <article class="panel">
+        <div class="panel-head"><h2>Data notes</h2></div>
+        <div id="notes" class="notes"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">Built for NSE/BSE institutional-flow tracking · Data sources are labelled in the pipeline.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
