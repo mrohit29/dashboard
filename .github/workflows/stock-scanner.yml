@@ -10,12 +10,12 @@ permissions:
 
 concurrency:
   group: stock-scanner
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
