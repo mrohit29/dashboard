@@ -2,8 +2,28 @@ name: Run stock scanner every 5 minutes
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run type"
+        required: true
+        default: "live"
+        type: choice
+        options:
+          - live
+          - historical
+      date:
+        description: "Historical trading date (used only in historical mode)"
+        required: true
+        default: "2026-09-23"
+        type: string
   schedule:
-    - cron: "*/5 * * * *"
+    # 09:00–09:00 IST? UTC equivalent for 09:00–14:30 IST, weekdays.
+    # 03:30–03:55 UTC = 09:00–09:25 IST
+    - cron: "30-55/5 3 * * 1-5"
+    # 04:00–08:55 UTC = 09:30–14:25 IST
+    - cron: "*/5 4-8 * * 1-5"
+    # 09:00–09:30 UTC = 14:30–15:00 IST (we only want through 14:30)
+    - cron: "0 9 * * 1-5"
 
 permissions:
   contents: write
@@ -20,22 +40,31 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Install dependencies
         run: pip install yfinance pandas pandas-ta requests pytz
-      - name: Run scanner
+
+      - name: Run live scanner
+        if: github.event_name == 'schedule' || inputs.mode == 'live'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
         run: python scripts/stock_scanner.py
+
+      - name: Run historical scanner
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'historical'
+        run: python scripts/historical_scanner.py --date "${{ inputs.date }}"
+
       - name: Commit scanner output
         run: |
           git config user.name "dashboard-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/scanner.json
-          git diff --cached --quiet || git commit -m "Refresh intraday scanner"
+          git add data/scanner.json data/historical_scanner_*.json
+          git diff --cached --quiet || git commit -m "Refresh scanner output"
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
