@@ -587,6 +587,17 @@ def main() -> None:
     try:
         sector = fetch_cdsl_latest_sector()
         write_json("sector_fpi.json", sector)
+
+        history_path = DATA / "sector_fpi_history.json"
+        history = {"snapshots": []}
+        if history_path.exists():
+            history = json.loads(history_path.read_text(encoding="utf-8"))
+        snapshots = history.get("snapshots", [])
+        snapshots = [s for s in snapshots if s.get("as_of") != sector.get("as_of")]
+        snapshots.append(sector)
+        snapshots.sort(key=lambda s: str(s.get("as_of", "")))
+        history["snapshots"] = snapshots[-26:]
+        write_json("sector_fpi_history.json", history)
     except Exception as exc:
         sector_path = DATA / "sector_fpi.json"
         if sector_path.exists():
