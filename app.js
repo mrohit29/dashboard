@@ -95,6 +95,11 @@ function renderTrend(weekly){
 
 function renderSector(sector){
   destroy('sector');
+  const heading=document.querySelector('#sectorChart')?.closest('.panel')?.querySelector('.panel-head h2');
+  if(heading){
+    const asOf=sector.as_of ? new Date(sector.as_of).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) : 'date unavailable';
+    heading.textContent='Sector Rotation · FPI (as of '+asOf+')';
+  }
   const rows=[...sector.items].sort((a,b)=>Math.abs(b.flow_cr)-Math.abs(a.flow_cr)).slice(0,10);
   state.charts.sector=new Chart(document.getElementById('sectorChart'),{
     type:'bar',
