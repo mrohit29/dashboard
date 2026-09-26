@@ -1,1 +1,196 @@
-import os, json, argparse\nfrom datetime import datetime, time\nimport pytz, pandas as pd, yfinance as yf, pandas_ta as ta\nIST=pytz.timezone("Asia/Kolkata")\nROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\nns={}\nwith open(os.path.join(ROOT,"scripts","stock_scanner.py"),encoding="utf-8") as f: exec(f.read().split("def main():")[0],ns)\nWATCHLIST=ns["WATCHLIST"]\ndef replay_one(symbol,date):\n end=(pd.Timestamp(date)+pd.Timedelta(days=1)).strftime("%Y-%m-%d")\n d=yf.Ticker(symbol).history(start=date,end=end,interval="5m",auto_adjust=False)\n if d.empty:return []\n d=d.copy(); d.index=d.index.tz_localize("UTC").tz_convert(IST) if d.index.tz is None else d.index.tz_convert(IST)\n day=d[d.index.date==pd.Timestamp(date).date()].copy()\n if day.empty:return []\n day["VWAP"]=ta.vwap(day.High,day.Low,day.Close,day.Volume)\n day["VS"]=d.Volume.rolling(20).mean().reindex(day.index); day["V5"]=d.Volume.rolling(375).mean().reindex(day.index)\n day["R"]=d.High.rolling(375).max().shift(1).reindex(day.index); day["S"]=d.Low.rolling(375).min().shift(1).reindex(day.index); day["ATR"]=ta.atr(d.High,d.Low,d.Close,length=14).reindex(day.index)\n morning=day[(day.index.hour==9)&(day.index.minute<45)]\n if morning.empty:return []\n hi=float(morning.High.max()); lo=float(morning.Low.min()); out=[]\n for i in range(len(day)):\n  x=day.iloc[i]; p=float(x.Close)\n  if day.index[i].time()<time(9,45):continue\n  bull=int(p>x.VWAP)+int(x.Volume>1.5*x.VS)+int(x.Volume>2*x.V5); bear=int(p<x.VWAP)+int(x.Volume>1.5*x.VS)+int(x.Volume>2*x.V5); direction=None\n  if bull==3 and p>hi and pd.notna(x.R) and p>x.R:direction="LONG"\n  elif bear==3 and p<lo and pd.notna(x.S) and p<x.S:direction="SHORT"\n  if not direction:continue\n  sl=None\n  for j in range(max(0,i-20),i):\n   c=day.iloc[j]\n   if direction=="LONG" and c.Close<c.Open:sl=float(c.Low*.9995);break\n   if direction=="SHORT" and c.Close>c.Open:sl=float(c.High*1.0005);break\n  if sl is None:\n   atr=float(x.ATR) if pd.notna(x.ATR) else p*.01; sl=p-1.5*atr if direction=="LONG" else p+1.5*atr\n  risk=abs(p-sl)/p*100\n  if risk>1:continue\n  target=p+2*(p-sl) if direction=="LONG" else p-2*(sl-p)\n  out.append({"symbol":symbol.replace(".NS",""),"time":day.index[i].strftime("%H:%M"),"direction":direction,"entry":round(p,2),"sl":round(sl,2),"target":round(target,2),"risk_pct":round(risk,2)})\n return out\nap=argparse.ArgumentParser(); ap.add_argument("--date",required=True); a=ap.parse_args(); signals=[]\nfor s in WATCHLIST:\n try:signals.extend(replay_one(s,a.date))\n except Exception as e:print(s,e)\nout={"date":a.date,"generated_ist":datetime.now(IST).isoformat(),"signals":signals,"unique_stocks":sorted(set(x["symbol"] for x in signals))}\npath=os.path.join(ROOT,"data",f"historical_scanner_{a.date}.json"); open(path,"w").write(json.dumps(out,indent=2)); print(json.dumps({"date":a.date,"signals":len(signals),"unique_stocks":len(out["unique_stocks"]),"stocks":out["unique_stocks"]},indent=2))\n
+import os
+import json
+import argparse
+from datetime import datetime, time
+
+import pytz
+import pandas as pd
+import yfinance as yf
+import pandas_ta as ta
+
+IST = pytz.timezone("Asia/Kolkata")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Reuse the exact watchlist from the live scanner without running its main().
+ns = {}
+with open(os.path.join(ROOT, "scripts", "stock_scanner.py"), encoding="utf-8") as f:
+    exec(f.read().split("def main():")[0], ns)
+
+WATCHLIST = ns["WATCHLIST"]
+
+
+def replay_one(symbol, date):
+    target = pd.Timestamp(date)
+    start = (target - pd.Timedelta(days=12)).strftime("%Y-%m-%d")
+    end = (target + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
+
+    # The live scanner uses roughly 10 days of 5-minute history. We need
+    # the preceding candles so the 20/375-candle rolling indicators exist.
+    d = yf.Ticker(symbol).history(
+        start=start,
+        end=end,
+        interval="5m",
+        auto_adjust=False,
+    )
+
+    if d.empty:
+        return []
+
+    d = d.copy()
+
+    if d.index.tz is None:
+        d.index = d.index.tz_localize("UTC").tz_convert(IST)
+    else:
+        d.index = d.index.tz_convert(IST)
+
+    # Same indicators as the live scanner.
+    d["VWAP"] = ta.vwap(d.High, d.Low, d.Close, d.Volume)
+    d["VS"] = d.Volume.rolling(20).mean()
+    d["V5"] = d.Volume.rolling(375).mean()
+    d["R"] = d.High.rolling(375).max().shift(1)
+    d["S"] = d.Low.rolling(375).min().shift(1)
+    d["ATR"] = ta.atr(d.High, d.Low, d.Close, length=14)
+
+    day = d[d.index.date == target.date()].copy()
+    if day.empty:
+        return []
+
+    # Opening range: 09:00 through 09:40 IST.
+    morning = day[
+        (day.index.hour == 9) &
+        (day.index.minute < 45)
+    ]
+
+    if morning.empty:
+        return []
+
+    orbhi = float(morning.High.max())
+    orblo = float(morning.Low.min())
+    signals = []
+
+    for i in range(len(day)):
+        x = day.iloc[i]
+        p = float(x.Close)
+
+        # The live scanner does not evaluate before 09:45.
+        if day.index[i].time() < time(9, 45):
+            continue
+
+        bull = (
+            int(p > x.VWAP)
+            + int(x.Volume > 1.5 * x.VS)
+            + int(x.Volume > 2 * x.V5)
+        )
+        bear = (
+            int(p < x.VWAP)
+            + int(x.Volume > 1.5 * x.VS)
+            + int(x.Volume > 2 * x.V5)
+        )
+
+        direction = None
+
+        if (
+            bull >= 3
+            and p > orbhi
+            and pd.notna(x.R)
+            and p > x.R
+        ):
+            direction = "LONG"
+
+        elif (
+            bear >= 3
+            and p < orblo
+            and pd.notna(x.S)
+            and p < x.S
+        ):
+            direction = "SHORT"
+
+        if not direction:
+            continue
+
+        # Same SL search used by the live scanner.
+        sl = None
+        for j in range(max(0, i - 20), i):
+            c = day.iloc[j]
+
+            if direction == "LONG" and c.Close < c.Open:
+                sl = float(c.Low * 0.9995)
+                break
+
+            if direction == "SHORT" and c.Close > c.Open:
+                sl = float(c.High * 1.0005)
+                break
+
+        # Same ATR fallback.
+        if sl is None:
+            atr = float(x.ATR) if pd.notna(x.ATR) else p * 0.01
+            sl = p - 1.5 * atr if direction == "LONG" else p + 1.5 * atr
+
+        risk = abs(p - sl) / p * 100
+
+        if risk > 1:
+            continue
+
+        target_price = (
+            p + 2 * (p - sl)
+            if direction == "LONG"
+            else p - 2 * (sl - p)
+        )
+
+        signals.append({
+            "symbol": symbol.replace(".NS", ""),
+            "time": day.index[i].strftime("%H:%M"),
+            "direction": direction,
+            "entry": round(p, 2),
+            "sl": round(sl, 2),
+            "target": round(target_price, 2),
+            "risk_pct": round(risk, 2),
+        })
+
+    return signals
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", required=True)
+    args = parser.parse_args()
+
+    signals = []
+
+    for symbol in WATCHLIST:
+        try:
+            signals.extend(replay_one(symbol, args.date))
+        except Exception as exc:
+            print(f"{symbol}: {exc}")
+
+    result = {
+        "date": args.date,
+        "generated_ist": datetime.now(IST).isoformat(),
+        "signals": signals,
+        "unique_stocks": sorted({x["symbol"] for x in signals}),
+    }
+
+    output_path = os.path.join(
+        ROOT,
+        "data",
+        f"historical_scanner_{args.date}.json",
+    )
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2)
+
+    print(
+        json.dumps(
+            {
+                "date": args.date,
+                "signals": len(signals),
+                "unique_stocks": len(result["unique_stocks"]),
+                "stocks": result["unique_stocks"],
+            },
+            indent=2,
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()
