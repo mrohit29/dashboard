@@ -22,10 +22,11 @@ jobs:
   refresh-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout latest main
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          ref: main
+          fetch-depth: 1
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -35,21 +36,21 @@ jobs:
       - name: Install dependencies
         run: pip install pandas requests beautifulsoup4 lxml
 
-      - name: Refresh official market data
+      - name: Refresh market data
         run: python scripts/update_data.py
 
-      - name: Commit refreshed data
+      - name: Commit generated data
         run: |
           git config user.name "dashboard-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/
-          git commit -m "Refresh market data" || echo "No data changes"
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh market data"
 
-      - name: Rebase on latest main and push
+      - name: Push generated data without rebase conflicts
         run: |
           git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+          git push origin HEAD:main --force-with-lease=refs/heads/main:$(git rev-parse origin/main)
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
