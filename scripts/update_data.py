@@ -37,8 +37,12 @@ CDSL_SECTOR = (
     "FortnightlySecWisePages/{month}%20{day}%2C%20{year}.html"
 )
 
-FII_DII_MIRROR = "https://raw.githubusercontent.com/chirag127/fii-dii-activity-api/main/data/{date}.json"
+FII_DII_SECONDARY = [
+    "https://www.icicidirect.com/share-market-today",
+    "https://www.kotakneo.com/share-market-today/fii-dii-data/",
+]
 DELIVERY_FULL = "https://nsearchives.nseindia.com/products/content/sec_bhavdata_full_{ddmmyyyy}.csv"
+CDSL_INDEX = "https://www.cdslindia.com/Publications/ForeignPortInvestor.html"
 
 
 HEADERS = {
@@ -79,40 +83,119 @@ def fetch_fii_dii_official() -> list[dict]:
     return payload
 
 
-def fetch_fii_dii_fallback(days: int = 90) -> list[dict]:
-    """
-    Secondary mirror of the daily NSE-derived FII/DII cash-market feed.
-    """
-    rows: list[dict] = []
-    today = date.today()
-    for i in range(days):
-        d = today - timedelta(days=i)
-        if d.weekday() >= 5:
+def normalize_fii_dii(rows: list[dict]) -> list[dict]:
+    out = []
+    for row in rows:
+        date_text = str(
+            row.get("date")
+            or row.get("Date")
+            or row.get("DATE")
+            or row.get("reportingDate")
+            or ""
+        ).strip()
+        if not date_text:
             continue
-        url = FII_DII_MIRROR.format(date=d.isoformat())
-        try:
-            r = requests.get(url, timeout=15)
-            if r.status_code != 200:
+
+        def num(*keys: str) -> float:
+            for key in keys:
+                value = row.get(key)
+                if value is None or value == "":
+                    continue
+                try:
+                    return float(str(value).replace(",", "").replace("₹", ""))
+                except Exception:
+                    pass
+            return 0.0
+
+        out.append({
+            "date": date_text,
+            "fii_buy": num("fiiBuy", "fii_buy", "FII BUY"),
+            "fii_sell": num("fiiSell", "fii_sell", "FII SELL"),
+            "fii_net": num("fiiNet", "fii_net", "FII NET"),
+            "dii_buy": num("diiBuy", "dii_buy", "DII BUY"),
+            "dii_sell": num("diiSell", "dii_sell", "DII SELL"),
+            "dii_net": num("diiNet", "dii_net", "DII NET"),
+        })
+    if not out:
+        raise RuntimeError("FII/DII payload contained no usable sessions")
+    return out
+
+
+def parse_secondary_fii_dii(html: str) -> list[dict]:
+    tables = pd.read_html(io.StringIO(html))
+    for table in tables:
+        table.columns = [
+            "_".join(str(x) for x in c) if isinstance(c, tuple) else str(c)
+            for c in table.columns
+        ]
+        cols = [str(c).strip().lower() for c in table.columns]
+        joined = " | ".join(cols)
+        if "date" not in joined or "fii" not in joined or "dii" not in joined:
+            continue
+
+        date_col = next((c for c in table.columns if "date" in str(c).lower()), None)
+
+        def find_col2(who: str, what: str):
+            for c in table.columns:
+                lc = str(c).lower()
+                if who in lc and what in lc:
+                    return c
+            return None
+
+        fii_buy = find_col2("fii", "gross purchase") or find_col2("fii", "buy")
+        fii_sell = find_col2("fii", "gross sales") or find_col2("fii", "sell")
+        fii_net = find_col2("fii", "net")
+        dii_buy = find_col2("dii", "gross purchase") or find_col2("dii", "buy")
+        dii_sell = find_col2("dii", "gross sales") or find_col2("dii", "sell")
+        dii_net = find_col2("dii", "net")
+
+        if not date_col or not fii_net or not dii_net:
+            continue
+
+        rows = []
+        for _, row in table.iterrows():
+            d = pd.to_datetime(row[date_col], errors="coerce")
+            if pd.isna(d):
                 continue
-            payload = r.json()
-            eq = payload.get("equity", {})
-            if payload.get("source") == "placeholder":
-                continue
+
+            def fv(col):
+                if not col:
+                    return 0.0
+                try:
+                    return float(str(row[col]).replace(",", "").replace("₹", "").replace("−", "-"))
+                except Exception:
+                    return 0.0
+
             rows.append({
                 "date": d.strftime("%d-%b-%Y"),
-                "fiiBuy": eq.get("fii_buy", 0),
-                "fiiSell": eq.get("fii_sell", 0),
-                "fiiNet": eq.get("fii_net", 0),
-                "diiBuy": eq.get("dii_buy", 0),
-                "diiSell": eq.get("dii_sell", 0),
-                "diiNet": eq.get("dii_net", 0),
+                "fiiBuy": fv(fii_buy),
+                "fiiSell": fv(fii_sell),
+                "fiiNet": fv(fii_net),
+                "diiBuy": fv(dii_buy),
+                "diiSell": fv(dii_sell),
+                "diiNet": fv(dii_net),
             })
-        except Exception:
-            continue
-    if not rows:
-        raise RuntimeError("FII/DII static mirror returned no usable sessions")
-    return rows
 
+        if rows:
+            return rows
+
+    raise RuntimeError("Secondary FII/DII page had no usable daily table")
+
+
+def fetch_fii_dii_fallback() -> list[dict]:
+    last_error = None
+    for url in FII_DII_SECONDARY:
+        try:
+            r = requests.get(
+                url,
+                timeout=45,
+                headers={"User-Agent": HEADERS["User-Agent"]},
+            )
+            r.raise_for_status()
+            return parse_secondary_fii_dii(r.text)
+        except Exception as exc:
+            last_error = exc
+    raise RuntimeError(f"No usable FII/DII secondary source: {last_error}")
 
 
 def fetch_fii_dii() -> tuple[list[dict], str]:
@@ -120,8 +203,7 @@ def fetch_fii_dii() -> tuple[list[dict], str]:
         return normalize_fii_dii(fetch_fii_dii_official()), "NSE official"
     except Exception as official_error:
         rows = fetch_fii_dii_fallback()
-        return normalize_fii_dii(rows), f"NSE-derived static mirror ({official_error})"
-
+        return normalize_fii_dii(rows), f"secondary source (NSE blocked: {official_error})"
 
 
 
@@ -265,8 +347,8 @@ def fetch_latest_delivery() -> tuple[date, list[dict]]:
 
     sym = find_col(df, "TckrSymb", "SYMBOL")
     close = find_col(df, "ClsPric", "CLOSE", "CLOSE_PRICE")
-    vol = find_col(df, "TtlTradgVol", "TOTAL_TRADED_QUANTITY", "TOTTRDQTY")
-    deliv = find_col(df, "DlvryQty", "DELIVERABLE_QTY", "DELIV_QTY")
+    vol = find_col(df, "TtlTradgVol", "TTL_TRD_QNTY", "TOTAL_TRADED_QUANTITY", "TOTTRDQTY")
+    deliv = find_col(df, "DlvryQty", "DELIV_QTY", "DELIVERABLE_QTY")
     pct = find_col(df, "DlvryPct", "DELIV_PER", "DELIVERY_PERCENT")
 
     if not sym or not close or not vol or not deliv:
@@ -364,42 +446,87 @@ def parse_cdsl_sector(html: str, as_of: str) -> list[dict]:
 
 
 def fetch_cdsl_latest_sector() -> dict:
-    today = date.today()
-    candidates = []
-    # CDSL publishes 15th/30th/31st snapshots. Try most recent first.
-    for day in (15, 30, 31):
-        for months_back in range(0, 2):
-            month_start = (today.replace(day=1) - pd.DateOffset(months=months_back)).date()
-            month = month_start.strftime("%B")
-            year = month_start.year
-            if day == 15 and month_start > today.replace(day=1):
-                continue
-            candidates.append((year, month, day))
+    r = requests.get(
+        CDSL_INDEX,
+        timeout=45,
+        headers={"User-Agent": HEADERS["User-Agent"]},
+    )
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, "html.parser")
 
-    for year, month, day in candidates:
-        url = CDSL_SECTOR.format(month=month, day=day, year=year)
-        try:
-            r = requests.get(
-                url,
-                timeout=45,
-                headers={
-                    "User-Agent": HEADERS["User-Agent"],
-                    "Referer": "https://www.cdslindia.com/Publications/ForeignPortInvestor.html",
-                    "Accept": "text/html,application/xhtml+xml,*/*",
-                },
-            )
-            if r.status_code != 200 or len(r.text) < 1000:
-                continue
-            items = parse_cdsl_sector(r.text, f"{day:02d}-{month}-{year}")
-            return {
-                "as_of": f"{year}-{datetime.strptime(month, '%b').month:02d}-{day:02d}",
-                "cadence": "fortnightly",
-                "items": items,
-                "source_url": url,
-            }
-        except Exception:
+    links = []
+    for a in soup.find_all("a", href=True):
+        text = " ".join(a.get_text(" ", strip=True).split())
+        href = a["href"]
+        if "Fortnightly" in text or "15, 2026" in text or "31, 2026" in text:
+            links.append((text, href))
+
+    # Prefer the newest date-like fortnightly sector link.
+    candidates = []
+    for text, href in links:
+        m = re.search(
+            r"(January|February|March|April|May|June|July|August|September|October|November|December)\s+"
+            r"(\d{1,2}),\s*(\d{4})",
+            text,
+            re.I,
+        )
+        if not m:
             continue
-    raise RuntimeError("Could not locate latest CDSL sector FPI page")
+        try:
+            dt = datetime.strptime(m.group(0), "%B %d, %Y").date()
+        except ValueError:
+            continue
+        full = requests.compat.urljoin(CDSL_INDEX, href)
+        candidates.append((dt, full))
+
+    # Some CDSL pages expose the date in href but not anchor text.
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if "FortnightlySecWisePages" not in href:
+            continue
+        m = re.search(
+            r"(January|February|March|April|May|June|July|August|September|October|November|December)%20(\d{1,2}),%20(\d{4})",
+            href,
+            re.I,
+        )
+        if not m:
+            m = re.search(
+                r"(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(\d{4})",
+                href,
+                re.I,
+            )
+        if m:
+            try:
+                dt = datetime.strptime(
+                    f"{m.group(1)} {m.group(2)}, {m.group(3)}", "%B %d, %Y"
+                ).date()
+                candidates.append((dt, requests.compat.urljoin(CDSL_INDEX, href)))
+            except ValueError:
+                pass
+
+    if not candidates:
+        raise RuntimeError("Could not find fortnightly sector links on CDSL index")
+
+    dt, url = max(candidates, key=lambda x: x[0])
+    rr = requests.get(
+        url,
+        timeout=45,
+        headers={
+            "User-Agent": HEADERS["User-Agent"],
+            "Referer": CDSL_INDEX,
+            "Accept": "text/html,application/xhtml+xml,*/*",
+        },
+    )
+    rr.raise_for_status()
+
+    items = parse_cdsl_sector(rr.text, dt.isoformat())
+    return {
+        "as_of": dt.isoformat(),
+        "cadence": "fortnightly",
+        "items": items,
+        "source_url": url,
+    }
+
 
 
 def main() -> None:
