@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "status": "sample data - replace with live pipeline output",
+    "sources": ["NSE FII/DII", "CDSL/NSDL sector FPI", "NSE delivery/bhavcopy"]
+  },
+  "weeks": [
+    {"week_ending":"2026-09-04","fii":-5612,"dii":23156,"nifty_return_pct":0.42},
+    {"week_ending":"2026-09-11","fii":-1795,"dii":6419,"nifty_return_pct":-2.09},
+    {"week_ending":"2026-09-18","fii":-7620,"dii":11232,"nifty_return_pct":-1.14},
+    {"week_ending":"2026-09-25","fii":-11490,"dii":16398,"nifty_return_pct":-1.64}
+  ]
+}
