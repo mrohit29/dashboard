@@ -34,7 +34,7 @@ NSE_BHAV = (
 )
 CDSL_SECTOR = (
     "https://www.cdslindia.com/publications/FII/"
-    "FortnightlySecWisePages/{month} {day}, {year}.html"
+    "FortnightlySecWisePages/{month}%20{day},{year}.html"
 )
 
 HEADERS = {
@@ -310,8 +310,16 @@ def fetch_cdsl_latest_sector() -> dict:
     for year, month, day in candidates:
         url = CDSL_SECTOR.format(month=month, day=day, year=year)
         try:
-            r = requests.get(url, timeout=45, headers={"User-Agent": HEADERS["User-Agent"]})
-            if r.status_code != 200 or "Fortnightly Sector-wise" not in r.text:
+            r = requests.get(
+                url,
+                timeout=45,
+                headers={
+                    "User-Agent": HEADERS["User-Agent"],
+                    "Referer": "https://www.cdslindia.com/Publications/ForeignPortInvestor.html",
+                    "Accept": "text/html,application/xhtml+xml,*/*",
+                },
+            )
+            if r.status_code != 200 or len(r.text) < 1000:
                 continue
             items = parse_cdsl_sector(r.text, f"{day:02d}-{month}-{year}")
             return {
