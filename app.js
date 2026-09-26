@@ -4,12 +4,27 @@ function fmtCr(n){return `₹${Number(n).toLocaleString('en-IN')} Cr`}
 function fmtPct(n){return `${Number(n).toFixed(2)}%`}
 
 async function loadData(){
-  const [weekly,sector,stocks]=await Promise.all([
-    fetch('data/weekly.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('weekly.json failed: '+r.status);return r.json()}),
-    fetch('data/sector_fpi.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('sector_fpi.json failed: '+r.status);return r.json()}),
-    fetch('data/stocks.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('stocks.json failed: '+r.status);return r.json()})
+  const getJson=async(path,label)=>{
+    const r=await fetch(path+'?ts='+Date.now());
+    if(!r.ok)throw new Error(label+' failed: '+r.status);
+    return r.json();
+  };
+
+  const results=await Promise.allSettled([
+    getJson('data/weekly.json','weekly.json'),
+    getJson('data/sector_fpi.json','sector_fpi.json'),
+    getJson('data/stocks.json','stocks.json')
   ]);
-  return {weekly,sector,stocks};
+
+  const [weeklyR,sectorR,stocksR]=results;
+
+  if(weeklyR.status==='rejected') throw weeklyR.reason;
+
+  return {
+    weekly:weeklyR.value,
+    sector:sectorR.status==='fulfilled' ? sectorR.value : {as_of:null,items:[],warning:'Sector data unavailable'},
+    stocks:stocksR.status==='fulfilled' ? stocksR.value : {items:[],meta:{status:'Stock screen unavailable'}}
+  };
 }
 
 function fillWeeks(weekly){
