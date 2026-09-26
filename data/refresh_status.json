@@ -1,9 +1,11 @@
 {
   "ok": false,
   "errors": [
-    "FII/DII: No usable FII/DII fallback table: 403 Client Error: Forbidden for url: https://www.moneycontrol.com/markets/fii-dii-data/cash/?classic=true",
-    "Delivery/bhavcopy: 404 Client Error: Not Found for url: https://nsearchives.nseindia.com/content/cm/sec_bhavdata_full_25092026.csv",
-    "CDSL sector FPI: Could not locate latest CDSL sector FPI page"
+    "FII/DII: name 'normalize_fii_dii' is not defined",
+    "Delivery/bhavcopy: Unexpected full bhavcopy columns: ['SYMBOL', ' SERIES', ' DATE1', ' PREV_CLOSE', ' OPEN_PRICE', ' HIGH_PRICE', ' LOW_PRICE', ' LAST_PRICE', ' CLOSE_PRICE', ' AVG_PRICE', ' TTL_TRD_QNTY', ' TURNOVER_LACS', ' NO_OF_TRADES', ' DELIV_QTY', ' DELIV_PER']"
   ],
-  "updated_utc": "2026-09-26T19:51:12.922725Z"
+  "warnings": [
+    "No newer CDSL snapshot fetched: Could not locate latest CDSL sector FPI page"
+  ],
+  "updated_utc": "2026-09-26T19:54:56.981250Z"
 }
