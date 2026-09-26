@@ -1,0 +1,13 @@
+{
+  "as_of":"2026-09-25",
+  "items":[
+    {"symbol":"INFY","name":"Infosys","fii_qoq":-1.36,"dii_qoq":0.72,"promoter_change":0,"delivery_pct":58,"rsi":27.1,"pe":13.8,"score":72},
+    {"symbol":"HDFCBANK","name":"HDFC Bank","fii_qoq":-0.20,"dii_qoq":1.10,"promoter_change":0,"delivery_pct":54,"rsi":46.4,"pe":14.5,"score":67},
+    {"symbol":"LENSKART","name":"Lenskart Solutions","fii_qoq":8.50,"dii_qoq":8.08,"promoter_change":-0.20,"delivery_pct":58.5,"rsi":39.4,"pe":238,"score":62},
+    {"symbol":"HFCL","name":"HFCL","fii_qoq":8.66,"dii_qoq":2.35,"promoter_change":0,"delivery_pct":100,"rsi":34.2,"pe":110,"score":60},
+    {"symbol":"LAURUSLABS","name":"Laurus Labs","fii_qoq":2.18,"dii_qoq":1.08,"promoter_change":0,"delivery_pct":50.9,"rsi":42.6,"pe":31.2,"score":78},
+    {"symbol":"GEVTD","name":"GE Vernova T&D India","fii_qoq":2.50,"dii_qoq":1.60,"promoter_change":0,"delivery_pct":50.6,"rsi":48.1,"pe":72.0,"score":74},
+    {"symbol":"SATIN","name":"Satin Creditcare Network","fii_qoq":1.36,"dii_qoq":1.02,"promoter_change":0,"delivery_pct":52,"rsi":44.0,"pe":6.6,"score":86},
+    {"symbol":"CREDITACC","name":"CreditAccess Grameen","fii_qoq":0.54,"dii_qoq":0.08,"promoter_change":-0.03,"delivery_pct":49,"rsi":41.5,"pe":18.4,"score":79}
+  ]
+}
