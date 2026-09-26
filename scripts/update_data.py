@@ -58,9 +58,20 @@ HEADERS = {
 }
 
 
+def _json_safe(value):
+    if isinstance(value, float) and not math.isfinite(value):
+        return None
+    if isinstance(value, dict):
+        return {k: _json_safe(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_json_safe(v) for v in value]
+    return value
+
+
 def write_json(name: str, payload: dict) -> None:
+    safe = _json_safe(payload)
     (DATA / name).write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False),
+        json.dumps(safe, indent=2, ensure_ascii=False, allow_nan=False),
         encoding="utf-8",
     )
 
@@ -387,62 +398,63 @@ def fetch_latest_delivery() -> tuple[date, list[dict]]:
 
 def parse_cdsl_sector(html: str, as_of: str) -> list[dict]:
     tables = pd.read_html(io.StringIO(html))
-    chosen = None
+    candidates = []
 
     for table in tables:
-        text = " ".join(str(x) for x in table.astype(str).fillna("").head(10).to_numpy().ravel())
-        if "Sectors" in text or "sector" in text:
-            chosen = table
-            break
+        t = table.copy()
+        t.columns = [
+            "_".join(str(x) for x in c) if isinstance(c, tuple) else str(c)
+            for c in t.columns
+        ]
+        cols = [str(c) for c in t.columns]
 
-    if chosen is None or chosen.empty:
-        raise RuntimeError("Could not identify CDSL sector table")
+        sector_col = next((c for c in cols if "sector" in c.lower()), None)
+        if not sector_col and len(cols) > 1:
+            sector_col = cols[1]
 
-    # The CDSL table is a multi-header table. Locate rows by sector name and
-    # extract the latest fortnight's Equity net-investment column.
-    chosen.columns = [
-        "_".join(str(x) for x in c) if isinstance(c, tuple) else str(c)
-        for c in chosen.columns
-    ]
-
-    sector_col = None
-    for c in chosen.columns:
-        if "sector" in c.lower():
-            sector_col = c
-            break
-    if sector_col is None:
-        sector_col = chosen.columns[1]
-
-    # Prefer the first numeric column after the sector name that looks like
-    # "Net Investment ... Equity" and fall back to a numeric scan.
-    numeric_cols = [c for c in chosen.columns if c != sector_col]
-    candidate = None
-    matches = []
-    for c in numeric_cols:
-        lc = c.lower()
-        if "net investment" in lc and "equity" in lc:
-            matches.append(c)
-    if matches:
-        candidate = matches[-1]
-    if candidate is None and numeric_cols:
-        candidate = numeric_cols[0]
-
-    items = []
-    for _, row in chosen.iterrows():
-        sector = str(row.get(sector_col, "")).strip()
-        if not sector or sector.lower() in {"sectors", "nan", "total"}:
+        # CDSL table contains multiple numeric groups. We want the Equity
+        # Net Investment column for the current fortnight, not the first
+        # numeric column (which can be an AUC / count field).
+        net_cols = [
+            c for c in cols
+            if "net investment" in c.lower() and "equity" in c.lower()
+        ]
+        if not sector_col or not net_cols:
             continue
-        raw = row.get(candidate)
-        try:
-            flow = float(str(raw).replace(",", "").replace("₹", ""))
-        except (ValueError, TypeError):
-            continue
-        items.append({"sector": sector, "flow_cr": flow})
 
-    if not items:
-        raise RuntimeError("CDSL sector table contained no numeric sector flows")
+        # Prefer a column whose header contains the current report date.
+        current = [
+            c for c in net_cols
+            if str(as_of)[:7] in str(c) or str(as_of) in str(c)
+        ]
+        candidate = current[-1] if current else net_cols[-1]
 
-    return items
+        rows = []
+        for _, row in t.iterrows():
+            sector = str(row.get(sector_col, "")).strip()
+            if not sector or sector.lower() in {"nan","sectors","grand total","total"}:
+                continue
+
+            raw = row.get(candidate)
+            try:
+                flow = float(str(raw).replace(",", "").replace("₹", "").strip())
+            except Exception:
+                continue
+
+            if not math.isfinite(flow):
+                continue
+            rows.append({"sector": sector, "flow_cr": flow})
+
+        # Real sector rows generally include multiple named sectors; reject
+        # tables that clearly aren't the sector investment table.
+        if len(rows) >= 10:
+            candidates.append(rows)
+
+    if not candidates:
+        raise RuntimeError("Could not identify a valid CDSL sector net-investment table")
+
+    return max(candidates, key=len)
+
 
 
 def fetch_cdsl_latest_sector() -> dict:
