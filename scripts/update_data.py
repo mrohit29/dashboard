@@ -358,7 +358,7 @@ def fetch_cdsl_latest_sector() -> dict:
     for day in (15, 30, 31):
         for months_back in range(0, 2):
             month_start = (today.replace(day=1) - pd.DateOffset(months=months_back)).date()
-            month = month_start.strftime("%b")
+            month = month_start.strftime("%B")
             year = month_start.year
             if day == 15 and month_start > today.replace(day=1):
                 continue
