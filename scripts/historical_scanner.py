@@ -47,8 +47,18 @@ def replay_one(symbol, date):
     d["VWAP"] = ta.vwap(d.High, d.Low, d.Close, d.Volume)
     d["VS"] = d.Volume.rolling(20).mean()
     d["V5"] = d.Volume.rolling(375).mean()
-    d["R"] = d.High.rolling(375).max().shift(1)
-    d["S"] = d.Low.rolling(375).min().shift(1)
+    # Actual previous 5 completed trading days for the breakout reference.
+    daily = yf.Ticker(symbol).history(period="15d", interval="1d", auto_adjust=False)
+    if daily.index.tz is None:
+        daily.index = daily.index.tz_localize(IST)
+    else:
+        daily.index = daily.index.tz_convert(IST)
+    daily = daily[daily.index.date < target.date()]
+    prev5 = daily.tail(5)
+    if len(prev5) < 5:
+        return []
+    five_day_high = float(prev5.High.max())
+    five_day_low = float(prev5.Low.min())
     d["ATR"] = ta.atr(d.High, d.Low, d.Close, length=14)
 
     day = d[d.index.date == target.date()].copy()
@@ -92,16 +102,14 @@ def replay_one(symbol, date):
         if (
             bull >= 3
             and p > orbhi
-            and pd.notna(x.R)
-            and p > x.R
+            and p > five_day_high
         ):
             direction = "LONG"
 
         elif (
             bear >= 3
             and p < orblo
-            and pd.notna(x.S)
-            and p < x.S
+            and p < five_day_low
         ):
             direction = "SHORT"
 
