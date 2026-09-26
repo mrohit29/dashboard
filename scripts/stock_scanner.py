@@ -61,8 +61,14 @@ def scan(symbol):
         d["VWAP"]=ta.vwap(d.High,d.Low,d.Close,d.Volume)
         d["VS"]=d.Volume.rolling(20).mean()
         d["V5"]=d.Volume.rolling(375).mean()
-        d["R"]=d.High.rolling(375).max().shift(1)
-        d["S"]=d.Low.rolling(375).min().shift(1)
+        # Use the actual previous 5 completed trading days, not 375 intraday candles.
+        daily=yf.Ticker(symbol).history(period="15d",interval="1d",auto_adjust=False)
+        daily.index=daily.index.tz_localize(IST) if daily.index.tz is None else daily.index.tz_convert(IST)
+        daily=daily[daily.index.date < now.date()]
+        prev5=daily.tail(5)
+        if len(prev5)<5: return None
+        five_day_high=float(prev5.High.max())
+        five_day_low=float(prev5.Low.min())
         d["ATR"]=ta.atr(d.High,d.Low,d.Close,length=14)
         now=datetime.now(IST)
         if now.time()<datetime.strptime("09:45","%H:%M").time(): return None
@@ -72,8 +78,8 @@ def scan(symbol):
         bull=int(p>x.VWAP)+int(x.Volume>1.5*x.VS)+int(x.Volume>2*x.V5)
         bear=int(p<x.VWAP)+int(x.Volume>1.5*x.VS)+int(x.Volume>2*x.V5)
         direction=None; score=0
-        if bull>=MIN_SCORE and p>orbhi and p>x.R: direction,score="LONG",bull
-        elif bear>=MIN_SCORE and p<orblo and p<x.S: direction,score="SHORT",bear
+        if bull>=MIN_SCORE and p>orbhi and p>five_day_high: direction,score="LONG",bull
+        elif bear>=MIN_SCORE and p<orblo and p<five_day_low: direction,score="SHORT",bear
         if not direction: return None
         sl=None
         for j in range(len(d)-2,max(0,len(d)-22),-1):
