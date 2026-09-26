@@ -1,6 +1,10 @@
 name: Update and deploy market data
 
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/**"
   workflow_dispatch:
   schedule:
     - cron: "30 13 * * 1-5"
