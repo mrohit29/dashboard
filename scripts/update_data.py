@@ -37,7 +37,11 @@ CDSL_SECTOR = (
     "FortnightlySecWisePages/{month}%20{day}%2C%20{year}.html"
 )
 
-FII_DII_FALLBACK = "https://chirag127.github.io/fii-dii-activity-api/data/{date}.json"
+FII_DII_FALLBACK_URLS = [
+    "https://chartdrift.com/fii-dii",
+    "https://www.moneycontrol.com/markets/fii-dii-data/cash/?classic=true",
+]
+DELIVERY_FULL = "https://nsearchives.nseindia.com/content/cm/sec_bhavdata_full_{ddmmyyyy}.csv"
 
 
 HEADERS = {
@@ -78,41 +82,82 @@ def fetch_fii_dii_official() -> list[dict]:
     return payload
 
 
-def fetch_fii_dii_fallback(days: int = 45) -> list[dict]:
+def fetch_fii_dii_fallback() -> list[dict]:
     """
-    Fallback for GitHub Actions when NSE blocks the runner.
-    The fallback is a static mirror whose payloads are sourced from NSE/Groww/
-    Moneycontrol; the dashboard labels this source as non-official.
+    Secondary source: ChartDrift's server-rendered historical table, which states
+    that its figures are sourced from the NSE provisional cash-market report.
     """
-    rows: list[dict] = []
-    today = date.today()
-    for i in range(days):
-        d = today - timedelta(days=i)
-        if d.weekday() >= 5:
-            continue
-        url = FII_DII_FALLBACK.format(date=d.isoformat())
+    last_error = None
+    for url in FII_DII_FALLBACK_URLS:
         try:
-            r = requests.get(url, timeout=20)
-            if r.status_code != 200:
-                continue
-            payload = r.json()
-            eq = payload.get("equity", {})
-            rows.append(
-                {
-                    "date": d.strftime("%d-%b-%Y"),
-                    "fiiBuy": eq.get("fii_buy", 0),
-                    "fiiSell": eq.get("fii_sell", 0),
-                    "fiiNet": eq.get("fii_net", 0),
-                    "diiBuy": eq.get("dii_buy", 0),
-                    "diiSell": eq.get("dii_sell", 0),
-                    "diiNet": eq.get("dii_net", 0),
-                }
+            r = requests.get(
+                url,
+                timeout=45,
+                headers={"User-Agent": HEADERS["User-Agent"]},
             )
-        except Exception:
-            continue
-    if not rows:
-        raise RuntimeError("Fallback FII/DII mirror returned no usable sessions")
-    return rows
+            r.raise_for_status()
+            tables = pd.read_html(io.StringIO(r.text))
+            for table in tables:
+                cols = [str(c).lower() for c in table.columns]
+                joined = " ".join(cols)
+                if "fii" not in joined or "dii" not in joined:
+                    continue
+
+                # Flatten a multi-index if present.
+                table.columns = [
+                    "_".join(str(x) for x in c) if isinstance(c, tuple) else str(c)
+                    for c in table.columns
+                ]
+                cmap = {str(c).lower(): c for c in table.columns}
+                date_col = next((c for c in table.columns if "date" in str(c).lower()), None)
+                if not date_col:
+                    continue
+
+                def col_like(term: str, extra: str | None = None):
+                    for c in table.columns:
+                        lc = str(c).lower()
+                        if term in lc and (extra is None or extra in lc):
+                            return c
+                    return None
+
+                fii_net = col_like("fii", "net")
+                dii_net = col_like("dii", "net")
+                fii_buy = col_like("fii", "buy") or col_like("fii", "bought")
+                fii_sell = col_like("fii", "sell") or col_like("fii", "sold")
+                dii_buy = col_like("dii", "buy") or col_like("dii", "bought")
+                dii_sell = col_like("dii", "sell") or col_like("dii", "sold")
+                if not fii_net or not dii_net:
+                    continue
+
+                out = []
+                for _, row in table.iterrows():
+                    d = pd.to_datetime(row[date_col], errors="coerce")
+                    if pd.isna(d):
+                        continue
+
+                    def fv(col):
+                        if not col:
+                            return 0.0
+                        try:
+                            return float(str(row[col]).replace(",", "").replace("₹", "").replace("−", "-"))
+                        except Exception:
+                            return 0.0
+
+                    out.append({
+                        "date": d.strftime("%d-%b-%Y"),
+                        "fiiBuy": fv(fii_buy),
+                        "fiiSell": fv(fii_sell),
+                        "fiiNet": fv(fii_net),
+                        "diiBuy": fv(dii_buy),
+                        "diiSell": fv(dii_sell),
+                        "diiNet": fv(dii_net),
+                    })
+                if out:
+                    return out
+        except Exception as exc:
+            last_error = exc
+    raise RuntimeError(f"No usable FII/DII fallback table: {last_error}")
+
 
 
 def fetch_fii_dii() -> tuple[list[dict], str]:
@@ -120,48 +165,9 @@ def fetch_fii_dii() -> tuple[list[dict], str]:
         return normalize_fii_dii(fetch_fii_dii_official()), "NSE official"
     except Exception as official_error:
         rows = fetch_fii_dii_fallback()
-        return normalize_fii_dii(rows), f"fallback mirror ({official_error})"
+        return normalize_fii_dii(rows), f"secondary NSE-sourced table ({official_error})"
 
 
-    s = nse_session()
-    r = s.get(NSE_FIIDII, timeout=30)
-    r.raise_for_status()
-    payload = r.json()
-    if not isinstance(payload, list) or not payload:
-        raise RuntimeError("NSE FII/DII returned an unexpected payload")
-    return payload
-
-
-def normalize_fii_dii(rows: list[dict]) -> list[dict]:
-    out = []
-    for row in rows:
-        date_text = str(row.get("date", "")).strip()
-        if not date_text:
-            continue
-
-        def num(*keys: str) -> float:
-            for key in keys:
-                value = row.get(key)
-                if value is None or value == "":
-                    continue
-                try:
-                    return float(str(value).replace(",", ""))
-                except ValueError:
-                    continue
-            return 0.0
-
-        out.append(
-            {
-                "date": date_text,
-                "fii_buy": num("fiiBuy"),
-                "fii_sell": num("fiiSell"),
-                "fii_net": num("fiiNet", "fiinet"),
-                "dii_buy": num("diiBuy"),
-                "dii_sell": num("diiSell"),
-                "dii_net": num("diiNet", "diinet"),
-            }
-        )
-    return out
 
 
 def iso_from_nse_date(value: str) -> date:
@@ -289,8 +295,57 @@ def latest_trading_date() -> date:
 
 def fetch_latest_delivery() -> tuple[date, list[dict]]:
     d = latest_trading_date()
-    df = fetch_bhavcopy(d)
-    return d, clean_bhav(df, d)
+    url = DELIVERY_FULL.format(ddmmyyyy=d.strftime("%d%m%Y"))
+    r = requests.get(
+        url,
+        timeout=60,
+        headers={
+            "User-Agent": HEADERS["User-Agent"],
+            "Accept": "text/csv,*/*",
+            "Referer": "https://www.nseindia.com/all-reports",
+        },
+    )
+    r.raise_for_status()
+    df = pd.read_csv(io.StringIO(r.text))
+
+    sym = find_col(df, "TckrSymb", "SYMBOL")
+    close = find_col(df, "ClsPric", "CLOSE", "CLOSE_PRICE")
+    vol = find_col(df, "TtlTradgVol", "TOTAL_TRADED_QUANTITY", "TOTTRDQTY")
+    deliv = find_col(df, "DlvryQty", "DELIVERABLE_QTY", "DELIV_QTY")
+    pct = find_col(df, "DlvryPct", "DELIV_PER", "DELIVERY_PERCENT")
+
+    if not sym or not close or not vol or not deliv:
+        raise RuntimeError(f"Unexpected full bhavcopy columns: {list(df.columns)[:30]}")
+
+    rows = []
+    for _, row in df.iterrows():
+        symbol = str(row.get(sym, "")).strip()
+        if not symbol or symbol.lower() == "nan":
+            continue
+
+        def fv(col):
+            try:
+                v = float(row[col])
+                return None if math.isnan(v) else v
+            except Exception:
+                return None
+
+        volume = fv(vol)
+        delivery_qty = fv(deliv)
+        delivery_pct = fv(pct) if pct else None
+        if delivery_pct is None and delivery_qty is not None and volume:
+            delivery_pct = 100.0 * delivery_qty / volume
+
+        rows.append({
+            "date": d.isoformat(),
+            "symbol": symbol,
+            "close": fv(close),
+            "volume": volume,
+            "delivery_qty": delivery_qty,
+            "delivery_pct": delivery_pct,
+        })
+    return d, rows
+
 
 
 def parse_cdsl_sector(html: str, as_of: str) -> list[dict]:
@@ -325,11 +380,13 @@ def parse_cdsl_sector(html: str, as_of: str) -> list[dict]:
     # "Net Investment ... Equity" and fall back to a numeric scan.
     numeric_cols = [c for c in chosen.columns if c != sector_col]
     candidate = None
+    matches = []
     for c in numeric_cols:
         lc = c.lower()
         if "net investment" in lc and "equity" in lc:
-            candidate = c
-            break
+            matches.append(c)
+    if matches:
+        candidate = matches[-1]
     if candidate is None and numeric_cols:
         candidate = numeric_cols[0]
 
@@ -438,8 +495,7 @@ def main() -> None:
     except Exception as exc:
         errors.append(f"CDSL sector FPI: {exc}")
 
-    # Keep stock ownership sample isolated until quarterly filing collector
-    # is wired. This avoids presenting stale values as live.
+    # Stock ownership remains isolated until its quarterly filing collector is wired.
     stock_path = DATA / "stocks.json"
     stocks = json.loads(stock_path.read_text(encoding="utf-8")) if stock_path.exists() else {"items": []}
     stocks["meta"] = {
