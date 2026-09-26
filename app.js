@@ -151,7 +151,7 @@ function renderStocks(stocks){
       <td class="${s.fii_qoq>=0?'positive':'negative'}">${fmtPct(s.fii_qoq)}</td>
       <td class="${s.dii_qoq>=0?'positive':'negative'}">${fmtPct(s.dii_qoq)}</td>
       <td>${fmtPct(s.promoter_change)}</td><td>${fmtPct(s.delivery_pct)}</td>
-      <td>${s.rsi.toFixed(1)}</td><td>${s.pe.toFixed(1)}</td>
+      <td>${fmtPct(s.profit_growth_pct)}</td><td>${s.pe?.toFixed ? s.pe.toFixed(1) : "—"}</td>
       <td class="score ${cls}">${s.score}</td>
     </tr>`;
   }).join('');
