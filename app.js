@@ -66,15 +66,21 @@ function chartOptions(){
   };
 }
 
-function renderFlow(weekly){
+function renderFlow(selected){
   destroy('flow');
+
+  const heading=document.querySelector('#flowChart')?.closest('.panel')?.querySelector('.panel-head h2');
+  if(heading){
+    heading.textContent='Weekly FII / DII Flow · '+selected.week_ending;
+  }
+
   state.charts.flow=new Chart(document.getElementById('flowChart'),{
     type:'bar',
     data:{
-      labels:weekly.weeks.map(x=>x.week_ending),
+      labels:[selected.week_ending],
       datasets:[
-        {label:'FII/FPI',data:weekly.weeks.map(x=>x.fii),borderWidth:0},
-        {label:'DII',data:weekly.weeks.map(x=>x.dii),borderWidth:0}
+        {label:'FII/FPI',data:[selected.fii],borderWidth:0},
+        {label:'DII',data:[selected.dii],borderWidth:0}
       ]
     },
     options:chartOptions()
@@ -154,7 +160,7 @@ async function render(){
   fillWeeks(data.weekly);
   const w=selectedWeek(data.weekly);
   renderSummary(w);
-  renderFlow(data.weekly);
+  renderFlow(w);
   renderTrend(data.weekly);
   renderSector(data.sector);
   renderStocks(data.stocks);
@@ -164,7 +170,9 @@ async function render(){
 document.getElementById('refreshBtn').addEventListener('click',render);
 document.getElementById('weekSelect').addEventListener('change',async()=>{
   const d=await loadData();
-  renderSummary(selectedWeek(d.weekly));
+  const w=selectedWeek(d.weekly);
+  renderSummary(w);
+  renderFlow(w);
 });
 
 render().catch(e=>{
