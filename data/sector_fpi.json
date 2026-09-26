@@ -3,74 +3,105 @@
   "cadence": "fortnightly",
   "items": [
     {
-      "sector": "Healthcare",
-      "flow_cr": 2114
-    },
-    {
-      "sector": "Construction",
-      "flow_cr": 930
-    },
-    {
-      "sector": "Services",
-      "flow_cr": 905
-    },
-    {
-      "sector": "Consumer Services",
-      "flow_cr": 422
-    },
-    {
-      "sector": "Chemicals",
-      "flow_cr": 228
-    },
-    {
-      "sector": "Utilities",
-      "flow_cr": 194
+      "sector": "Automobile and Auto Components",
+      "flow_cr": 1.0
     },
     {
       "sector": "Capital Goods",
-      "flow_cr": -108
+      "flow_cr": 2.0
+    },
+    {
+      "sector": "Chemicals",
+      "flow_cr": 3.0
+    },
+    {
+      "sector": "Construction",
+      "flow_cr": 4.0
+    },
+    {
+      "sector": "Construction Materials",
+      "flow_cr": 5.0
     },
     {
       "sector": "Consumer Durables",
-      "flow_cr": -397
+      "flow_cr": 6.0
     },
     {
-      "sector": "Metals & Mining",
-      "flow_cr": -681
+      "sector": "Consumer Services",
+      "flow_cr": 7.0
     },
     {
-      "sector": "Realty",
-      "flow_cr": -762
+      "sector": "Diversified",
+      "flow_cr": 8.0
     },
     {
-      "sector": "IT",
-      "flow_cr": -960
-    },
-    {
-      "sector": "Telecom",
-      "flow_cr": -991
-    },
-    {
-      "sector": "Power",
-      "flow_cr": -1653
-    },
-    {
-      "sector": "FMCG",
-      "flow_cr": -2029
-    },
-    {
-      "sector": "Oil & Gas",
-      "flow_cr": -2385
-    },
-    {
-      "sector": "Auto",
-      "flow_cr": -2670
+      "sector": "Fast Moving Consumer Goods",
+      "flow_cr": 9.0
     },
     {
       "sector": "Financial Services",
-      "flow_cr": -6204
+      "flow_cr": 10.0
+    },
+    {
+      "sector": "Forest Materials",
+      "flow_cr": 11.0
+    },
+    {
+      "sector": "Healthcare",
+      "flow_cr": 12.0
+    },
+    {
+      "sector": "Information Technology",
+      "flow_cr": 13.0
+    },
+    {
+      "sector": "Media, Entertainment & Publication",
+      "flow_cr": 14.0
+    },
+    {
+      "sector": "Metals & Mining",
+      "flow_cr": 15.0
+    },
+    {
+      "sector": "Oil, Gas & Consumable Fuels",
+      "flow_cr": 16.0
+    },
+    {
+      "sector": "Power",
+      "flow_cr": 17.0
+    },
+    {
+      "sector": "Realty",
+      "flow_cr": 18.0
+    },
+    {
+      "sector": "Services",
+      "flow_cr": 19.0
+    },
+    {
+      "sector": "Telecommunication",
+      "flow_cr": 20.0
+    },
+    {
+      "sector": "Textiles",
+      "flow_cr": 21.0
+    },
+    {
+      "sector": "Utilities",
+      "flow_cr": 22.0
+    },
+    {
+      "sector": "Sovereign",
+      "flow_cr": 23.0
+    },
+    {
+      "sector": "Others",
+      "flow_cr": 24.0
+    },
+    {
+      "sector": "Grand Total",
+      "flow_cr": NaN
     }
   ],
-  "warning": "No newer CDSL snapshot fetched: Could not locate latest CDSL sector FPI page",
-  "status": "last verified snapshot retained"
+  "source_url": "https://www.cdslindia.com/publications/FII/FortnightlySecWisePages/September 15, 2026.html"
 }

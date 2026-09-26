@@ -1,11 +1,6 @@
 {
-  "ok": false,
-  "errors": [
-    "FII/DII: name 'normalize_fii_dii' is not defined",
-    "Delivery/bhavcopy: Unexpected full bhavcopy columns: ['SYMBOL', ' SERIES', ' DATE1', ' PREV_CLOSE', ' OPEN_PRICE', ' HIGH_PRICE', ' LOW_PRICE', ' LAST_PRICE', ' CLOSE_PRICE', ' AVG_PRICE', ' TTL_TRD_QNTY', ' TURNOVER_LACS', ' NO_OF_TRADES', ' DELIV_QTY', ' DELIV_PER']"
-  ],
-  "warnings": [
-    "No newer CDSL snapshot fetched: Could not locate latest CDSL sector FPI page"
-  ],
-  "updated_utc": "2026-09-26T19:54:56.981250Z"
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "updated_utc": "2026-09-26T20:04:12.883790Z"
 }
