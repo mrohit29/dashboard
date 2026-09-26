@@ -37,11 +37,8 @@ CDSL_SECTOR = (
     "FortnightlySecWisePages/{month}%20{day}%2C%20{year}.html"
 )
 
-FII_DII_FALLBACK_URLS = [
-    "https://chartdrift.com/fii-dii",
-    "https://www.moneycontrol.com/markets/fii-dii-data/cash/?classic=true",
-]
-DELIVERY_FULL = "https://nsearchives.nseindia.com/content/cm/sec_bhavdata_full_{ddmmyyyy}.csv"
+FII_DII_MIRROR = "https://raw.githubusercontent.com/chirag127/fii-dii-activity-api/main/data/{date}.json"
+DELIVERY_FULL = "https://nsearchives.nseindia.com/products/content/sec_bhavdata_full_{ddmmyyyy}.csv"
 
 
 HEADERS = {
@@ -82,81 +79,39 @@ def fetch_fii_dii_official() -> list[dict]:
     return payload
 
 
-def fetch_fii_dii_fallback() -> list[dict]:
+def fetch_fii_dii_fallback(days: int = 90) -> list[dict]:
     """
-    Secondary source: ChartDrift's server-rendered historical table, which states
-    that its figures are sourced from the NSE provisional cash-market report.
+    Secondary mirror of the daily NSE-derived FII/DII cash-market feed.
     """
-    last_error = None
-    for url in FII_DII_FALLBACK_URLS:
+    rows: list[dict] = []
+    today = date.today()
+    for i in range(days):
+        d = today - timedelta(days=i)
+        if d.weekday() >= 5:
+            continue
+        url = FII_DII_MIRROR.format(date=d.isoformat())
         try:
-            r = requests.get(
-                url,
-                timeout=45,
-                headers={"User-Agent": HEADERS["User-Agent"]},
-            )
-            r.raise_for_status()
-            tables = pd.read_html(io.StringIO(r.text))
-            for table in tables:
-                cols = [str(c).lower() for c in table.columns]
-                joined = " ".join(cols)
-                if "fii" not in joined or "dii" not in joined:
-                    continue
-
-                # Flatten a multi-index if present.
-                table.columns = [
-                    "_".join(str(x) for x in c) if isinstance(c, tuple) else str(c)
-                    for c in table.columns
-                ]
-                cmap = {str(c).lower(): c for c in table.columns}
-                date_col = next((c for c in table.columns if "date" in str(c).lower()), None)
-                if not date_col:
-                    continue
-
-                def col_like(term: str, extra: str | None = None):
-                    for c in table.columns:
-                        lc = str(c).lower()
-                        if term in lc and (extra is None or extra in lc):
-                            return c
-                    return None
-
-                fii_net = col_like("fii", "net")
-                dii_net = col_like("dii", "net")
-                fii_buy = col_like("fii", "buy") or col_like("fii", "bought")
-                fii_sell = col_like("fii", "sell") or col_like("fii", "sold")
-                dii_buy = col_like("dii", "buy") or col_like("dii", "bought")
-                dii_sell = col_like("dii", "sell") or col_like("dii", "sold")
-                if not fii_net or not dii_net:
-                    continue
-
-                out = []
-                for _, row in table.iterrows():
-                    d = pd.to_datetime(row[date_col], errors="coerce")
-                    if pd.isna(d):
-                        continue
-
-                    def fv(col):
-                        if not col:
-                            return 0.0
-                        try:
-                            return float(str(row[col]).replace(",", "").replace("₹", "").replace("−", "-"))
-                        except Exception:
-                            return 0.0
-
-                    out.append({
-                        "date": d.strftime("%d-%b-%Y"),
-                        "fiiBuy": fv(fii_buy),
-                        "fiiSell": fv(fii_sell),
-                        "fiiNet": fv(fii_net),
-                        "diiBuy": fv(dii_buy),
-                        "diiSell": fv(dii_sell),
-                        "diiNet": fv(dii_net),
-                    })
-                if out:
-                    return out
-        except Exception as exc:
-            last_error = exc
-    raise RuntimeError(f"No usable FII/DII fallback table: {last_error}")
+            r = requests.get(url, timeout=15)
+            if r.status_code != 200:
+                continue
+            payload = r.json()
+            eq = payload.get("equity", {})
+            if payload.get("source") == "placeholder":
+                continue
+            rows.append({
+                "date": d.strftime("%d-%b-%Y"),
+                "fiiBuy": eq.get("fii_buy", 0),
+                "fiiSell": eq.get("fii_sell", 0),
+                "fiiNet": eq.get("fii_net", 0),
+                "diiBuy": eq.get("dii_buy", 0),
+                "diiSell": eq.get("dii_sell", 0),
+                "diiNet": eq.get("dii_net", 0),
+            })
+        except Exception:
+            continue
+    if not rows:
+        raise RuntimeError("FII/DII static mirror returned no usable sessions")
+    return rows
 
 
 
@@ -165,7 +120,7 @@ def fetch_fii_dii() -> tuple[list[dict], str]:
         return normalize_fii_dii(fetch_fii_dii_official()), "NSE official"
     except Exception as official_error:
         rows = fetch_fii_dii_fallback()
-        return normalize_fii_dii(rows), f"secondary NSE-sourced table ({official_error})"
+        return normalize_fii_dii(rows), f"NSE-derived static mirror ({official_error})"
 
 
 
@@ -302,7 +257,7 @@ def fetch_latest_delivery() -> tuple[date, list[dict]]:
         headers={
             "User-Agent": HEADERS["User-Agent"],
             "Accept": "text/csv,*/*",
-            "Referer": "https://www.nseindia.com/all-reports",
+            "Referer": "https://www.nseindia.com/",
         },
     )
     r.raise_for_status()
@@ -488,12 +443,21 @@ def main() -> None:
     except Exception as exc:
         errors.append(f"Delivery/bhavcopy: {exc}")
 
-    # 3) Sector FPI
+    # 3) Sector FPI — official CDSL is fortnightly. Preserve the
+    # last verified snapshot if no new release is available.
     try:
         sector = fetch_cdsl_latest_sector()
         write_json("sector_fpi.json", sector)
     except Exception as exc:
-        errors.append(f"CDSL sector FPI: {exc}")
+        sector_path = DATA / "sector_fpi.json"
+        if sector_path.exists():
+            existing = json.loads(sector_path.read_text(encoding="utf-8"))
+            existing["warning"] = f"No newer CDSL snapshot fetched: {exc}"
+            existing["status"] = "last verified snapshot retained"
+            write_json("sector_fpi.json", existing)
+            print(f"Sector FPI: retaining last verified snapshot ({exc})")
+        else:
+            errors.append(f"CDSL sector FPI: {exc}")
 
     # Stock ownership remains isolated until its quarterly filing collector is wired.
     stock_path = DATA / "stocks.json"
@@ -504,7 +468,20 @@ def main() -> None:
     }
     write_json("stocks.json", stocks)
 
-    status = {"ok": not errors, "errors": errors, "updated_utc": datetime.utcnow().isoformat() + "Z"}
+    warnings = []
+    try:
+        sector_state = json.loads((DATA / "sector_fpi.json").read_text(encoding="utf-8"))
+        if sector_state.get("warning"):
+            warnings.append(sector_state["warning"])
+    except Exception:
+        pass
+
+    status = {
+        "ok": not errors,
+        "errors": errors,
+        "warnings": warnings,
+        "updated_utc": datetime.utcnow().isoformat() + "Z",
+    }
     write_json("refresh_status.json", status)
     if errors:
         print("Refresh completed with errors:")
