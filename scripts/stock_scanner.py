@@ -61,6 +61,7 @@ def scan(symbol):
         d["VWAP"]=ta.vwap(d.High,d.Low,d.Close,d.Volume)
         d["VS"]=d.Volume.rolling(20).mean()
         d["V5"]=d.Volume.rolling(375).mean()
+        now=datetime.now(IST)
         # Use the actual previous 5 completed trading days, not 375 intraday candles.
         daily=yf.Ticker(symbol).history(period="15d",interval="1d",auto_adjust=False)
         daily.index=daily.index.tz_localize(IST) if daily.index.tz is None else daily.index.tz_convert(IST)
@@ -70,7 +71,6 @@ def scan(symbol):
         five_day_high=float(prev5.High.max())
         five_day_low=float(prev5.Low.min())
         d["ATR"]=ta.atr(d.High,d.Low,d.Close,length=14)
-        now=datetime.now(IST)
         if now.time()<datetime.strptime("09:45","%H:%M").time(): return None
         morning=d[(d.index.date==now.date())&(d.index.hour==9)&(d.index.minute<45)]
         if morning.empty: return None
