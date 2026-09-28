@@ -22,8 +22,6 @@ on:
     - cron: "30-55/5 3 * * 1-5"
     # 04:00–08:55 UTC = 09:30–14:25 IST
     - cron: "*/5 4-8 * * 1-5"
-    # 09:00–09:30 UTC = 14:30–15:00 IST (we only want through 14:30)
-    - cron: "0 9 * * 1-5"
 
 permissions:
   contents: write
