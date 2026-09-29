@@ -16,12 +16,11 @@ on:
         required: true
         default: "2026-09-23"
         type: string
+
+  # Start one continuous scanner job at 9:30 AM IST on weekdays.
   schedule:
-    # 09:00–09:00 IST? UTC equivalent for 09:00–14:30 IST, weekdays.
-    # 03:30–03:55 UTC = 09:00–09:25 IST
-    - cron: "30-55/5 3 * * 1-5"
-    # 04:00–08:55 UTC = 09:30–14:25 IST
-    - cron: "*/5 4-8 * * 1-5"
+    - cron: "30 9 * * 1-5"
+      timezone: "Asia/Kolkata"
 
 permissions:
   contents: write
@@ -33,7 +32,8 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 330
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,23 +46,65 @@ jobs:
       - name: Install dependencies
         run: pip install yfinance pandas pandas-ta requests pytz
 
-      - name: Run live scanner
+      - name: Run live scanner continuously
         if: github.event_name == 'schedule' || inputs.mode == 'live'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
-        run: python scripts/stock_scanner.py
+        run: |
+          set -e
+
+          echo "Continuous scanner started at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
+
+          while true; do
+            NOW=$(TZ=Asia/Kolkata date '+%H:%M')
+
+            # Stop before/at 2:30 PM IST. The Python scanner also enforces
+            # its own market-hours check, so no alert can be generated after 2:30.
+            if [[ "$NOW" > "14:29" ]]; then
+              echo "Market window ended at $NOW IST. Stopping scanner."
+              break
+            fi
+
+            echo "Running scanner at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
+            python scripts/stock_scanner.py
+
+            # Keep the dashboard data updated after each scan.
+            git add data/scanner.json
+            if ! git diff --cached --quiet; then
+              git config user.name "dashboard-bot"
+              git config user.email "actions@users.noreply.github.com"
+              git commit -m "Refresh scanner output"
+
+              git fetch origin main
+              git rebase origin/main || {
+                echo "Rebase conflict; aborting this cycle."
+                git rebase --abort
+              }
+
+              git push origin HEAD:main || {
+                echo "Push was rejected; retrying after rebase."
+                git fetch origin main
+                git rebase origin/main
+                git push origin HEAD:main
+              }
+            fi
+
+            echo "Sleeping 5 minutes..."
+            sleep 300
+          done
 
       - name: Run historical scanner
         if: github.event_name == 'workflow_dispatch' && inputs.mode == 'historical'
         run: python scripts/historical_scanner.py --date "${{ inputs.date }}"
 
-      - name: Commit scanner output
+      - name: Commit historical output
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'historical'
         run: |
           git config user.name "dashboard-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/scanner.json data/historical_scanner_*.json
-          git diff --cached --quiet || git commit -m "Refresh scanner output"
+          git add data/historical_scanner_*.json
+          git diff --cached --quiet || git commit -m "Refresh historical scanner output"
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
