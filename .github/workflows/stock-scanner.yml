@@ -17,10 +17,9 @@ on:
         default: "2026-09-23"
         type: string
 
-  # 04:00 UTC = 09:30 IST. The job itself also waits for 09:30 IST
-  # before scanning, so scheduler delays/early starts cannot create early alerts.
+  # TEST: 13:30 UTC = 19:00 IST, weekdays.
   schedule:
-    - cron: "0 4 * * 1-5"
+    - cron: "30 13 * * 1-5"
 
 permissions:
   contents: write
@@ -32,7 +31,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 90
 
     steps:
       - uses: actions/checkout@v4
@@ -54,31 +53,30 @@ jobs:
         run: |
           set -e
 
-          echo "Continuous scanner job started at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "TEST scanner job started at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
 
-          # Wait until 09:30 IST before the first scan.
+          # TEST: wait until 19:00 IST.
           while true; do
             NOW=$(TZ=Asia/Kolkata date '+%H:%M')
-            if [[ "$NOW" > "09:29" ]]; then
+            if [[ "$NOW" > "18:59" ]]; then
               break
             fi
-            echo "Waiting for 09:30 IST. Current time: $NOW IST"
+            echo "Waiting for 19:00 IST. Current time: $NOW IST"
             sleep 30
           done
 
           while true; do
             NOW=$(TZ=Asia/Kolkata date '+%H:%M')
 
-            # Stop once the 14:30 IST market cutoff is reached.
-            if [[ "$NOW" > "14:29" ]]; then
-              echo "Market window ended at $NOW IST. Stopping scanner."
+            # TEST: run for 30 minutes, then stop at 19:30 IST.
+            if [[ "$NOW" > "19:29" ]]; then
+              echo "Test window ended at $NOW IST. Stopping scanner."
               break
             fi
 
             echo "Running scanner at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
             python scripts/stock_scanner.py
 
-            # Keep the dashboard data updated after each scan.
             git add data/scanner.json
             if ! git diff --cached --quiet; then
               git config user.name "dashboard-bot"
