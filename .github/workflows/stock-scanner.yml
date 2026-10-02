@@ -17,9 +17,9 @@ on:
         default: "2026-09-23"
         type: string
 
-  # TEST: 13:30 UTC = 19:00 IST, weekdays.
+  # 04:00 UTC = 09:30 IST, weekdays.
   schedule:
-    - cron: "30 13 * * 1-5"
+    - cron: "0 4 * * 1-5"
 
 permissions:
   contents: write
@@ -31,7 +31,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 330
 
     steps:
       - uses: actions/checkout@v4
@@ -53,24 +53,20 @@ jobs:
         run: |
           set -e
 
-          echo "TEST scanner job started at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "Continuous scanner job started at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
 
-          # TEST: wait until 19:00 IST.
           while true; do
             NOW=$(TZ=Asia/Kolkata date '+%H:%M')
-            if [[ "$NOW" > "18:59" ]]; then
-              break
+
+            # Do not enter the 5-minute scan loop outside market hours.
+            if [[ "$NOW" < "09:00" ]]; then
+              echo "Before 09:00 IST ($NOW). Waiting 60 seconds without scanning."
+              sleep 60
+              continue
             fi
-            echo "Waiting for 19:00 IST. Current time: $NOW IST"
-            sleep 30
-          done
 
-          while true; do
-            NOW=$(TZ=Asia/Kolkata date '+%H:%M')
-
-            # TEST: run for 30 minutes, then stop at 19:30 IST.
-            if [[ "$NOW" > "19:29" ]]; then
-              echo "Test window ended at $NOW IST. Stopping scanner."
+            if [[ "$NOW" > "14:29" ]]; then
+              echo "After 14:30 IST ($NOW). Stopping scanner."
               break
             fi
 
