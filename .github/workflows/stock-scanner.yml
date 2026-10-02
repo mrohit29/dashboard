@@ -17,10 +17,10 @@ on:
         default: "2026-09-23"
         type: string
 
-  # Start one continuous scanner job at 9:30 AM IST on weekdays.
+  # 04:00 UTC = 09:30 IST. The job itself also waits for 09:30 IST
+  # before scanning, so scheduler delays/early starts cannot create early alerts.
   schedule:
-    - cron: "30 9 * * 1-5"
-      timezone: "Asia/Kolkata"
+    - cron: "0 4 * * 1-5"
 
 permissions:
   contents: write
@@ -54,13 +54,22 @@ jobs:
         run: |
           set -e
 
-          echo "Continuous scanner started at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "Continuous scanner job started at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
+
+          # Wait until 09:30 IST before the first scan.
+          while true; do
+            NOW=$(TZ=Asia/Kolkata date '+%H:%M')
+            if [[ "$NOW" > "09:29" ]]; then
+              break
+            fi
+            echo "Waiting for 09:30 IST. Current time: $NOW IST"
+            sleep 30
+          done
 
           while true; do
             NOW=$(TZ=Asia/Kolkata date '+%H:%M')
 
-            # Stop before/at 2:30 PM IST. The Python scanner also enforces
-            # its own market-hours check, so no alert can be generated after 2:30.
+            # Stop once the 14:30 IST market cutoff is reached.
             if [[ "$NOW" > "14:29" ]]; then
               echo "Market window ended at $NOW IST. Stopping scanner."
               break
