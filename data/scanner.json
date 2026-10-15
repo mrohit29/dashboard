@@ -1,49 +1,69 @@
 {
-  "updated_ist": "2026-10-15T14:21:07.708162+05:30",
+  "updated_ist": "2026-10-15T14:26:22.001947+05:30",
   "status": "live",
   "market_regime": "BEARISH",
   "signals": [
     {
-      "symbol": "ICICIBANK",
+      "symbol": "HDFCBANK",
       "direction": "LONG",
       "score": 3,
-      "entry": 1386.3,
-      "sl": 1383.81,
-      "target": 1391.28,
-      "risk_pct": 0.18,
-      "candle_time": "2026-10-15 14:15:00"
+      "entry": 725.0,
+      "sl": 725.04,
+      "target": 724.93,
+      "risk_pct": 0.01,
+      "candle_time": "2026-10-15 14:20:00"
     },
     {
-      "symbol": "CUMMINSIND",
-      "direction": "SHORT",
+      "symbol": "LTTS",
+      "direction": "LONG",
       "score": 3,
-      "entry": 4633.5,
-      "sl": 4642.32,
-      "target": 4615.86,
-      "risk_pct": 0.19,
-      "candle_time": "2026-10-15 14:15:00"
+      "entry": 3724.0,
+      "sl": 3722.54,
+      "target": 3726.92,
+      "risk_pct": 0.04,
+      "candle_time": "2026-10-15 14:20:00"
+    },
+    {
+      "symbol": "RELIANCE",
+      "direction": "LONG",
+      "score": 3,
+      "entry": 1214.5,
+      "sl": 1213.99,
+      "target": 1215.51,
+      "risk_pct": 0.04,
+      "candle_time": "2026-10-15 14:20:00"
     },
     {
       "symbol": "KOTAKBANK",
       "direction": "LONG",
       "score": 3,
-      "entry": 445.5,
+      "entry": 445.65,
       "sl": 444.63,
-      "target": 447.24,
-      "risk_pct": 0.2,
-      "candle_time": "2026-10-15 14:15:00"
+      "target": 447.69,
+      "risk_pct": 0.23,
+      "candle_time": "2026-10-15 14:20:00"
     },
     {
-      "symbol": "EICHERMOT",
+      "symbol": "AXISBANK",
       "direction": "LONG",
       "score": 3,
-      "entry": 7268.0,
-      "sl": 7244.38,
-      "target": 7315.25,
-      "risk_pct": 0.33,
-      "candle_time": "2026-10-15 14:15:00"
+      "entry": 1291.4,
+      "sl": 1287.86,
+      "target": 1298.49,
+      "risk_pct": 0.27,
+      "candle_time": "2026-10-15 14:20:00"
+    },
+    {
+      "symbol": "BALKRISIND",
+      "direction": "LONG",
+      "score": 3,
+      "entry": 2066.4,
+      "sl": 2054.47,
+      "target": 2090.26,
+      "risk_pct": 0.58,
+      "candle_time": "2026-10-15 14:20:00"
     }
   ],
   "watchlist_size": 179,
-  "last_completed_candle": "2026-10-15 14:15:00"
+  "last_completed_candle": "2026-10-15 14:20:00"
 }
