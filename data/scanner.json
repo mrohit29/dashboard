@@ -1,8 +1,39 @@
 {
-  "updated_ist": "2026-09-29T15:57:05.203998+05:30",
-  "status": "market-closed",
-  "market_regime": "UNKNOWN",
-  "signals": [],
+  "updated_ist": "2026-10-15T14:15:51.124076+05:30",
+  "status": "live",
+  "market_regime": "BEARISH",
+  "signals": [
+    {
+      "symbol": "HEROMOTOCO",
+      "direction": "LONG",
+      "score": 3,
+      "entry": 5183.5,
+      "sl": 5166.42,
+      "target": 5217.67,
+      "risk_pct": 0.33,
+      "candle_time": "2026-10-15 14:10:00"
+    },
+    {
+      "symbol": "NAVINFLUOR",
+      "direction": "SHORT",
+      "score": 3,
+      "entry": 8223.5,
+      "sl": 8281.14,
+      "target": 8108.22,
+      "risk_pct": 0.7,
+      "candle_time": "2026-10-15 14:10:00"
+    },
+    {
+      "symbol": "LTTS",
+      "direction": "LONG",
+      "score": 3,
+      "entry": 3728.5,
+      "sl": 3695.55,
+      "target": 3794.4,
+      "risk_pct": 0.88,
+      "candle_time": "2026-10-15 14:10:00"
+    }
+  ],
   "watchlist_size": 179,
-  "last_completed_candle": null
+  "last_completed_candle": "2026-10-15 14:10:00"
 }
