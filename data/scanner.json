@@ -1,39 +1,49 @@
 {
-  "updated_ist": "2026-10-15T14:15:51.124076+05:30",
+  "updated_ist": "2026-10-15T14:21:07.708162+05:30",
   "status": "live",
   "market_regime": "BEARISH",
   "signals": [
     {
-      "symbol": "HEROMOTOCO",
+      "symbol": "ICICIBANK",
       "direction": "LONG",
       "score": 3,
-      "entry": 5183.5,
-      "sl": 5166.42,
-      "target": 5217.67,
-      "risk_pct": 0.33,
-      "candle_time": "2026-10-15 14:10:00"
+      "entry": 1386.3,
+      "sl": 1383.81,
+      "target": 1391.28,
+      "risk_pct": 0.18,
+      "candle_time": "2026-10-15 14:15:00"
     },
     {
-      "symbol": "NAVINFLUOR",
+      "symbol": "CUMMINSIND",
       "direction": "SHORT",
       "score": 3,
-      "entry": 8223.5,
-      "sl": 8281.14,
-      "target": 8108.22,
-      "risk_pct": 0.7,
-      "candle_time": "2026-10-15 14:10:00"
+      "entry": 4633.5,
+      "sl": 4642.32,
+      "target": 4615.86,
+      "risk_pct": 0.19,
+      "candle_time": "2026-10-15 14:15:00"
     },
     {
-      "symbol": "LTTS",
+      "symbol": "KOTAKBANK",
       "direction": "LONG",
       "score": 3,
-      "entry": 3728.5,
-      "sl": 3695.55,
-      "target": 3794.4,
-      "risk_pct": 0.88,
-      "candle_time": "2026-10-15 14:10:00"
+      "entry": 445.5,
+      "sl": 444.63,
+      "target": 447.24,
+      "risk_pct": 0.2,
+      "candle_time": "2026-10-15 14:15:00"
+    },
+    {
+      "symbol": "EICHERMOT",
+      "direction": "LONG",
+      "score": 3,
+      "entry": 7268.0,
+      "sl": 7244.38,
+      "target": 7315.25,
+      "risk_pct": 0.33,
+      "candle_time": "2026-10-15 14:15:00"
     }
   ],
   "watchlist_size": 179,
-  "last_completed_candle": "2026-10-15 14:10:00"
+  "last_completed_candle": "2026-10-15 14:15:00"
 }
