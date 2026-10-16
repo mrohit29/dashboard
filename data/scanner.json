@@ -1,29 +1,39 @@
 {
-  "updated_ist": "2026-10-16T14:16:14.567532+05:30",
+  "updated_ist": "2026-10-16T14:21:25.860018+05:30",
   "status": "live",
   "market_regime": "BEARISH",
   "signals": [
     {
-      "symbol": "MGL",
+      "symbol": "TCS",
       "direction": "LONG",
       "score": 3,
-      "entry": 1054.9,
-      "sl": 1050.47,
-      "target": 1063.75,
-      "risk_pct": 0.42,
-      "candle_time": "2026-10-16 14:10:00"
+      "entry": 2447.1,
+      "sl": 2447.98,
+      "target": 2445.35,
+      "risk_pct": 0.04,
+      "candle_time": "2026-10-16 14:15:00"
     },
     {
-      "symbol": "BPCL",
+      "symbol": "SHREECEM",
       "direction": "LONG",
       "score": 3,
-      "entry": 296.65,
-      "sl": 294.95,
-      "target": 300.05,
-      "risk_pct": 0.57,
-      "candle_time": "2026-10-16 14:10:00"
+      "entry": 22555.0,
+      "sl": 22483.75,
+      "target": 22697.49,
+      "risk_pct": 0.32,
+      "candle_time": "2026-10-16 14:15:00"
+    },
+    {
+      "symbol": "IOC",
+      "direction": "LONG",
+      "score": 3,
+      "entry": 130.1,
+      "sl": 129.58,
+      "target": 131.15,
+      "risk_pct": 0.4,
+      "candle_time": "2026-10-16 14:15:00"
     }
   ],
   "watchlist_size": 179,
-  "last_completed_candle": "2026-10-16 14:10:00"
+  "last_completed_candle": "2026-10-16 14:15:00"
 }
