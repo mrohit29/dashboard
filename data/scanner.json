@@ -1,39 +1,19 @@
 {
-  "updated_ist": "2026-10-16T14:21:25.860018+05:30",
+  "updated_ist": "2026-10-16T14:26:37.480339+05:30",
   "status": "live",
   "market_regime": "BEARISH",
   "signals": [
     {
-      "symbol": "TCS",
-      "direction": "LONG",
-      "score": 3,
-      "entry": 2447.1,
-      "sl": 2447.98,
-      "target": 2445.35,
-      "risk_pct": 0.04,
-      "candle_time": "2026-10-16 14:15:00"
-    },
-    {
       "symbol": "SHREECEM",
       "direction": "LONG",
       "score": 3,
-      "entry": 22555.0,
+      "entry": 22550.0,
       "sl": 22483.75,
-      "target": 22697.49,
-      "risk_pct": 0.32,
-      "candle_time": "2026-10-16 14:15:00"
-    },
-    {
-      "symbol": "IOC",
-      "direction": "LONG",
-      "score": 3,
-      "entry": 130.1,
-      "sl": 129.58,
-      "target": 131.15,
-      "risk_pct": 0.4,
-      "candle_time": "2026-10-16 14:15:00"
+      "target": 22682.49,
+      "risk_pct": 0.29,
+      "candle_time": "2026-10-16 14:20:00"
     }
   ],
   "watchlist_size": 179,
-  "last_completed_candle": "2026-10-16 14:15:00"
+  "last_completed_candle": "2026-10-16 14:20:00"
 }
