@@ -1,69 +1,29 @@
 {
-  "updated_ist": "2026-10-15T14:26:22.001947+05:30",
+  "updated_ist": "2026-10-16T14:11:00.757879+05:30",
   "status": "live",
   "market_regime": "BEARISH",
   "signals": [
     {
-      "symbol": "HDFCBANK",
+      "symbol": "BATAINDIA",
       "direction": "LONG",
       "score": 3,
-      "entry": 725.0,
-      "sl": 725.04,
-      "target": 724.93,
-      "risk_pct": 0.01,
-      "candle_time": "2026-10-15 14:20:00"
+      "entry": 632.85,
+      "sl": 631.33,
+      "target": 635.88,
+      "risk_pct": 0.24,
+      "candle_time": "2026-10-16 14:05:00"
     },
     {
-      "symbol": "LTTS",
-      "direction": "LONG",
+      "symbol": "NAVINFLUOR",
+      "direction": "SHORT",
       "score": 3,
-      "entry": 3724.0,
-      "sl": 3722.54,
-      "target": 3726.92,
-      "risk_pct": 0.04,
-      "candle_time": "2026-10-15 14:20:00"
-    },
-    {
-      "symbol": "RELIANCE",
-      "direction": "LONG",
-      "score": 3,
-      "entry": 1214.5,
-      "sl": 1213.99,
-      "target": 1215.51,
-      "risk_pct": 0.04,
-      "candle_time": "2026-10-15 14:20:00"
-    },
-    {
-      "symbol": "KOTAKBANK",
-      "direction": "LONG",
-      "score": 3,
-      "entry": 445.65,
-      "sl": 444.63,
-      "target": 447.69,
-      "risk_pct": 0.23,
-      "candle_time": "2026-10-15 14:20:00"
-    },
-    {
-      "symbol": "AXISBANK",
-      "direction": "LONG",
-      "score": 3,
-      "entry": 1291.4,
-      "sl": 1287.86,
-      "target": 1298.49,
-      "risk_pct": 0.27,
-      "candle_time": "2026-10-15 14:20:00"
-    },
-    {
-      "symbol": "BALKRISIND",
-      "direction": "LONG",
-      "score": 3,
-      "entry": 2066.4,
-      "sl": 2054.47,
-      "target": 2090.26,
-      "risk_pct": 0.58,
-      "candle_time": "2026-10-15 14:20:00"
+      "entry": 8096.0,
+      "sl": 8130.06,
+      "target": 8027.87,
+      "risk_pct": 0.42,
+      "candle_time": "2026-10-16 14:05:00"
     }
   ],
   "watchlist_size": 179,
-  "last_completed_candle": "2026-10-15 14:20:00"
+  "last_completed_candle": "2026-10-16 14:05:00"
 }
