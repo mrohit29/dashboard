@@ -1,29 +1,29 @@
 {
-  "updated_ist": "2026-10-16T14:11:00.757879+05:30",
+  "updated_ist": "2026-10-16T14:16:14.567532+05:30",
   "status": "live",
   "market_regime": "BEARISH",
   "signals": [
     {
-      "symbol": "BATAINDIA",
+      "symbol": "MGL",
       "direction": "LONG",
       "score": 3,
-      "entry": 632.85,
-      "sl": 631.33,
-      "target": 635.88,
-      "risk_pct": 0.24,
-      "candle_time": "2026-10-16 14:05:00"
+      "entry": 1054.9,
+      "sl": 1050.47,
+      "target": 1063.75,
+      "risk_pct": 0.42,
+      "candle_time": "2026-10-16 14:10:00"
     },
     {
-      "symbol": "NAVINFLUOR",
-      "direction": "SHORT",
+      "symbol": "BPCL",
+      "direction": "LONG",
       "score": 3,
-      "entry": 8096.0,
-      "sl": 8130.06,
-      "target": 8027.87,
-      "risk_pct": 0.42,
-      "candle_time": "2026-10-16 14:05:00"
+      "entry": 296.65,
+      "sl": 294.95,
+      "target": 300.05,
+      "risk_pct": 0.57,
+      "candle_time": "2026-10-16 14:10:00"
     }
   ],
   "watchlist_size": 179,
-  "last_completed_candle": "2026-10-16 14:05:00"
+  "last_completed_candle": "2026-10-16 14:10:00"
 }
