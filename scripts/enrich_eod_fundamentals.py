@@ -67,14 +67,14 @@ def balance_sheet_debt_equity(soup):
 
 def fundamental_score(record):
     checks=[]
-    def add(value,passed):
-        if value is not None:checks.append(1 if passed else 0)
-    add(record.get("roe_pct"),record["roe_pct"]>=15)
-    add(record.get("roce_pct"),record["roce_pct"]>=15)
-    add(record.get("sales_yoy_growth_pct"),record["sales_yoy_growth_pct"]>0)
-    add(record.get("net_profit_yoy_growth_pct"),record["net_profit_yoy_growth_pct"]>0)
-    add(record.get("debt_to_equity"),record["debt_to_equity"]<=1)
-    add(record.get("promoter_change_qoq_pp"),record["promoter_change_qoq_pp"]>=0)
+    def add(value,predicate):
+        if value is not None:checks.append(1 if predicate(value) else 0)
+    add(record.get("roe_pct"),lambda v:v>=15)
+    add(record.get("roce_pct"),lambda v:v>=15)
+    add(record.get("sales_yoy_growth_pct"),lambda v:v>0)
+    add(record.get("net_profit_yoy_growth_pct"),lambda v:v>0)
+    add(record.get("debt_to_equity"),lambda v:v<=1)
+    add(record.get("promoter_change_qoq_pp"),lambda v:v>=0)
     institutional=[x for x in (record.get("fii_change_qoq_pp"),record.get("dii_change_qoq_pp")) if x is not None]
     if institutional:checks.append(1 if sum(institutional)>0 else 0)
     return {"fundamental_quality_score":sum(checks),"fundamental_score_criteria_available":len(checks),
