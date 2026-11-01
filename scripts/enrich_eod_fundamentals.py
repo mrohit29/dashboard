@@ -64,7 +64,7 @@ def table_rows(soup, table_id):
         vals=[c.get_text(" ",strip=True).replace("\\xa0"," ").strip() for c in cells]
         if len(vals)>=2:
             # If there is no explicit thead, the first row is the date header.
-            if not header and all(re.search(r"\\b(?:Mar|Jun|Sep|Dec)\\b",v,re.I) for v in vals[1:]):
+            if not header and all(re.search(r"\\b(?:Mar|Jun|Sep|Dec)\b",v,re.I) for v in vals[1:]):
                 header=vals
                 continue
             rows.append(vals)
