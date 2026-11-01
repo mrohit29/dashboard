@@ -17,8 +17,14 @@ TARGET_SESSIONS=280; MAX_CALENDAR_DAYS=500; MIN_TURNOVER_CR=0.50
 HEADERS={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/128.0.0.0 Safari/537.36","Accept":"*/*","Referer":HOME}
 
 def session():
-    s=requests.Session(); s.headers.update(HEADERS)
-    r=s.get(HOME,timeout=30); r.raise_for_status()
+    """Create an HTTP session without probing the NSE homepage.
+
+    GitHub-hosted runners are often denied by the public homepage (HTTP 403),
+    while the historical bhavcopy archive host may still serve direct files.
+    Do not make homepage access a prerequisite for the archive request.
+    """
+    s=requests.Session()
+    s.headers.update(HEADERS)
     return s
 
 def col(columns,*names):
