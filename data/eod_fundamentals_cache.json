@@ -4,7 +4,7 @@
     "company_name": "Twenty First Century Management Services Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/21STCENMGM/",
-    "fetched_utc": "2026-11-01T17:26:47.248296+00:00",
+    "fetched_utc": "2026-11-01T17:51:36.875866+00:00",
     "ratios_as_displayed": {
       "Market Cap": "60.7",
       "Current Price": "57.8",
@@ -20,7 +20,8 @@
     "pe": 51.9,
     "roe_pct": -70.8,
     "roce_pct": -48.9,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.405,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -38,9 +39,9 @@
       "Sep 2026"
     ],
     "latest_quarter_sales": 11.11,
-    "sales_yoy_growth_pct": -251.98,
+    "sales_yoy_growth_pct": null,
     "latest_quarter_net_profit": 8.61,
-    "net_profit_yoy_growth_pct": -209.96,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -65,14 +66,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 4,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "63MOONS": {
     "symbol": "63MOONS",
     "company_name": "63 Moons Technologies Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/63MOONS/",
-    "fetched_utc": "2026-11-01T17:26:49.060113+00:00",
+    "fetched_utc": "2026-11-01T17:51:38.680007+00:00",
     "ratios_as_displayed": {
       "Market Cap": "4,372",
       "Current Price": "949",
@@ -88,7 +93,8 @@
     "pe": 76.4,
     "roe_pct": 1.54,
     "roce_pct": 2.49,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.001,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.21,
     "quarterly_periods": [
       "Jun 2023",
@@ -133,14 +139,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "AARON": {
     "symbol": "AARON",
     "company_name": "Aaron Industries Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/AARON/",
-    "fetched_utc": "2026-11-01T17:26:50.877822+00:00",
+    "fetched_utc": "2026-11-01T17:51:40.489890+00:00",
     "ratios_as_displayed": {
       "Market Cap": "270",
       "Current Price": "129",
@@ -156,7 +166,8 @@
     "pe": 27.6,
     "roe_pct": 15.0,
     "roce_pct": 18.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.39,
     "quarterly_periods": [
       "Sep 2023",
@@ -201,14 +212,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ABSLLIQUID": {
     "symbol": "ABSLLIQUID",
     "company_name": "Aditya Birla Sun Life Crisil Liquid Overnight ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ABSLLIQUID/",
-    "fetched_utc": "2026-11-01T17:26:52.409139+00:00",
+    "fetched_utc": "2026-11-01T17:51:42.021130+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -225,6 +240,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -242,14 +258,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ACUTAAS": {
     "symbol": "ACUTAAS",
     "company_name": "Acutaas Chemicals Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ACUTAAS/",
-    "fetched_utc": "2026-11-01T17:26:54.221455+00:00",
+    "fetched_utc": "2026-11-01T17:51:43.824026+00:00",
     "ratios_as_displayed": {
       "Market Cap": "32,778",
       "Current Price": "4,004",
@@ -265,7 +285,8 @@
     "pe": 71.2,
     "roe_pct": 24.4,
     "roce_pct": 32.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.008,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.06,
     "quarterly_periods": [
       "Sep 2023",
@@ -310,14 +331,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ADANIPORTS": {
     "symbol": "ADANIPORTS",
     "company_name": "Adani Ports & Special Economic Zone Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ADANIPORTS/",
-    "fetched_utc": "2026-11-01T17:26:56.052829+00:00",
+    "fetched_utc": "2026-11-01T17:51:45.638028+00:00",
     "ratios_as_displayed": {
       "Market Cap": "4,26,232",
       "Current Price": "1,850",
@@ -333,7 +358,8 @@
     "pe": 131.0,
     "roe_pct": 3.72,
     "roce_pct": 8.12,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.874,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.41,
     "quarterly_periods": [
       "Sep 2023",
@@ -378,14 +404,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "AERONEU": {
     "symbol": "AERONEU",
     "company_name": "Aeroflex Neu Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/AERONEU/",
-    "fetched_utc": "2026-11-01T17:26:57.861201+00:00",
+    "fetched_utc": "2026-11-01T17:51:47.437485+00:00",
     "ratios_as_displayed": {
       "Market Cap": "202",
       "Current Price": "78.4",
@@ -401,7 +431,8 @@
     "pe": null,
     "roe_pct": 1.54,
     "roce_pct": 4.34,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.278,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -446,14 +477,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "AFSL": {
     "symbol": "AFSL",
     "company_name": "Abans Financial Services Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/AFSL/",
-    "fetched_utc": "2026-11-01T17:26:59.664743+00:00",
+    "fetched_utc": "2026-11-01T17:51:49.232650+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,037",
       "Current Price": "202",
@@ -469,7 +504,8 @@
     "pe": 62.8,
     "roe_pct": 2.85,
     "roce_pct": 2.97,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -489,7 +525,7 @@
     "latest_quarter_sales": 9.0,
     "sales_yoy_growth_pct": 800.0,
     "latest_quarter_net_profit": 10.0,
-    "net_profit_yoy_growth_pct": -1100.0,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -514,14 +550,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "AGARWALEYE": {
     "symbol": "AGARWALEYE",
     "company_name": "Dr Agarwals Health Care Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/AGARWALEYE/",
-    "fetched_utc": "2026-11-01T17:27:01.462638+00:00",
+    "fetched_utc": "2026-11-01T17:51:51.024873+00:00",
     "ratios_as_displayed": {
       "Market Cap": "16,144",
       "Current Price": "509",
@@ -537,7 +577,8 @@
     "pe": 331.0,
     "roe_pct": 1.67,
     "roce_pct": 5.31,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.342,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Dec 2023",
@@ -575,14 +616,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ALIVUS": {
     "symbol": "ALIVUS",
     "company_name": "Alivus Life Sciences Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ALIVUS/",
-    "fetched_utc": "2026-11-01T17:27:03.295898+00:00",
+    "fetched_utc": "2026-11-01T17:51:52.849786+00:00",
     "ratios_as_displayed": {
       "Market Cap": "17,376",
       "Current Price": "1,415",
@@ -598,7 +643,8 @@
     "pe": 25.2,
     "roe_pct": 17.9,
     "roce_pct": 23.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.015,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.35,
     "quarterly_periods": [
       "Sep 2023",
@@ -643,14 +689,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ANANDRATHI": {
     "symbol": "ANANDRATHI",
     "company_name": "Anand Rathi Wealth Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ANANDRATHI/",
-    "fetched_utc": "2026-11-01T17:27:05.106631+00:00",
+    "fetched_utc": "2026-11-01T17:51:54.652924+00:00",
     "ratios_as_displayed": {
       "Market Cap": "37,392",
       "Current Price": "2,252",
@@ -666,7 +716,8 @@
     "pe": 82.4,
     "roe_pct": 45.3,
     "roce_pct": 57.5,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.055,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.29,
     "quarterly_periods": [
       "Sep 2023",
@@ -711,14 +762,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "AONELIQUID": {
     "symbol": "AONELIQUID",
     "company_name": "Angel One Nifty 1D Rate Liquid ETF - Growth",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/AONELIQUID/",
-    "fetched_utc": "2026-11-01T17:27:06.639965+00:00",
+    "fetched_utc": "2026-11-01T17:51:56.184664+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -735,6 +790,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -752,14 +808,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ASTRAZEN": {
     "symbol": "ASTRAZEN",
     "company_name": "Astrazeneca Pharma India Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ASTRAZEN/",
-    "fetched_utc": "2026-11-01T17:27:08.451648+00:00",
+    "fetched_utc": "2026-11-01T17:51:57.989963+00:00",
     "ratios_as_displayed": {
       "Market Cap": "15,911",
       "Current Price": "6,364",
@@ -775,7 +835,8 @@
     "pe": 91.7,
     "roe_pct": 23.3,
     "roce_pct": 29.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.128,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.57,
     "quarterly_periods": [
       "Jun 2023",
@@ -820,14 +881,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ATALREAL": {
     "symbol": "ATALREAL",
     "company_name": "Atal Realtech Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ATALREAL/",
-    "fetched_utc": "2026-11-01T17:27:10.258830+00:00",
+    "fetched_utc": "2026-11-01T17:51:59.792144+00:00",
     "ratios_as_displayed": {
       "Market Cap": "169",
       "Current Price": "13.7",
@@ -843,7 +908,8 @@
     "pe": 24.8,
     "roe_pct": 7.95,
     "roce_pct": 10.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.197,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -888,14 +954,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ATHERENERG": {
     "symbol": "ATHERENERG",
     "company_name": "Ather Energy Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ATHERENERG/",
-    "fetched_utc": "2026-11-01T17:27:12.055266+00:00",
+    "fetched_utc": "2026-11-01T17:52:01.586949+00:00",
     "ratios_as_displayed": {
       "Market Cap": "69,693",
       "Current Price": "1,756",
@@ -911,7 +981,8 @@
     "pe": null,
     "roe_pct": -33.4,
     "roce_pct": -19.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.226,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Mar 2024",
@@ -929,7 +1000,7 @@
     "latest_quarter_sales": 1464.24,
     "sales_yoy_growth_pct": 62.9,
     "latest_quarter_net_profit": 1.5,
-    "net_profit_yoy_growth_pct": -100.97,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Jun 2025",
@@ -948,14 +1019,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ATLANTAA": {
     "symbol": "ATLANTAA",
     "company_name": "Atlantaa Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ATLANTAA/",
-    "fetched_utc": "2026-11-01T17:27:13.868730+00:00",
+    "fetched_utc": "2026-11-01T17:52:03.398203+00:00",
     "ratios_as_displayed": {
       "Market Cap": "310",
       "Current Price": "38.0",
@@ -971,7 +1046,8 @@
     "pe": null,
     "roe_pct": 0.48,
     "roce_pct": 1.12,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.07,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -1016,14 +1092,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "AUROPHARMA": {
     "symbol": "AUROPHARMA",
     "company_name": "Aurobindo Pharma Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/AUROPHARMA/",
-    "fetched_utc": "2026-11-01T17:27:15.726833+00:00",
+    "fetched_utc": "2026-11-01T17:52:05.234227+00:00",
     "ratios_as_displayed": {
       "Market Cap": "96,744",
       "Current Price": "1,681",
@@ -1039,7 +1119,8 @@
     "pe": 37.1,
     "roe_pct": 11.2,
     "roce_pct": 13.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.189,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.24,
     "quarterly_periods": [
       "Jun 2023",
@@ -1084,14 +1165,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "BANKBARODA": {
     "symbol": "BANKBARODA",
     "company_name": "Bank of Baroda",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/BANKBARODA/",
-    "fetched_utc": "2026-11-01T17:27:17.551063+00:00",
+    "fetched_utc": "2026-11-01T17:52:07.045424+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,23,389",
       "Current Price": "239",
@@ -1108,6 +1193,7 @@
     "roe_pct": 13.8,
     "roce_pct": 5.66,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 3.56,
     "quarterly_periods": [
       "Sep 2023",
@@ -1152,14 +1238,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "BHARTIARTL": {
     "symbol": "BHARTIARTL",
     "company_name": "Bharti Airtel Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/BHARTIARTL/",
-    "fetched_utc": "2026-11-01T17:27:19.378086+00:00",
+    "fetched_utc": "2026-11-01T17:52:08.858075+00:00",
     "ratios_as_displayed": {
       "Market Cap": "12,31,907",
       "Current Price": "1,974",
@@ -1175,7 +1265,8 @@
     "pe": 71.5,
     "roe_pct": 10.7,
     "roce_pct": 12.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.915,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.22,
     "quarterly_periods": [
       "Jun 2023",
@@ -1220,14 +1311,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "BOSCHLTD": {
     "symbol": "BOSCHLTD",
     "company_name": "Bosch Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/BOSCHLTD/",
-    "fetched_utc": "2026-11-01T17:27:21.204072+00:00",
+    "fetched_utc": "2026-11-01T17:52:10.667456+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,39,222",
       "Current Price": "47,200",
@@ -1243,7 +1338,8 @@
     "pe": 59.1,
     "roe_pct": 14.6,
     "roce_pct": 21.5,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.008,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.57,
     "quarterly_periods": [
       "Jun 2023",
@@ -1288,14 +1384,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "BPLPHARMA": {
     "symbol": "BPLPHARMA",
     "company_name": "Bharat Parenterals Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/BPLPHARMA/",
-    "fetched_utc": "2026-11-01T17:27:23.013582+00:00",
+    "fetched_utc": "2026-11-01T17:52:12.467091+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,399",
       "Current Price": "2,030",
@@ -1311,7 +1411,8 @@
     "pe": 113.0,
     "roe_pct": 4.0,
     "roce_pct": 5.75,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.084,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.05,
     "quarterly_periods": [
       "Sep 2023",
@@ -1356,14 +1457,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "BSE": {
     "symbol": "BSE",
     "company_name": "BSE Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/BSE/",
-    "fetched_utc": "2026-11-01T17:27:24.857398+00:00",
+    "fetched_utc": "2026-11-01T17:52:14.300701+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,43,184",
       "Current Price": "3,510",
@@ -1379,7 +1484,8 @@
     "pe": 53.7,
     "roe_pct": 50.0,
     "roce_pct": 66.2,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.28,
     "quarterly_periods": [
       "Jun 2023",
@@ -1424,14 +1530,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "BSLSENETFG": {
     "symbol": "BSLSENETFG",
     "company_name": "Aditya Birla Sun Life BSE Sensex ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/BSLSENETFG/",
-    "fetched_utc": "2026-11-01T17:27:26.393944+00:00",
+    "fetched_utc": "2026-11-01T17:52:15.835714+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -1448,6 +1558,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -1465,14 +1576,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "CARERATING": {
     "symbol": "CARERATING",
     "company_name": "CARE Ratings Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/CARERATING/",
-    "fetched_utc": "2026-11-01T17:27:28.213344+00:00",
+    "fetched_utc": "2026-11-01T17:52:17.645545+00:00",
     "ratios_as_displayed": {
       "Market Cap": "4,996",
       "Current Price": "1,658",
@@ -1488,7 +1603,8 @@
     "pe": 26.0,
     "roe_pct": 18.9,
     "roce_pct": 25.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.014,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.33,
     "quarterly_periods": [
       "Sep 2023",
@@ -1533,14 +1649,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "CASHIETF": {
     "symbol": "CASHIETF",
     "company_name": "ICICI Prudential BSE Liquid Rate ETF - Growth",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/CASHIETF/",
-    "fetched_utc": "2026-11-01T17:27:29.744105+00:00",
+    "fetched_utc": "2026-11-01T17:52:19.178576+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -1557,6 +1677,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -1574,14 +1695,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "CELEBRITY": {
     "symbol": "CELEBRITY",
     "company_name": "Celebrity Fashions Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/CELEBRITY/",
-    "fetched_utc": "2026-11-01T17:27:31.550490+00:00",
+    "fetched_utc": "2026-11-01T17:52:20.981440+00:00",
     "ratios_as_displayed": {
       "Market Cap": "39.8",
       "Current Price": "6.16",
@@ -1598,6 +1723,7 @@
     "roe_pct": -104.0,
     "roce_pct": -12.3,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -1617,7 +1743,7 @@
     "latest_quarter_sales": 26.42,
     "sales_yoy_growth_pct": -35.04,
     "latest_quarter_net_profit": -2.37,
-    "net_profit_yoy_growth_pct": -64.78,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -1642,14 +1768,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 1,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "CHEMCRUX": {
     "symbol": "CHEMCRUX",
     "company_name": "Chemcrux Enterprises Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/CHEMCRUX/",
-    "fetched_utc": "2026-11-01T17:27:33.353473+00:00",
+    "fetched_utc": "2026-11-01T17:52:22.783101+00:00",
     "ratios_as_displayed": {
       "Market Cap": "119",
       "Current Price": "80.3",
@@ -1665,7 +1795,8 @@
     "pe": 19.0,
     "roe_pct": 5.2,
     "roce_pct": 7.81,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.34,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.25,
     "quarterly_periods": [
       "Jun 2023",
@@ -1710,14 +1841,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "CIPLA": {
     "symbol": "CIPLA",
     "company_name": "Cipla Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/CIPLA/",
-    "fetched_utc": "2026-11-01T17:27:35.211238+00:00",
+    "fetched_utc": "2026-11-01T17:52:24.619587+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,11,397",
       "Current Price": "1,379",
@@ -1733,7 +1868,8 @@
     "pe": 39.0,
     "roe_pct": 10.4,
     "roce_pct": 13.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.004,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.94,
     "quarterly_periods": [
       "Sep 2023",
@@ -1778,14 +1914,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "CNL": {
     "symbol": "CNL",
     "company_name": "Creative Newtech Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/CNL/",
-    "fetched_utc": "2026-11-01T17:27:37.026933+00:00",
+    "fetched_utc": "2026-11-01T17:52:26.424687+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,670",
       "Current Price": "1,112",
@@ -1801,7 +1941,8 @@
     "pe": 38.3,
     "roe_pct": 12.2,
     "roce_pct": 13.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.425,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.04,
     "quarterly_periods": [
       "Sep 2023",
@@ -1846,14 +1987,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "COFORGE": {
     "symbol": "COFORGE",
     "company_name": "Coforge Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/COFORGE/",
-    "fetched_utc": "2026-11-01T17:27:38.849408+00:00",
+    "fetched_utc": "2026-11-01T17:52:28.235806+00:00",
     "ratios_as_displayed": {
       "Market Cap": "90,606",
       "Current Price": "2,045",
@@ -1869,7 +2014,8 @@
     "pe": 73.2,
     "roe_pct": 19.0,
     "roce_pct": 19.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.276,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.59,
     "quarterly_periods": [
       "Sep 2023",
@@ -1914,14 +2060,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "CSLFINANCE": {
     "symbol": "CSLFINANCE",
     "company_name": "CSL Finance Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/CSLFINANCE/",
-    "fetched_utc": "2026-11-01T17:27:40.664214+00:00",
+    "fetched_utc": "2026-11-01T17:52:30.044212+00:00",
     "ratios_as_displayed": {
       "Market Cap": "494",
       "Current Price": "217",
@@ -1938,6 +2088,7 @@
     "roe_pct": 14.9,
     "roce_pct": 14.5,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 1.38,
     "quarterly_periods": [
       "Jun 2023",
@@ -1982,14 +2133,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DCM": {
     "symbol": "DCM",
     "company_name": "DCM Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DCM/",
-    "fetched_utc": "2026-11-01T17:27:42.472150+00:00",
+    "fetched_utc": "2026-11-01T17:52:31.845732+00:00",
     "ratios_as_displayed": {
       "Market Cap": "142",
       "Current Price": "75.8",
@@ -2006,6 +2161,7 @@
     "roe_pct": -88.1,
     "roce_pct": -74.1,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -2025,7 +2181,7 @@
     "latest_quarter_sales": 0.24,
     "sales_yoy_growth_pct": 242.86,
     "latest_quarter_net_profit": -1.63,
-    "net_profit_yoy_growth_pct": -15.54,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -2050,14 +2206,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DHANUKA": {
     "symbol": "DHANUKA",
     "company_name": "Dhanuka Agritech Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DHANUKA/",
-    "fetched_utc": "2026-11-01T17:27:44.293830+00:00",
+    "fetched_utc": "2026-11-01T17:52:33.654564+00:00",
     "ratios_as_displayed": {
       "Market Cap": "4,369",
       "Current Price": "980",
@@ -2073,7 +2233,8 @@
     "pe": 15.4,
     "roe_pct": 18.5,
     "roce_pct": 23.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.017,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.2,
     "quarterly_periods": [
       "Sep 2023",
@@ -2118,14 +2279,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DHOOTTRANS": {
     "symbol": "DHOOTTRANS",
     "company_name": "Dhoot Transmission Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DHOOTTRANS/",
-    "fetched_utc": "2026-11-01T17:27:46.097072+00:00",
+    "fetched_utc": "2026-11-01T17:52:35.458905+00:00",
     "ratios_as_displayed": {
       "Market Cap": "31,611",
       "Current Price": "1,545",
@@ -2141,7 +2306,8 @@
     "pe": 161.0,
     "roe_pct": 10.2,
     "roce_pct": 13.4,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.205,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2025",
@@ -2165,14 +2331,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 1,
+    "fundamental_score_criteria_available": 3,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DIGISPICE": {
     "symbol": "DIGISPICE",
     "company_name": "DigiSpice Technologies Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DIGISPICE/",
-    "fetched_utc": "2026-11-01T17:27:47.915387+00:00",
+    "fetched_utc": "2026-11-01T17:52:37.264389+00:00",
     "ratios_as_displayed": {
       "Market Cap": "379",
       "Current Price": "16.1",
@@ -2188,7 +2358,8 @@
     "pe": null,
     "roe_pct": -1.85,
     "roce_pct": -0.81,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -2208,7 +2379,7 @@
     "latest_quarter_sales": 0.0,
     "sales_yoy_growth_pct": null,
     "latest_quarter_net_profit": -2.79,
-    "net_profit_yoy_growth_pct": 187.63,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -2233,14 +2404,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DIVISLAB": {
     "symbol": "DIVISLAB",
     "company_name": "Divis Laboratories Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DIVISLAB/",
-    "fetched_utc": "2026-11-01T17:27:49.737370+00:00",
+    "fetched_utc": "2026-11-01T17:52:39.073441+00:00",
     "ratios_as_displayed": {
       "Market Cap": "2,59,628",
       "Current Price": "9,780",
@@ -2256,7 +2431,8 @@
     "pe": 86.7,
     "roe_pct": 16.8,
     "roce_pct": 22.4,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.31,
     "quarterly_periods": [
       "Jun 2023",
@@ -2301,14 +2477,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DIVOPPBEES": {
     "symbol": "DIVOPPBEES",
     "company_name": "Nippon India ETF  Nifty Dividend Opportunities 50",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DIVOPPBEES/",
-    "fetched_utc": "2026-11-01T17:27:51.267769+00:00",
+    "fetched_utc": "2026-11-01T17:52:40.601507+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -2325,6 +2505,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -2342,14 +2523,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DLF": {
     "symbol": "DLF",
     "company_name": "DLF Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DLF/",
-    "fetched_utc": "2026-11-01T17:27:53.093583+00:00",
+    "fetched_utc": "2026-11-01T17:52:42.411978+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,71,180",
       "Current Price": "692",
@@ -2365,7 +2550,8 @@
     "pe": 47.8,
     "roe_pct": 11.5,
     "roce_pct": 13.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.001,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.16,
     "quarterly_periods": [
       "Sep 2023",
@@ -2410,14 +2596,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DRAGARWQ": {
     "symbol": "DRAGARWQ",
     "company_name": "Dr Agarwals Eye Hospital Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DRAGARWQ/",
-    "fetched_utc": "2026-11-01T17:27:54.901299+00:00",
+    "fetched_utc": "2026-11-01T17:52:44.212756+00:00",
     "ratios_as_displayed": {
       "Market Cap": "2,570",
       "Current Price": "5,318",
@@ -2433,7 +2623,8 @@
     "pe": 33.7,
     "roe_pct": 24.2,
     "roce_pct": 17.2,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.956,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.13,
     "quarterly_periods": [
       "Jun 2023",
@@ -2478,14 +2669,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "DRREDDY": {
     "symbol": "DRREDDY",
     "company_name": "Dr Reddys Laboratories Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/DRREDDY/",
-    "fetched_utc": "2026-11-01T17:27:56.751205+00:00",
+    "fetched_utc": "2026-11-01T17:52:46.046535+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,12,849",
       "Current Price": "1,352",
@@ -2501,7 +2696,8 @@
     "pe": 116.0,
     "roe_pct": 10.2,
     "roce_pct": 12.1,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.181,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.59,
     "quarterly_periods": [
       "Sep 2023",
@@ -2546,14 +2742,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "EBBETF0431": {
     "symbol": "EBBETF0431",
     "company_name": "Bharat Bond ETF - April 2031",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/EBBETF0431/",
-    "fetched_utc": "2026-11-01T17:27:58.282758+00:00",
+    "fetched_utc": "2026-11-01T17:52:47.578606+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -2570,6 +2770,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -2587,14 +2788,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ELIQUID": {
     "symbol": "ELIQUID",
     "company_name": "Edelweiss Nifty 1D Rate Liquid ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ELIQUID/",
-    "fetched_utc": "2026-11-01T17:27:59.815477+00:00",
+    "fetched_utc": "2026-11-01T17:52:49.111679+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -2611,6 +2816,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -2628,14 +2834,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "EQUAL50ADD": {
     "symbol": "EQUAL50ADD",
     "company_name": "DSP Nifty 50 Equal Weight ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/EQUAL50ADD/",
-    "fetched_utc": "2026-11-01T17:28:01.347853+00:00",
+    "fetched_utc": "2026-11-01T17:52:50.644487+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -2652,6 +2862,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -2669,14 +2880,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ESENSEX": {
     "symbol": "ESENSEX",
     "company_name": "Edelweiss BSE Sensex ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ESENSEX/",
-    "fetched_utc": "2026-11-01T17:28:02.880960+00:00",
+    "fetched_utc": "2026-11-01T17:52:52.176061+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -2693,6 +2908,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -2710,14 +2926,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ESG": {
     "symbol": "ESG",
     "company_name": "Mirae Asset Nifty 100 ESG Sector Leaders ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ESG/",
-    "fetched_utc": "2026-11-01T17:28:04.411356+00:00",
+    "fetched_utc": "2026-11-01T17:52:53.708025+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -2734,6 +2954,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -2751,14 +2972,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ETERNAL": {
     "symbol": "ETERNAL",
     "company_name": "Eternal Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ETERNAL/",
-    "fetched_utc": "2026-11-01T17:28:06.228092+00:00",
+    "fetched_utc": "2026-11-01T17:52:55.520301+00:00",
     "ratios_as_displayed": {
       "Market Cap": "3,31,634",
       "Current Price": "344",
@@ -2774,7 +2999,8 @@
     "pe": 128.0,
     "roe_pct": 7.19,
     "roce_pct": 8.12,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.011,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -2819,14 +3045,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "FSL": {
     "symbol": "FSL",
     "company_name": "Firstsource Solutions Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/FSL/",
-    "fetched_utc": "2026-11-01T17:28:08.064700+00:00",
+    "fetched_utc": "2026-11-01T17:52:57.336305+00:00",
     "ratios_as_displayed": {
       "Market Cap": "20,709",
       "Current Price": "293",
@@ -2842,7 +3072,8 @@
     "pe": 30.0,
     "roe_pct": 20.8,
     "roce_pct": 21.1,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.482,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.88,
     "quarterly_periods": [
       "Sep 2023",
@@ -2887,14 +3118,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "GARFIBRES": {
     "symbol": "GARFIBRES",
     "company_name": "Garware Technical Fibres Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/GARFIBRES/",
-    "fetched_utc": "2026-11-01T17:28:09.883607+00:00",
+    "fetched_utc": "2026-11-01T17:52:59.146626+00:00",
     "ratios_as_displayed": {
       "Market Cap": "7,278",
       "Current Price": "745",
@@ -2910,7 +3145,8 @@
     "pe": 32.5,
     "roe_pct": 17.4,
     "roce_pct": 23.2,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.028,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.21,
     "quarterly_periods": [
       "Sep 2023",
@@ -2955,14 +3191,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "GCSL": {
     "symbol": "GCSL",
     "company_name": "Gretex Corporate Services Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/GCSL/",
-    "fetched_utc": "2026-11-01T17:28:11.711374+00:00",
+    "fetched_utc": "2026-11-01T17:53:00.964203+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,919",
       "Current Price": "767",
@@ -2978,7 +3218,8 @@
     "pe": 131.0,
     "roe_pct": 7.05,
     "roce_pct": 10.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.01,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.09,
     "quarterly_periods": [
       "Jun 2023",
@@ -3023,14 +3264,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "GKWLIMITED": {
     "symbol": "GKWLIMITED",
     "company_name": "GKW Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/GKWLIMITED/",
-    "fetched_utc": "2026-11-01T17:28:13.519845+00:00",
+    "fetched_utc": "2026-11-01T17:53:02.764338+00:00",
     "ratios_as_displayed": {
       "Market Cap": "950",
       "Current Price": "1,591",
@@ -3046,7 +3291,8 @@
     "pe": null,
     "roe_pct": -0.11,
     "roce_pct": 0.47,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -3091,14 +3337,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "GLOBAL": {
     "symbol": "GLOBAL",
     "company_name": "Global Education Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/GLOBAL/",
-    "fetched_utc": "2026-11-01T17:28:15.325601+00:00",
+    "fetched_utc": "2026-11-01T17:53:04.564897+00:00",
     "ratios_as_displayed": {
       "Market Cap": "732",
       "Current Price": "144",
@@ -3114,7 +3364,8 @@
     "pe": 29.6,
     "roe_pct": 21.7,
     "roce_pct": 29.2,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.7,
     "quarterly_periods": [
       "Jun 2023",
@@ -3159,14 +3410,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "GROWWLIQID": {
     "symbol": "GROWWLIQID",
     "company_name": "Groww Nifty 1D Rate Liquid ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/GROWWLIQID/",
-    "fetched_utc": "2026-11-01T17:28:16.856492+00:00",
+    "fetched_utc": "2026-11-01T17:53:06.095164+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3183,6 +3438,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3200,14 +3456,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "GROWWLOVOL": {
     "symbol": "GROWWLOVOL",
     "company_name": "Groww Nifty 500 Low Volatility 50 ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/GROWWLOVOL/",
-    "fetched_utc": "2026-11-01T17:28:18.386457+00:00",
+    "fetched_utc": "2026-11-01T17:53:07.624792+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3224,6 +3484,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3241,14 +3502,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "GRPLTD": {
     "symbol": "GRPLTD",
     "company_name": "GRP Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/GRPLTD/",
-    "fetched_utc": "2026-11-01T17:28:20.206510+00:00",
+    "fetched_utc": "2026-11-01T17:53:09.432089+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,029",
       "Current Price": "1,929",
@@ -3264,7 +3529,8 @@
     "pe": 72.4,
     "roe_pct": 5.41,
     "roce_pct": 8.26,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.08,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.18,
     "quarterly_periods": [
       "Sep 2023",
@@ -3309,14 +3575,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "GSEC5IETF": {
     "symbol": "GSEC5IETF",
     "company_name": "ICICI Prudential Nifty 5 Yr Benchmark G-Sec ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/GSEC5IETF/",
-    "fetched_utc": "2026-11-01T17:28:21.737138+00:00",
+    "fetched_utc": "2026-11-01T17:53:10.962798+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3333,6 +3603,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3350,14 +3621,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HDFCGROWTH": {
     "symbol": "HDFCGROWTH",
     "company_name": "HDFC Nifty Growth Sectors 15 ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HDFCGROWTH/",
-    "fetched_utc": "2026-11-01T17:28:23.271463+00:00",
+    "fetched_utc": "2026-11-01T17:53:12.493466+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3374,6 +3649,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3391,14 +3667,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HDFCLIQUID": {
     "symbol": "HDFCLIQUID",
     "company_name": "HDFC Nifty 1D Rate Liquid ETF-Growth",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HDFCLIQUID/",
-    "fetched_utc": "2026-11-01T17:28:24.832978+00:00",
+    "fetched_utc": "2026-11-01T17:53:14.023107+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3415,6 +3695,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3432,14 +3713,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HDFCNIFIT": {
     "symbol": "HDFCNIFIT",
     "company_name": "HDFC Nifty IT ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HDFCNIFIT/",
-    "fetched_utc": "2026-11-01T17:28:26.365012+00:00",
+    "fetched_utc": "2026-11-01T17:53:15.551660+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3456,6 +3741,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3473,14 +3759,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HDFCNIFTY": {
     "symbol": "HDFCNIFTY",
     "company_name": "HDFC Nifty 50 ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HDFCNIFTY/",
-    "fetched_utc": "2026-11-01T17:28:27.921012+00:00",
+    "fetched_utc": "2026-11-01T17:53:17.104065+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3497,6 +3787,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3514,14 +3805,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HDFCPSUBK": {
     "symbol": "HDFCPSUBK",
     "company_name": "HDFC Nifty PSU Bank ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HDFCPSUBK/",
-    "fetched_utc": "2026-11-01T17:28:29.449993+00:00",
+    "fetched_utc": "2026-11-01T17:53:18.632400+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3538,6 +3833,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3555,14 +3851,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HDFCQUAL": {
     "symbol": "HDFCQUAL",
     "company_name": "HDFC Nifty 100 Quality 30 ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HDFCQUAL/",
-    "fetched_utc": "2026-11-01T17:28:30.980913+00:00",
+    "fetched_utc": "2026-11-01T17:53:20.162637+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3579,6 +3879,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3596,14 +3897,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HDFCVALUE": {
     "symbol": "HDFCVALUE",
     "company_name": "HDFC Nifty 50 Value 20 ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HDFCVALUE/",
-    "fetched_utc": "2026-11-01T17:28:32.512702+00:00",
+    "fetched_utc": "2026-11-01T17:53:21.690382+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3620,6 +3925,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3637,14 +3943,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HEALTHAXIS": {
     "symbol": "HEALTHAXIS",
     "company_name": "Axis Nifty Healthcare ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HEALTHAXIS/",
-    "fetched_utc": "2026-11-01T17:28:34.043035+00:00",
+    "fetched_utc": "2026-11-01T17:53:23.220126+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3661,6 +3971,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3678,14 +3989,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HEALTHIETF": {
     "symbol": "HEALTHIETF",
     "company_name": "ICICI Prudential Healthcare ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HEALTHIETF/",
-    "fetched_utc": "2026-11-01T17:28:35.574221+00:00",
+    "fetched_utc": "2026-11-01T17:53:24.749347+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -3702,6 +4017,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -3719,14 +4035,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "HESTERBIO": {
     "symbol": "HESTERBIO",
     "company_name": "Hester Biosciences Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/HESTERBIO/",
-    "fetched_utc": "2026-11-01T17:28:37.396285+00:00",
+    "fetched_utc": "2026-11-01T17:53:26.559302+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,947",
       "Current Price": "2,289",
@@ -3742,7 +4062,8 @@
     "pe": 36.3,
     "roe_pct": 13.0,
     "roce_pct": 15.5,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.199,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.48,
     "quarterly_periods": [
       "Jun 2023",
@@ -3787,14 +4108,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ICEMAKE": {
     "symbol": "ICEMAKE",
     "company_name": "ICE Make Refrigeration Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ICEMAKE/",
-    "fetched_utc": "2026-11-01T17:28:39.213940+00:00",
+    "fetched_utc": "2026-11-01T17:53:28.365155+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,185",
       "Current Price": "653",
@@ -3810,7 +4135,8 @@
     "pe": 109.0,
     "roe_pct": 8.24,
     "roce_pct": 10.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.3,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.34,
     "quarterly_periods": [
       "Jun 2023",
@@ -3830,7 +4156,7 @@
     "latest_quarter_sales": 176.08,
     "sales_yoy_growth_pct": 57.41,
     "latest_quarter_net_profit": -1.41,
-    "net_profit_yoy_growth_pct": 1.44,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -3855,14 +4181,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 1,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ICICIBANK": {
     "symbol": "ICICIBANK",
     "company_name": "ICICI Bank Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ICICIBANK/",
-    "fetched_utc": "2026-11-01T17:28:41.040065+00:00",
+    "fetched_utc": "2026-11-01T17:53:30.178056+00:00",
     "ratios_as_displayed": {
       "Market Cap": "10,03,901",
       "Current Price": "1,398",
@@ -3879,6 +4209,7 @@
     "roe_pct": 15.8,
     "roce_pct": 6.9,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 0.86,
     "quarterly_periods": [
       "Sep 2023",
@@ -3923,14 +4254,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 4,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "IGIL": {
     "symbol": "IGIL",
     "company_name": "International Gemological Institute Limited",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/IGIL/",
-    "fetched_utc": "2026-11-01T17:28:42.863985+00:00",
+    "fetched_utc": "2026-11-01T17:53:31.995433+00:00",
     "ratios_as_displayed": {
       "Market Cap": "17,189",
       "Current Price": "398",
@@ -3946,7 +4281,8 @@
     "pe": 27.3,
     "roe_pct": 30.2,
     "roce_pct": 39.9,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.016,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.64,
     "quarterly_periods": [
       "Dec 2023",
@@ -3986,14 +4322,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "IIFLCAPS": {
     "symbol": "IIFLCAPS",
     "company_name": "IIFL Capital Services Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/IIFLCAPS/",
-    "fetched_utc": "2026-11-01T17:28:44.678832+00:00",
+    "fetched_utc": "2026-11-01T17:53:33.799074+00:00",
     "ratios_as_displayed": {
       "Market Cap": "10,976",
       "Current Price": "348",
@@ -4009,7 +4349,8 @@
     "pe": 18.5,
     "roe_pct": 21.4,
     "roce_pct": 23.9,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.7,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.86,
     "quarterly_periods": [
       "Sep 2023",
@@ -4054,14 +4395,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "INDHOTEL": {
     "symbol": "INDHOTEL",
     "company_name": "Indian Hotels Co Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/INDHOTEL/",
-    "fetched_utc": "2026-11-01T17:28:46.510576+00:00",
+    "fetched_utc": "2026-11-01T17:53:35.614604+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,15,533",
       "Current Price": "812",
@@ -4077,7 +4422,8 @@
     "pe": 61.7,
     "roe_pct": 12.2,
     "roce_pct": 17.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.09,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.4,
     "quarterly_periods": [
       "Sep 2023",
@@ -4122,14 +4468,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "INDIANB": {
     "symbol": "INDIANB",
     "company_name": "Indian Bank",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/INDIANB/",
-    "fetched_utc": "2026-11-01T17:28:48.333662+00:00",
+    "fetched_utc": "2026-11-01T17:53:37.423492+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,16,580",
       "Current Price": "866",
@@ -4146,6 +4496,7 @@
     "roe_pct": 16.5,
     "roce_pct": 6.32,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 2.11,
     "quarterly_periods": [
       "Sep 2023",
@@ -4190,14 +4541,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "INDSWFTLAB": {
     "symbol": "INDSWFTLAB",
     "company_name": "Ind-Swift Laboratories Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/INDSWFTLAB/",
-    "fetched_utc": "2026-11-01T17:28:50.147316+00:00",
+    "fetched_utc": "2026-11-01T17:53:39.226046+00:00",
     "ratios_as_displayed": {
       "Market Cap": "3,202",
       "Current Price": "368",
@@ -4213,7 +4568,8 @@
     "pe": 35.8,
     "roe_pct": 4.01,
     "roce_pct": 4.86,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.015,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -4258,14 +4614,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "INFY": {
     "symbol": "INFY",
     "company_name": "Infosys Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/INFY/",
-    "fetched_utc": "2026-11-01T17:28:51.976078+00:00",
+    "fetched_utc": "2026-11-01T17:53:41.039082+00:00",
     "ratios_as_displayed": {
       "Market Cap": "4,80,908",
       "Current Price": "1,185",
@@ -4281,7 +4641,8 @@
     "pe": 15.4,
     "roe_pct": 35.7,
     "roce_pct": 45.6,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.043,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 4.05,
     "quarterly_periods": [
       "Sep 2023",
@@ -4326,14 +4687,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "INVPRECQ": {
     "symbol": "INVPRECQ",
     "company_name": "Investment & Precision Castings Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/INVPRECQ/",
-    "fetched_utc": "2026-11-01T17:28:53.817866+00:00",
+    "fetched_utc": "2026-11-01T17:53:42.874778+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,360",
       "Current Price": "1,360",
@@ -4349,7 +4714,8 @@
     "pe": 91.1,
     "roe_pct": 12.5,
     "roce_pct": 14.4,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.774,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.07,
     "quarterly_periods": [
       "Jun 2023",
@@ -4394,14 +4760,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ISGEC": {
     "symbol": "ISGEC",
     "company_name": "ISGEC Heavy Engineering  Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ISGEC/",
-    "fetched_utc": "2026-11-01T17:28:55.643922+00:00",
+    "fetched_utc": "2026-11-01T17:53:44.686257+00:00",
     "ratios_as_displayed": {
       "Market Cap": "6,762",
       "Current Price": "920",
@@ -4417,7 +4787,8 @@
     "pe": 18.7,
     "roe_pct": 13.8,
     "roce_pct": 17.6,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.251,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.65,
     "quarterly_periods": [
       "Jun 2023",
@@ -4462,14 +4833,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ITADD": {
     "symbol": "ITADD",
     "company_name": "DSP Nifty IT ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ITADD/",
-    "fetched_utc": "2026-11-01T17:28:57.174942+00:00",
+    "fetched_utc": "2026-11-01T17:53:46.216604+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -4486,6 +4861,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -4503,14 +4879,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ITAXIS": {
     "symbol": "ITAXIS",
     "company_name": "Axis Nifty IT ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ITAXIS/",
-    "fetched_utc": "2026-11-01T17:28:58.706219+00:00",
+    "fetched_utc": "2026-11-01T17:53:47.746884+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -4527,6 +4907,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -4544,14 +4925,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ITBEES": {
     "symbol": "ITBEES",
     "company_name": "Nippon India ETF Nifty IT",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ITBEES/",
-    "fetched_utc": "2026-11-01T17:29:00.236175+00:00",
+    "fetched_utc": "2026-11-01T17:53:49.276550+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -4568,6 +4953,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -4585,14 +4971,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ITBETA": {
     "symbol": "ITBETA",
     "company_name": "UTI Nifty IT ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ITBETA/",
-    "fetched_utc": "2026-11-01T17:29:01.770604+00:00",
+    "fetched_utc": "2026-11-01T17:53:50.808739+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -4609,6 +4999,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -4626,14 +5017,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ITC": {
     "symbol": "ITC",
     "company_name": "ITC Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ITC/",
-    "fetched_utc": "2026-11-01T17:29:03.592440+00:00",
+    "fetched_utc": "2026-11-01T17:53:52.619084+00:00",
     "ratios_as_displayed": {
       "Market Cap": "3,32,848",
       "Current Price": "266",
@@ -4649,7 +5044,8 @@
     "pe": 17.4,
     "roe_pct": 29.6,
     "roce_pct": 38.6,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.031,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 5.46,
     "quarterly_periods": [
       "Jun 2023",
@@ -4694,14 +5090,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ITETF": {
     "symbol": "ITETF",
     "company_name": "Mirae Asset Nifty IT ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ITETF/",
-    "fetched_utc": "2026-11-01T17:29:05.122744+00:00",
+    "fetched_utc": "2026-11-01T17:53:54.149181+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -4718,6 +5118,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -4735,14 +5136,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ITIETF": {
     "symbol": "ITIETF",
     "company_name": "ICICI Prudential IT ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ITIETF/",
-    "fetched_utc": "2026-11-01T17:29:06.652817+00:00",
+    "fetched_utc": "2026-11-01T17:53:55.678473+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -4759,6 +5164,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -4776,14 +5182,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "JAGRAN": {
     "symbol": "JAGRAN",
     "company_name": "Jagran Prakashan Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/JAGRAN/",
-    "fetched_utc": "2026-11-01T17:29:08.495969+00:00",
+    "fetched_utc": "2026-11-01T17:53:57.512099+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,349",
       "Current Price": "62.0",
@@ -4799,7 +5209,8 @@
     "pe": 6.14,
     "roe_pct": 12.7,
     "roce_pct": 16.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.044,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 11.3,
     "quarterly_periods": [
       "Jun 2023",
@@ -4844,14 +5255,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "JINDALPHOT": {
     "symbol": "JINDALPHOT",
     "company_name": "Jindal Photo Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/JINDALPHOT/",
-    "fetched_utc": "2026-11-01T17:29:10.305205+00:00",
+    "fetched_utc": "2026-11-01T17:53:59.314872+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,167",
       "Current Price": "1,138",
@@ -4867,7 +5282,8 @@
     "pe": 102.0,
     "roe_pct": 0.63,
     "roce_pct": 1.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.065,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -4887,7 +5303,7 @@
     "latest_quarter_sales": 7.97,
     "sales_yoy_growth_pct": 1375.93,
     "latest_quarter_net_profit": 6.67,
-    "net_profit_yoy_growth_pct": -794.79,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -4912,14 +5328,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "JLHL": {
     "symbol": "JLHL",
     "company_name": "Jupiter Life Line Hospitals Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/JLHL/",
-    "fetched_utc": "2026-11-01T17:29:12.109804+00:00",
+    "fetched_utc": "2026-11-01T17:54:01.113836+00:00",
     "ratios_as_displayed": {
       "Market Cap": "8,430",
       "Current Price": "257",
@@ -4935,7 +5355,8 @@
     "pe": 45.5,
     "roe_pct": 12.1,
     "roce_pct": 15.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.251,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.08,
     "quarterly_periods": [
       "Sep 2023",
@@ -4980,14 +5401,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "KOTAKBANK": {
     "symbol": "KOTAKBANK",
     "company_name": "Kotak Mahindra Bank Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/KOTAKBANK/",
-    "fetched_utc": "2026-11-01T17:29:13.938426+00:00",
+    "fetched_utc": "2026-11-01T17:54:02.932726+00:00",
     "ratios_as_displayed": {
       "Market Cap": "4,59,194",
       "Current Price": "462",
@@ -5004,6 +5429,7 @@
     "roe_pct": 11.7,
     "roce_pct": 6.42,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 0.14,
     "quarterly_periods": [
       "Sep 2023",
@@ -5048,14 +5474,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "KOTYARK": {
     "symbol": "KOTYARK",
     "company_name": "Kotyark Industries Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/KOTYARK/",
-    "fetched_utc": "2026-11-01T17:29:15.737389+00:00",
+    "fetched_utc": "2026-11-01T17:54:04.728833+00:00",
     "ratios_as_displayed": {
       "Market Cap": "437",
       "Current Price": "38.6",
@@ -5071,7 +5501,8 @@
     "pe": 25.9,
     "roe_pct": 10.7,
     "roce_pct": 14.5,
-    "debt_to_equity": null,
+    "debt_to_equity": 2.067,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.18,
     "quarterly_periods": [
       "Dec 2020",
@@ -5115,14 +5546,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "KPRMILL": {
     "symbol": "KPRMILL",
     "company_name": "K P R Mill Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/KPRMILL/",
-    "fetched_utc": "2026-11-01T17:29:17.563461+00:00",
+    "fetched_utc": "2026-11-01T17:54:06.539552+00:00",
     "ratios_as_displayed": {
       "Market Cap": "38,099",
       "Current Price": "1,115",
@@ -5138,7 +5573,8 @@
     "pe": 44.7,
     "roe_pct": 14.4,
     "roce_pct": 18.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.056,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.45,
     "quarterly_periods": [
       "Sep 2023",
@@ -5183,14 +5619,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "KRISHANA": {
     "symbol": "KRISHANA",
     "company_name": "Krishana Phoschem Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/KRISHANA/",
-    "fetched_utc": "2026-11-01T17:29:19.404051+00:00",
+    "fetched_utc": "2026-11-01T17:54:08.370686+00:00",
     "ratios_as_displayed": {
       "Market Cap": "7,065",
       "Current Price": "229",
@@ -5206,7 +5646,8 @@
     "pe": 35.9,
     "roe_pct": 38.2,
     "roce_pct": 27.2,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.469,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.04,
     "quarterly_periods": [
       "Jun 2023",
@@ -5251,14 +5692,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LAL": {
     "symbol": "LAL",
     "company_name": "Lorenzini Apparels Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LAL/",
-    "fetched_utc": "2026-11-01T17:29:21.205765+00:00",
+    "fetched_utc": "2026-11-01T17:54:10.168542+00:00",
     "ratios_as_displayed": {
       "Market Cap": "150",
       "Current Price": "8.68",
@@ -5274,7 +5719,8 @@
     "pe": 27.0,
     "roe_pct": 5.66,
     "roce_pct": 10.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.577,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -5319,14 +5765,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LAURUSLABS": {
     "symbol": "LAURUSLABS",
     "company_name": "Laurus Labs Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LAURUSLABS/",
-    "fetched_utc": "2026-11-01T17:29:23.032371+00:00",
+    "fetched_utc": "2026-11-01T17:54:11.983852+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,29,972",
       "Current Price": "2,406",
@@ -5342,7 +5792,8 @@
     "pe": 124.0,
     "roe_pct": 15.2,
     "roce_pct": 16.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.378,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.08,
     "quarterly_periods": [
       "Sep 2023",
@@ -5387,14 +5838,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LGHL": {
     "symbol": "LGHL",
     "company_name": "Laxmi Goldorna House Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LGHL/",
-    "fetched_utc": "2026-11-01T17:29:24.837240+00:00",
+    "fetched_utc": "2026-11-01T17:54:13.787017+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,211",
       "Current Price": "242",
@@ -5410,7 +5865,8 @@
     "pe": 748.0,
     "roe_pct": 5.81,
     "roce_pct": 10.1,
-    "debt_to_equity": null,
+    "debt_to_equity": 5.143,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -5455,14 +5911,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LICNETFGSC": {
     "symbol": "LICNETFGSC",
     "company_name": "LIC Nomura MF G-Sec Long Term ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LICNETFGSC/",
-    "fetched_utc": "2026-11-01T17:29:26.367810+00:00",
+    "fetched_utc": "2026-11-01T17:54:15.315383+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5479,6 +5939,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5496,14 +5957,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQGRWBEES": {
     "symbol": "LIQGRWBEES",
     "company_name": "Nippon India Nifty 1D Rate Liquid ETF - Growth",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQGRWBEES/",
-    "fetched_utc": "2026-11-01T17:29:27.901695+00:00",
+    "fetched_utc": "2026-11-01T17:54:16.845430+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5520,6 +5985,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5537,14 +6003,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUID": {
     "symbol": "LIQUID",
     "company_name": "Mirae Asset Nifty 1D Rate Liquid ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUID/",
-    "fetched_utc": "2026-11-01T17:29:29.431904+00:00",
+    "fetched_utc": "2026-11-01T17:54:18.378045+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5561,6 +6031,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5578,14 +6049,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUID1": {
     "symbol": "LIQUID1",
     "company_name": "Kotak Nifty 1D Rate Liquid ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUID1/",
-    "fetched_utc": "2026-11-01T17:29:30.962009+00:00",
+    "fetched_utc": "2026-11-01T17:54:19.909624+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5602,6 +6077,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5619,14 +6095,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDADD": {
     "symbol": "LIQUIDADD",
     "company_name": "DSP BSE Liquid Rate ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDADD/",
-    "fetched_utc": "2026-11-01T17:29:32.493508+00:00",
+    "fetched_utc": "2026-11-01T17:54:21.438851+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5643,6 +6123,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5660,14 +6141,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDBEES": {
     "symbol": "LIQUIDBEES",
     "company_name": "Nippon India ETF Nifty 1D Rate Liquid BeES",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDBEES/",
-    "fetched_utc": "2026-11-01T17:29:34.054335+00:00",
+    "fetched_utc": "2026-11-01T17:54:22.994527+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5684,6 +6169,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5701,14 +6187,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDBETF": {
     "symbol": "LIQUIDBETF",
     "company_name": "Bajaj Finserv Nifty 1D Rate Liquid ETF - Growth",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDBETF/",
-    "fetched_utc": "2026-11-01T17:29:35.585248+00:00",
+    "fetched_utc": "2026-11-01T17:54:24.525073+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5725,6 +6215,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5742,14 +6233,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDCASE": {
     "symbol": "LIQUIDCASE",
     "company_name": "Zerodha Nifty 1D Rate Liquid ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDCASE/",
-    "fetched_utc": "2026-11-01T17:29:37.116543+00:00",
+    "fetched_utc": "2026-11-01T17:54:26.054542+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5766,6 +6261,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5783,14 +6279,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDETF": {
     "symbol": "LIQUIDETF",
     "company_name": "DSP BlackRock Liquid ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDETF/",
-    "fetched_utc": "2026-11-01T17:29:39.090543+00:00",
+    "fetched_utc": "2026-11-01T17:54:28.061629+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5807,6 +6307,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5824,14 +6325,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDIETF": {
     "symbol": "LIQUIDIETF",
     "company_name": "ICICI Prudential BSE Liquid Rate ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDIETF/",
-    "fetched_utc": "2026-11-01T17:29:40.611516+00:00",
+    "fetched_utc": "2026-11-01T17:54:29.597096+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5848,6 +6353,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5865,14 +6371,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDPLUS": {
     "symbol": "LIQUIDPLUS",
     "company_name": "Mirae Asset Nifty 1D Rate Liquid ETF-Growth",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDPLUS/",
-    "fetched_utc": "2026-11-01T17:29:42.136093+00:00",
+    "fetched_utc": "2026-11-01T17:54:31.157683+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5889,6 +6399,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5906,14 +6417,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDSBI": {
     "symbol": "LIQUIDSBI",
     "company_name": "SBI Nifty 1D Rate Liquid ETF - IDCW",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDSBI/",
-    "fetched_utc": "2026-11-01T17:29:43.660821+00:00",
+    "fetched_utc": "2026-11-01T17:54:32.685999+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5930,6 +6445,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5947,14 +6463,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LIQUIDSHRI": {
     "symbol": "LIQUIDSHRI",
     "company_name": "Shriram Nifty 1D Rate Liquid ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LIQUIDSHRI/",
-    "fetched_utc": "2026-11-01T17:29:45.183753+00:00",
+    "fetched_utc": "2026-11-01T17:54:34.211415+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -5971,6 +6491,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -5988,14 +6509,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LT": {
     "symbol": "LT",
     "company_name": "Larsen & Toubro Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LT/",
-    "fetched_utc": "2026-11-01T17:29:46.995454+00:00",
+    "fetched_utc": "2026-11-01T17:54:36.021121+00:00",
     "ratios_as_displayed": {
       "Market Cap": "5,32,713",
       "Current Price": "3,872",
@@ -6011,7 +6536,8 @@
     "pe": 34.2,
     "roe_pct": 14.8,
     "roce_pct": 19.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.206,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.98,
     "quarterly_periods": [
       "Sep 2023",
@@ -6031,7 +6557,7 @@
     "latest_quarter_sales": 43584.0,
     "sales_yoy_growth_pct": 24.11,
     "latest_quarter_net_profit": 3370.0,
-    "net_profit_yoy_growth_pct": -193.85,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -6056,14 +6582,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LTGILTBEES": {
     "symbol": "LTGILTBEES",
     "company_name": "Nippon India ETF Nifty 8-13 yr G-Sec LongTerm Gilt",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LTGILTBEES/",
-    "fetched_utc": "2026-11-01T17:29:48.518168+00:00",
+    "fetched_utc": "2026-11-01T17:54:37.551556+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -6080,6 +6610,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -6097,14 +6628,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "LTTS": {
     "symbol": "LTTS",
     "company_name": "L&T Technology Services Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/LTTS/",
-    "fetched_utc": "2026-11-01T17:29:50.325730+00:00",
+    "fetched_utc": "2026-11-01T17:54:39.358127+00:00",
     "ratios_as_displayed": {
       "Market Cap": "45,411",
       "Current Price": "4,280",
@@ -6120,7 +6655,8 @@
     "pe": 35.1,
     "roe_pct": 21.6,
     "roce_pct": 26.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.082,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.36,
     "quarterly_periods": [
       "Sep 2023",
@@ -6165,14 +6701,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MAKERSL": {
     "symbol": "MAKERSL",
     "company_name": "Makers Laboratories Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MAKERSL/",
-    "fetched_utc": "2026-11-01T17:29:52.140680+00:00",
+    "fetched_utc": "2026-11-01T17:54:41.183214+00:00",
     "ratios_as_displayed": {
       "Market Cap": "119",
       "Current Price": "201",
@@ -6188,7 +6728,8 @@
     "pe": null,
     "roe_pct": -3.13,
     "roce_pct": -2.57,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.08,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -6208,7 +6749,7 @@
     "latest_quarter_sales": 10.19,
     "sales_yoy_growth_pct": -25.78,
     "latest_quarter_net_profit": -1.08,
-    "net_profit_yoy_growth_pct": 300.0,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -6233,14 +6774,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MANAKCOAT": {
     "symbol": "MANAKCOAT",
     "company_name": "Manaksia Coated Metals & Industries Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MANAKCOAT/",
-    "fetched_utc": "2026-11-01T17:29:53.939452+00:00",
+    "fetched_utc": "2026-11-01T17:54:42.984874+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,495",
       "Current Price": "140",
@@ -6256,7 +6801,8 @@
     "pe": 32.6,
     "roe_pct": 11.3,
     "roce_pct": 18.1,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.501,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.04,
     "quarterly_periods": [
       "Sep 2023",
@@ -6301,14 +6847,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MANOMAY": {
     "symbol": "MANOMAY",
     "company_name": "Manomay Tex India Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MANOMAY/",
-    "fetched_utc": "2026-11-01T17:29:55.729468+00:00",
+    "fetched_utc": "2026-11-01T17:54:44.781055+00:00",
     "ratios_as_displayed": {
       "Market Cap": "447",
       "Current Price": "248",
@@ -6324,7 +6874,8 @@
     "pe": 22.2,
     "roe_pct": 12.3,
     "roce_pct": 11.4,
-    "debt_to_equity": null,
+    "debt_to_equity": 2.275,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -6369,14 +6920,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MARICO": {
     "symbol": "MARICO",
     "company_name": "Marico Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MARICO/",
-    "fetched_utc": "2026-11-01T17:29:57.543838+00:00",
+    "fetched_utc": "2026-11-01T17:54:46.594704+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,04,016",
       "Current Price": "800",
@@ -6392,7 +6947,8 @@
     "pe": 63.4,
     "roe_pct": 37.0,
     "roce_pct": 41.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.032,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.5,
     "quarterly_periods": [
       "Jun 2023",
@@ -6437,14 +6993,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MARSONS": {
     "symbol": "MARSONS",
     "company_name": "Marsons Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MARSONS/",
-    "fetched_utc": "2026-11-01T17:29:59.335315+00:00",
+    "fetched_utc": "2026-11-01T17:54:48.388656+00:00",
     "ratios_as_displayed": {
       "Market Cap": "2,558",
       "Current Price": "149",
@@ -6460,7 +7020,8 @@
     "pe": 57.9,
     "roe_pct": 26.2,
     "roce_pct": 24.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.005,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.03,
     "quarterly_periods": [
       "Jun 2023",
@@ -6505,14 +7066,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MBAPL": {
     "symbol": "MBAPL",
     "company_name": "Madhya Bharat Agro Products Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MBAPL/",
-    "fetched_utc": "2026-11-01T17:30:01.130386+00:00",
+    "fetched_utc": "2026-11-01T17:54:50.184874+00:00",
     "ratios_as_displayed": {
       "Market Cap": "8,127",
       "Current Price": "177",
@@ -6528,7 +7093,8 @@
     "pe": 52.4,
     "roe_pct": 31.3,
     "roce_pct": 19.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.853,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.06,
     "quarterly_periods": [
       "Jun 2023",
@@ -6573,14 +7139,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MGL": {
     "symbol": "MGL",
     "company_name": "Mahanagar Gas Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MGL/",
-    "fetched_utc": "2026-11-01T17:30:02.973989+00:00",
+    "fetched_utc": "2026-11-01T17:54:52.021333+00:00",
     "ratios_as_displayed": {
       "Market Cap": "10,357",
       "Current Price": "1,048",
@@ -6596,7 +7166,8 @@
     "pe": 14.4,
     "roe_pct": 12.3,
     "roce_pct": 17.1,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.035,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 2.86,
     "quarterly_periods": [
       "Jun 2023",
@@ -6641,14 +7212,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MONARCH": {
     "symbol": "MONARCH",
     "company_name": "Monarch Networth Capital Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MONARCH/",
-    "fetched_utc": "2026-11-01T17:30:04.767209+00:00",
+    "fetched_utc": "2026-11-01T17:54:53.817991+00:00",
     "ratios_as_displayed": {
       "Market Cap": "2,790",
       "Current Price": "352",
@@ -6664,7 +7239,8 @@
     "pe": 15.0,
     "roe_pct": 20.9,
     "roce_pct": 27.5,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.13,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.28,
     "quarterly_periods": [
       "Sep 2023",
@@ -6709,14 +7285,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MOSERVICE": {
     "symbol": "MOSERVICE",
     "company_name": "Motilal Oswal Nifty Services Sector ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MOSERVICE/",
-    "fetched_utc": "2026-11-01T17:30:06.290410+00:00",
+    "fetched_utc": "2026-11-01T17:54:55.345632+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -6733,6 +7313,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -6750,14 +7331,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "MSCIADD": {
     "symbol": "MSCIADD",
     "company_name": "DSP MSCI India ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/MSCIADD/",
-    "fetched_utc": "2026-11-01T17:30:07.812230+00:00",
+    "fetched_utc": "2026-11-01T17:54:56.871011+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -6774,6 +7359,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -6791,14 +7377,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NAVINFLUOR": {
     "symbol": "NAVINFLUOR",
     "company_name": "Navin Fluorine International Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NAVINFLUOR/",
-    "fetched_utc": "2026-11-01T17:30:09.639324+00:00",
+    "fetched_utc": "2026-11-01T17:54:58.689102+00:00",
     "ratios_as_displayed": {
       "Market Cap": "44,541",
       "Current Price": "8,680",
@@ -6814,7 +7404,8 @@
     "pe": 69.4,
     "roe_pct": 15.3,
     "roce_pct": 20.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.022,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.17,
     "quarterly_periods": [
       "Sep 2023",
@@ -6859,14 +7450,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NETF": {
     "symbol": "NETF",
     "company_name": "Tata Nifty 50 ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NETF/",
-    "fetched_utc": "2026-11-01T17:30:11.162009+00:00",
+    "fetched_utc": "2026-11-01T17:55:00.215719+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -6883,6 +7478,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -6900,14 +7496,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NGIL": {
     "symbol": "NGIL",
     "company_name": "Nakoda Group of Industries Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NGIL/",
-    "fetched_utc": "2026-11-01T17:30:12.951223+00:00",
+    "fetched_utc": "2026-11-01T17:55:02.049192+00:00",
     "ratios_as_displayed": {
       "Market Cap": "77.1",
       "Current Price": "44.0",
@@ -6923,7 +7523,8 @@
     "pe": 42.6,
     "roe_pct": 5.28,
     "roce_pct": 8.42,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.694,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -6968,14 +7569,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NHPC": {
     "symbol": "NHPC",
     "company_name": "NHPC Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NHPC/",
-    "fetched_utc": "2026-11-01T17:30:14.781336+00:00",
+    "fetched_utc": "2026-11-01T17:55:03.884429+00:00",
     "ratios_as_displayed": {
       "Market Cap": "78,090",
       "Current Price": "77.7",
@@ -6991,7 +7596,8 @@
     "pe": 21.3,
     "roe_pct": 12.8,
     "roce_pct": 8.18,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.481,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 2.07,
     "quarterly_periods": [
       "Jun 2023",
@@ -7036,14 +7642,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NIFTY1": {
     "symbol": "NIFTY1",
     "company_name": "Kotak Nifty 50 ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NIFTY1/",
-    "fetched_utc": "2026-11-01T17:30:16.305044+00:00",
+    "fetched_utc": "2026-11-01T17:55:05.410920+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -7060,6 +7670,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -7077,14 +7688,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NIFTYBEES": {
     "symbol": "NIFTYBEES",
     "company_name": "Nippon India ETF Nifty 50 BeES",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NIFTYBEES/",
-    "fetched_utc": "2026-11-01T17:30:17.829185+00:00",
+    "fetched_utc": "2026-11-01T17:55:06.936733+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -7101,6 +7716,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -7118,14 +7734,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NIFTYBETF": {
     "symbol": "NIFTYBETF",
     "company_name": "Bajaj Finserv Nifty 50 ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NIFTYBETF/",
-    "fetched_utc": "2026-11-01T17:30:19.351670+00:00",
+    "fetched_utc": "2026-11-01T17:55:08.464030+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -7142,6 +7762,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -7159,14 +7780,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NIFTYIETF": {
     "symbol": "NIFTYIETF",
     "company_name": "ICICI Prudential Nifty ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NIFTYIETF/",
-    "fetched_utc": "2026-11-01T17:30:20.873936+00:00",
+    "fetched_utc": "2026-11-01T17:55:09.990996+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -7183,6 +7808,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -7200,14 +7826,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NINSYS": {
     "symbol": "NINSYS",
     "company_name": "NINtec Systems Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NINSYS/",
-    "fetched_utc": "2026-11-01T17:30:22.662942+00:00",
+    "fetched_utc": "2026-11-01T17:55:11.788571+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,745",
       "Current Price": "940",
@@ -7223,7 +7853,8 @@
     "pe": 54.1,
     "roe_pct": 37.0,
     "roce_pct": 50.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.036,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -7268,14 +7899,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NIRLON": {
     "symbol": "NIRLON",
     "company_name": "Nirlon Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NIRLON/",
-    "fetched_utc": "2026-11-01T17:30:24.463820+00:00",
+    "fetched_utc": "2026-11-01T17:55:13.590439+00:00",
     "ratios_as_displayed": {
       "Market Cap": "5,689",
       "Current Price": "631",
@@ -7291,7 +7926,8 @@
     "pe": 15.9,
     "roe_pct": 83.8,
     "roce_pct": 30.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 3.034,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 4.75,
     "quarterly_periods": [
       "Jun 2023",
@@ -7336,14 +7972,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "NYKAA": {
     "symbol": "NYKAA",
     "company_name": "FSN E-Commerce Ventures Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/NYKAA/",
-    "fetched_utc": "2026-11-01T17:30:26.258098+00:00",
+    "fetched_utc": "2026-11-01T17:55:15.388355+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,00,078",
       "Current Price": "349",
@@ -7359,7 +7999,8 @@
     "pe": 1162.0,
     "roe_pct": 5.17,
     "roce_pct": 6.78,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.137,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -7404,14 +8045,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "OPTIFIN": {
     "symbol": "OPTIFIN",
     "company_name": "Optimus Finance Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/OPTIFIN/",
-    "fetched_utc": "2026-11-01T17:30:28.043448+00:00",
+    "fetched_utc": "2026-11-01T17:55:17.181889+00:00",
     "ratios_as_displayed": {
       "Market Cap": "128",
       "Current Price": "17.2",
@@ -7428,6 +8073,7 @@
     "roe_pct": 2.21,
     "roce_pct": 2.98,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -7472,14 +8118,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 4,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ORICONENT": {
     "symbol": "ORICONENT",
     "company_name": "Oricon Enterprises Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ORICONENT/",
-    "fetched_utc": "2026-11-01T17:30:29.863381+00:00",
+    "fetched_utc": "2026-11-01T17:55:19.008188+00:00",
     "ratios_as_displayed": {
       "Market Cap": "885",
       "Current Price": "56.4",
@@ -7495,7 +8145,8 @@
     "pe": 101.0,
     "roe_pct": 0.15,
     "roce_pct": 0.82,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.003,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.35,
     "quarterly_periods": [
       "Jun 2023",
@@ -7540,14 +8191,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ORIENTHOT": {
     "symbol": "ORIENTHOT",
     "company_name": "Oriental Hotels Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ORIENTHOT/",
-    "fetched_utc": "2026-11-01T17:30:31.659098+00:00",
+    "fetched_utc": "2026-11-01T17:55:20.810576+00:00",
     "ratios_as_displayed": {
       "Market Cap": "2,873",
       "Current Price": "161",
@@ -7563,7 +8218,8 @@
     "pe": 39.1,
     "roe_pct": 15.6,
     "roce_pct": 17.1,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.235,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.4,
     "quarterly_periods": [
       "Sep 2023",
@@ -7608,14 +8264,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "PASHUPATI": {
     "symbol": "PASHUPATI",
     "company_name": "Pashupati Cotspin Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/PASHUPATI/",
-    "fetched_utc": "2026-11-01T17:30:33.446340+00:00",
+    "fetched_utc": "2026-11-01T17:55:22.605137+00:00",
     "ratios_as_displayed": {
       "Market Cap": "2,125",
       "Current Price": "135",
@@ -7631,7 +8291,8 @@
     "pe": 136.0,
     "roe_pct": 6.53,
     "roce_pct": 10.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.622,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.04,
     "quarterly_periods": [
       "Jun 2024",
@@ -7672,14 +8333,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "PERSISTENT": {
     "symbol": "PERSISTENT",
     "company_name": "Persistent Systems Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/PERSISTENT/",
-    "fetched_utc": "2026-11-01T17:30:35.254924+00:00",
+    "fetched_utc": "2026-11-01T17:55:24.414705+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,00,296",
       "Current Price": "6,048",
@@ -7695,7 +8360,8 @@
     "pe": 57.1,
     "roe_pct": 26.8,
     "roce_pct": 35.6,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.068,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.66,
     "quarterly_periods": [
       "Sep 2023",
@@ -7740,14 +8406,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "PHOENIXLTD": {
     "symbol": "PHOENIXLTD",
     "company_name": "Phoenix Mills Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/PHOENIXLTD/",
-    "fetched_utc": "2026-11-01T17:30:37.075445+00:00",
+    "fetched_utc": "2026-11-01T17:55:26.228926+00:00",
     "ratios_as_displayed": {
       "Market Cap": "70,008",
       "Current Price": "1,957",
@@ -7763,7 +8433,8 @@
     "pe": 218.0,
     "roe_pct": 5.14,
     "roce_pct": 6.59,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.126,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.13,
     "quarterly_periods": [
       "Sep 2023",
@@ -7808,14 +8479,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "PNB": {
     "symbol": "PNB",
     "company_name": "Punjab National Bank",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/PNB/",
-    "fetched_utc": "2026-11-01T17:30:38.911126+00:00",
+    "fetched_utc": "2026-11-01T17:55:28.059471+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,41,191",
       "Current Price": "123",
@@ -7832,6 +8507,7 @@
     "roe_pct": 12.5,
     "roce_pct": 6.09,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 2.44,
     "quarterly_periods": [
       "Sep 2023",
@@ -7876,14 +8552,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "POWERGRID": {
     "symbol": "POWERGRID",
     "company_name": "Power Grid Corporation of India Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/POWERGRID/",
-    "fetched_utc": "2026-11-01T17:30:40.719301+00:00",
+    "fetched_utc": "2026-11-01T17:55:29.865407+00:00",
     "ratios_as_displayed": {
       "Market Cap": "2,46,466",
       "Current Price": "265",
@@ -7899,7 +8579,8 @@
     "pe": 15.7,
     "roe_pct": 15.8,
     "roce_pct": 9.79,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.634,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 3.4,
     "quarterly_periods": [
       "Jun 2023",
@@ -7944,14 +8625,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "PPLPHARMA": {
     "symbol": "PPLPHARMA",
     "company_name": "Piramal Pharma Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/PPLPHARMA/",
-    "fetched_utc": "2026-11-01T17:30:42.518107+00:00",
+    "fetched_utc": "2026-11-01T17:55:31.659436+00:00",
     "ratios_as_displayed": {
       "Market Cap": "31,807",
       "Current Price": "239",
@@ -7967,7 +8652,8 @@
     "pe": 42.5,
     "roe_pct": 9.84,
     "roce_pct": 11.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.078,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -8012,14 +8698,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "PTL": {
     "symbol": "PTL",
     "company_name": "PTL Enterprises Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/PTL/",
-    "fetched_utc": "2026-11-01T17:30:44.308700+00:00",
+    "fetched_utc": "2026-11-01T17:55:33.459591+00:00",
     "ratios_as_displayed": {
       "Market Cap": "510",
       "Current Price": "38.5",
@@ -8035,7 +8725,8 @@
     "pe": 11.2,
     "roe_pct": 5.45,
     "roce_pct": 7.72,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.006,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 6.5,
     "quarterly_periods": [
       "Jun 2023",
@@ -8080,14 +8771,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "PVRINOX": {
     "symbol": "PVRINOX",
     "company_name": "PVR Inox Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/PVRINOX/",
-    "fetched_utc": "2026-11-01T17:30:46.114714+00:00",
+    "fetched_utc": "2026-11-01T17:55:35.263813+00:00",
     "ratios_as_displayed": {
       "Market Cap": "14,682",
       "Current Price": "1,495",
@@ -8103,7 +8798,8 @@
     "pe": 32.6,
     "roe_pct": 2.05,
     "roce_pct": 6.67,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.869,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -8148,14 +8844,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "QUICKHEAL": {
     "symbol": "QUICKHEAL",
     "company_name": "Quick Heal Technologies Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/QUICKHEAL/",
-    "fetched_utc": "2026-11-01T17:30:47.917658+00:00",
+    "fetched_utc": "2026-11-01T17:55:37.067368+00:00",
     "ratios_as_displayed": {
       "Market Cap": "838",
       "Current Price": "154",
@@ -8171,7 +8871,8 @@
     "pe": null,
     "roe_pct": -3.7,
     "roce_pct": -5.85,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.078,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -8216,14 +8917,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 1,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "RATNAVEER": {
     "symbol": "RATNAVEER",
     "company_name": "Ratnaveer Precision Engineering Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/RATNAVEER/",
-    "fetched_utc": "2026-11-01T17:30:49.730212+00:00",
+    "fetched_utc": "2026-11-01T17:55:38.889840+00:00",
     "ratios_as_displayed": {
       "Market Cap": "3,023",
       "Current Price": "360",
@@ -8239,7 +8944,8 @@
     "pe": 39.6,
     "roe_pct": 12.4,
     "roce_pct": 12.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.265,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -8284,14 +8990,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "RBA": {
     "symbol": "RBA",
     "company_name": "Restaurant Brands Asia Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/RBA/",
-    "fetched_utc": "2026-11-01T17:30:51.528499+00:00",
+    "fetched_utc": "2026-11-01T17:55:40.689608+00:00",
     "ratios_as_displayed": {
       "Market Cap": "6,249",
       "Current Price": "87.7",
@@ -8307,7 +9017,8 @@
     "pe": 855.0,
     "roe_pct": -1.69,
     "roce_pct": 3.46,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.706,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -8327,7 +9038,7 @@
     "latest_quarter_sales": 706.0,
     "sales_yoy_growth_pct": 24.08,
     "latest_quarter_net_profit": 16.0,
-    "net_profit_yoy_growth_pct": -180.0,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -8352,14 +9063,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SAKUMA": {
     "symbol": "SAKUMA",
     "company_name": "Sakuma Exports Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SAKUMA/",
-    "fetched_utc": "2026-11-01T17:30:53.319534+00:00",
+    "fetched_utc": "2026-11-01T17:55:42.487284+00:00",
     "ratios_as_displayed": {
       "Market Cap": "303",
       "Current Price": "1.93",
@@ -8375,7 +9090,8 @@
     "pe": 37.9,
     "roe_pct": 0.56,
     "roce_pct": 1.45,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.025,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -8420,14 +9136,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SANOFI": {
     "symbol": "SANOFI",
     "company_name": "Sanofi India Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SANOFI/",
-    "fetched_utc": "2026-11-01T17:30:55.113328+00:00",
+    "fetched_utc": "2026-11-01T17:55:44.285674+00:00",
     "ratios_as_displayed": {
       "Market Cap": "7,379",
       "Current Price": "3,204",
@@ -8443,7 +9163,8 @@
     "pe": 20.2,
     "roe_pct": 43.0,
     "roce_pct": 57.5,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.019,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 2.34,
     "quarterly_periods": [
       "Sep 2023",
@@ -8488,14 +9209,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SAREGAMA": {
     "symbol": "SAREGAMA",
     "company_name": "Saregama India Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SAREGAMA/",
-    "fetched_utc": "2026-11-01T17:30:56.923575+00:00",
+    "fetched_utc": "2026-11-01T17:55:46.091304+00:00",
     "ratios_as_displayed": {
       "Market Cap": "10,578",
       "Current Price": "549",
@@ -8511,7 +9236,8 @@
     "pe": 45.2,
     "roe_pct": 13.6,
     "roce_pct": 18.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.057,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.82,
     "quarterly_periods": [
       "Jun 2023",
@@ -8556,14 +9282,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SBC": {
     "symbol": "SBC",
     "company_name": "SBC Exports Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SBC/",
-    "fetched_utc": "2026-11-01T17:30:58.743854+00:00",
+    "fetched_utc": "2026-11-01T17:55:47.928926+00:00",
     "ratios_as_displayed": {
       "Market Cap": "3,150",
       "Current Price": "66.2",
@@ -8579,7 +9309,8 @@
     "pe": 92.0,
     "roe_pct": 33.5,
     "roce_pct": 16.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 6.021,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -8624,14 +9355,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SBILIQETF": {
     "symbol": "SBILIQETF",
     "company_name": "SBI Nifty 1D Rate Liquid ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SBILIQETF/",
-    "fetched_utc": "2026-11-01T17:31:00.268239+00:00",
+    "fetched_utc": "2026-11-01T17:55:49.460248+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -8648,6 +9383,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -8665,14 +9401,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SENSEXADD": {
     "symbol": "SENSEXADD",
     "company_name": "DSP BSE Sensex ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SENSEXADD/",
-    "fetched_utc": "2026-11-01T17:31:01.794853+00:00",
+    "fetched_utc": "2026-11-01T17:55:50.988970+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -8689,6 +9429,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -8706,14 +9447,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SENSEXAXIS": {
     "symbol": "SENSEXAXIS",
     "company_name": "AXIS BSE SENSEX ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SENSEXAXIS/",
-    "fetched_utc": "2026-11-01T17:31:03.315633+00:00",
+    "fetched_utc": "2026-11-01T17:55:52.519111+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -8730,6 +9475,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -8747,14 +9493,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SENSEXBETA": {
     "symbol": "SENSEXBETA",
     "company_name": "UTI BSE Sensex ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SENSEXBETA/",
-    "fetched_utc": "2026-11-01T17:31:04.837212+00:00",
+    "fetched_utc": "2026-11-01T17:55:54.049856+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -8771,6 +9521,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -8788,14 +9539,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SENSEXETF": {
     "symbol": "SENSEXETF",
     "company_name": "Mirae Asset S&P BSE Sensex ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SENSEXETF/",
-    "fetched_utc": "2026-11-01T17:31:06.359219+00:00",
+    "fetched_utc": "2026-11-01T17:55:55.581626+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -8812,6 +9567,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -8829,14 +9585,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SENSEXIETF": {
     "symbol": "SENSEXIETF",
     "company_name": "ICICI Prudential BSE Sensex ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SENSEXIETF/",
-    "fetched_utc": "2026-11-01T17:31:07.886702+00:00",
+    "fetched_utc": "2026-11-01T17:55:57.117626+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -8853,6 +9613,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -8870,14 +9631,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SHAILY": {
     "symbol": "SHAILY",
     "company_name": "Shaily Engineering Plastics Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SHAILY/",
-    "fetched_utc": "2026-11-01T17:31:09.690310+00:00",
+    "fetched_utc": "2026-11-01T17:55:58.920609+00:00",
     "ratios_as_displayed": {
       "Market Cap": "14,580",
       "Current Price": "3,170",
@@ -8893,7 +9658,8 @@
     "pe": 71.6,
     "roe_pct": 28.2,
     "roce_pct": 30.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.232,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.09,
     "quarterly_periods": [
       "Sep 2023",
@@ -8938,14 +9704,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SHANKARA": {
     "symbol": "SHANKARA",
     "company_name": "Shankara Building Products Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SHANKARA/",
-    "fetched_utc": "2026-11-01T17:31:11.495053+00:00",
+    "fetched_utc": "2026-11-01T17:56:00.726136+00:00",
     "ratios_as_displayed": {
       "Market Cap": "282",
       "Current Price": "116",
@@ -8961,7 +9731,8 @@
     "pe": null,
     "roe_pct": -2.97,
     "roce_pct": -2.9,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -8981,7 +9752,7 @@
     "latest_quarter_sales": 10.72,
     "sales_yoy_growth_pct": null,
     "latest_quarter_net_profit": 0.62,
-    "net_profit_yoy_growth_pct": -131.31,
+    "net_profit_yoy_growth_pct": null,
     "latest_quarter_eps": null,
     "shareholding_periods": [
       "Dec 2023",
@@ -9006,14 +9777,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 2,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SHARIABEES": {
     "symbol": "SHARIABEES",
     "company_name": "Nippon India ETF Nifty 50 Shariah BeES",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SHARIABEES/",
-    "fetched_utc": "2026-11-01T17:31:13.014348+00:00",
+    "fetched_utc": "2026-11-01T17:56:02.255081+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -9030,6 +9805,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -9047,14 +9823,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SHREEJISPG": {
     "symbol": "SHREEJISPG",
     "company_name": "Shreeji Shipping Global Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SHREEJISPG/",
-    "fetched_utc": "2026-11-01T17:31:14.783510+00:00",
+    "fetched_utc": "2026-11-01T17:56:04.040647+00:00",
     "ratios_as_displayed": {
       "Market Cap": "13,739",
       "Current Price": "843",
@@ -9070,7 +9850,8 @@
     "pe": 83.8,
     "roe_pct": 30.5,
     "roce_pct": 28.3,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.456,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.12,
     "quarterly_periods": [
       "Jun 2024",
@@ -9104,14 +9885,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SHREEPUSHK": {
     "symbol": "SHREEPUSHK",
     "company_name": "Shree Pushkar Chemicals & Fertilizers Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SHREEPUSHK/",
-    "fetched_utc": "2026-11-01T17:31:16.620861+00:00",
+    "fetched_utc": "2026-11-01T17:56:05.882317+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,949",
       "Current Price": "603",
@@ -9127,7 +9912,8 @@
     "pe": 42.6,
     "roe_pct": 9.52,
     "roce_pct": 10.5,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.217,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.35,
     "quarterly_periods": [
       "Jun 2023",
@@ -9172,14 +9958,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SINTERCOM": {
     "symbol": "SINTERCOM",
     "company_name": "Sintercom India Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SINTERCOM/",
-    "fetched_utc": "2026-11-01T17:31:18.416298+00:00",
+    "fetched_utc": "2026-11-01T17:56:07.680567+00:00",
     "ratios_as_displayed": {
       "Market Cap": "219",
       "Current Price": "79.7",
@@ -9195,7 +9985,8 @@
     "pe": 132.0,
     "roe_pct": 1.4,
     "roce_pct": 5.92,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.697,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -9240,14 +10031,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SMSPHARMA": {
     "symbol": "SMSPHARMA",
     "company_name": "SMS Pharmaceuticals Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SMSPHARMA/",
-    "fetched_utc": "2026-11-01T17:31:20.215249+00:00",
+    "fetched_utc": "2026-11-01T17:56:09.482926+00:00",
     "ratios_as_displayed": {
       "Market Cap": "4,789",
       "Current Price": "511",
@@ -9263,7 +10058,8 @@
     "pe": 52.9,
     "roe_pct": 11.9,
     "roce_pct": 13.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.459,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.08,
     "quarterly_periods": [
       "Jun 2023",
@@ -9308,14 +10104,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SONACOMS": {
     "symbol": "SONACOMS",
     "company_name": "Sona BLW Precision Forgings Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SONACOMS/",
-    "fetched_utc": "2026-11-01T17:31:22.024593+00:00",
+    "fetched_utc": "2026-11-01T17:56:11.289811+00:00",
     "ratios_as_displayed": {
       "Market Cap": "55,672",
       "Current Price": "890",
@@ -9331,7 +10131,8 @@
     "pe": 69.0,
     "roe_pct": 11.7,
     "roce_pct": 15.1,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.093,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.38,
     "quarterly_periods": [
       "Sep 2023",
@@ -9376,14 +10177,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "SUPREME": {
     "symbol": "SUPREME",
     "company_name": "Supreme Holdings & Hospitality Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/SUPREME/",
-    "fetched_utc": "2026-11-01T17:31:23.814515+00:00",
+    "fetched_utc": "2026-11-01T17:56:13.084105+00:00",
     "ratios_as_displayed": {
       "Market Cap": "116",
       "Current Price": "30.0",
@@ -9399,7 +10204,8 @@
     "pe": 113.0,
     "roe_pct": -0.05,
     "roce_pct": 0.04,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.0,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -9444,14 +10250,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TANLA": {
     "symbol": "TANLA",
     "company_name": "Tanla Platforms Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TANLA/",
-    "fetched_utc": "2026-11-01T17:31:25.658231+00:00",
+    "fetched_utc": "2026-11-01T17:56:14.932779+00:00",
     "ratios_as_displayed": {
       "Market Cap": "8,318",
       "Current Price": "627",
@@ -9467,7 +10277,8 @@
     "pe": 49.4,
     "roe_pct": 22.4,
     "roce_pct": 21.6,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.261,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.91,
     "quarterly_periods": [
       "Sep 2023",
@@ -9512,14 +10323,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TARACHAND": {
     "symbol": "TARACHAND",
     "company_name": "Tara Chand Infralogistic Solutions Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TARACHAND/",
-    "fetched_utc": "2026-11-01T17:31:27.453676+00:00",
+    "fetched_utc": "2026-11-01T17:56:16.730460+00:00",
     "ratios_as_displayed": {
       "Market Cap": "369",
       "Current Price": "46.8",
@@ -9535,7 +10350,8 @@
     "pe": 14.9,
     "roe_pct": 19.4,
     "roce_pct": 17.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.275,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.43,
     "quarterly_periods": [
       "Sep 2023",
@@ -9580,14 +10396,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TASTYBITE": {
     "symbol": "TASTYBITE",
     "company_name": "Tasty Bite Eatables Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TASTYBITE/",
-    "fetched_utc": "2026-11-01T17:31:29.249534+00:00",
+    "fetched_utc": "2026-11-01T17:56:18.531828+00:00",
     "ratios_as_displayed": {
       "Market Cap": "2,497",
       "Current Price": "9,733",
@@ -9603,7 +10423,8 @@
     "pe": 68.8,
     "roe_pct": 10.9,
     "roce_pct": 14.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.124,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.1,
     "quarterly_periods": [
       "Jun 2023",
@@ -9648,14 +10469,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TATACONSUM": {
     "symbol": "TATACONSUM",
     "company_name": "Tata Consumer Products Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TATACONSUM/",
-    "fetched_utc": "2026-11-01T17:31:31.066229+00:00",
+    "fetched_utc": "2026-11-01T17:56:20.344132+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,01,533",
       "Current Price": "1,026",
@@ -9671,7 +10496,8 @@
     "pe": 61.6,
     "roe_pct": 9.37,
     "roce_pct": 11.9,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.039,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.97,
     "quarterly_periods": [
       "Sep 2023",
@@ -9716,14 +10542,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TOP10ADD": {
     "symbol": "TOP10ADD",
     "company_name": "DSP Nifty Top 10 Equal Weight ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TOP10ADD/",
-    "fetched_utc": "2026-11-01T17:31:32.593063+00:00",
+    "fetched_utc": "2026-11-01T17:56:21.871572+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -9740,6 +10570,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -9757,14 +10588,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TOP15IETF": {
     "symbol": "TOP15IETF",
     "company_name": "ICICI Prudential Nifty Top 15 Equal Weight ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TOP15IETF/",
-    "fetched_utc": "2026-11-01T17:31:34.117206+00:00",
+    "fetched_utc": "2026-11-01T17:56:23.398541+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -9781,6 +10616,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -9798,14 +10634,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TOP20": {
     "symbol": "TOP20",
     "company_name": "Mirae Asset Nifty Top 20 Equal Weight ETF",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TOP20/",
-    "fetched_utc": "2026-11-01T17:31:35.639992+00:00",
+    "fetched_utc": "2026-11-01T17:56:24.927937+00:00",
     "ratios_as_displayed": {
       "Market Cap": "",
       "Current Price": "",
@@ -9822,6 +10662,7 @@
     "roe_pct": null,
     "roce_pct": null,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": null,
     "quarterly_periods": [],
     "latest_quarter_sales": null,
@@ -9839,14 +10680,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": false,
-    "shareholding_table_found": false
+    "shareholding_table_found": false,
+    "fundamental_quality_score": 0,
+    "fundamental_score_criteria_available": 0,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TRENT": {
     "symbol": "TRENT",
     "company_name": "Trent Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TRENT/",
-    "fetched_utc": "2026-11-01T17:31:37.439734+00:00",
+    "fetched_utc": "2026-11-01T17:56:26.728831+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,60,892",
       "Current Price": "3,017",
@@ -9862,7 +10707,8 @@
     "pe": 75.3,
     "roe_pct": 26.4,
     "roce_pct": 27.4,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.263,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.13,
     "quarterly_periods": [
       "Sep 2023",
@@ -9907,14 +10753,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TTKHLTCARE": {
     "symbol": "TTKHLTCARE",
     "company_name": "TTK Healthcare Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TTKHLTCARE/",
-    "fetched_utc": "2026-11-01T17:31:39.265516+00:00",
+    "fetched_utc": "2026-11-01T17:56:28.560315+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,279",
       "Current Price": "905",
@@ -9930,7 +10780,8 @@
     "pe": 17.6,
     "roe_pct": 6.3,
     "roce_pct": 8.04,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.021,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 1.1,
     "quarterly_periods": [
       "Sep 2023",
@@ -9975,14 +10826,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "TVSMOTOR": {
     "symbol": "TVSMOTOR",
     "company_name": "TVS Motor Company Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/TVSMOTOR/",
-    "fetched_utc": "2026-11-01T17:31:41.073066+00:00",
+    "fetched_utc": "2026-11-01T17:56:30.366061+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,99,309",
       "Current Price": "4,195",
@@ -9998,7 +10853,8 @@
     "pe": 44.1,
     "roe_pct": 34.4,
     "roce_pct": 38.2,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.453,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.29,
     "quarterly_periods": [
       "Sep 2023",
@@ -10043,14 +10899,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ULTRACEMCO": {
     "symbol": "ULTRACEMCO",
     "company_name": "UltraTech Cement Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ULTRACEMCO/",
-    "fetched_utc": "2026-11-01T17:31:42.888189+00:00",
+    "fetched_utc": "2026-11-01T17:56:32.179369+00:00",
     "ratios_as_displayed": {
       "Market Cap": "3,25,473",
       "Current Price": "11,045",
@@ -10066,7 +10926,8 @@
     "pe": 41.1,
     "roe_pct": 10.3,
     "roce_pct": 12.6,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.36,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 2.17,
     "quarterly_periods": [
       "Sep 2023",
@@ -10111,14 +10972,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "UNIONBANK": {
     "symbol": "UNIONBANK",
     "company_name": "Union Bank of India",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/UNIONBANK/",
-    "fetched_utc": "2026-11-01T17:31:44.698291+00:00",
+    "fetched_utc": "2026-11-01T17:56:33.987909+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,41,985",
       "Current Price": "186",
@@ -10135,6 +11000,7 @@
     "roe_pct": 15.5,
     "roce_pct": 6.31,
     "debt_to_equity": null,
+    "debt_to_equity_method": null,
     "dividend_yield_pct": 2.69,
     "quarterly_periods": [
       "Sep 2023",
@@ -10179,14 +11045,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 5,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "UNITEDPOLY": {
     "symbol": "UNITEDPOLY",
     "company_name": "United Polyfab Gujarat Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/UNITEDPOLY/",
-    "fetched_utc": "2026-11-01T17:31:46.486447+00:00",
+    "fetched_utc": "2026-11-01T17:56:35.782132+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,246",
       "Current Price": "54.3",
@@ -10202,7 +11072,8 @@
     "pe": 40.3,
     "roe_pct": 21.1,
     "roce_pct": 17.8,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.953,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Sep 2023",
@@ -10247,14 +11118,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "VADILALIND": {
     "symbol": "VADILALIND",
     "company_name": "Vadilal Industries Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/VADILALIND/",
-    "fetched_utc": "2026-11-01T17:31:48.311796+00:00",
+    "fetched_utc": "2026-11-01T17:56:37.618447+00:00",
     "ratios_as_displayed": {
       "Market Cap": "5,387",
       "Current Price": "7,492",
@@ -10270,7 +11145,8 @@
     "pe": 30.0,
     "roe_pct": 17.6,
     "roce_pct": 22.2,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.202,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.57,
     "quarterly_periods": [
       "Sep 2023",
@@ -10315,14 +11191,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 7,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "VIJSOLX": {
     "symbol": "VIJSOLX",
     "company_name": "Vijay Solvex Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/VIJSOLX/",
-    "fetched_utc": "2026-11-01T17:31:50.101793+00:00",
+    "fetched_utc": "2026-11-01T17:56:39.420988+00:00",
     "ratios_as_displayed": {
       "Market Cap": "230",
       "Current Price": "719",
@@ -10338,7 +11218,8 @@
     "pe": 9.86,
     "roe_pct": 6.42,
     "roce_pct": 9.74,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.204,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -10383,14 +11264,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 4,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "VINNY": {
     "symbol": "VINNY",
     "company_name": "Vinny Overseas Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/VINNY/",
-    "fetched_utc": "2026-11-01T17:31:51.887088+00:00",
+    "fetched_utc": "2026-11-01T17:56:41.210739+00:00",
     "ratios_as_displayed": {
       "Market Cap": "48.8",
       "Current Price": "1.05",
@@ -10406,7 +11291,8 @@
     "pe": 57.5,
     "roe_pct": 1.11,
     "roce_pct": 2.44,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.444,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.0,
     "quarterly_periods": [
       "Jun 2023",
@@ -10451,14 +11337,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 6,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "WIPRO": {
     "symbol": "WIPRO",
     "company_name": "Wipro Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/WIPRO/",
-    "fetched_utc": "2026-11-01T17:31:53.696259+00:00",
+    "fetched_utc": "2026-11-01T17:56:43.017656+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,96,439",
       "Current Price": "198",
@@ -10474,7 +11364,8 @@
     "pe": 17.0,
     "roe_pct": 19.0,
     "roce_pct": 23.7,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.179,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 5.55,
     "quarterly_periods": [
       "Sep 2023",
@@ -10519,14 +11410,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 6,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "WORTHPERI": {
     "symbol": "WORTHPERI",
     "company_name": "Worth Peripherals Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/WORTHPERI/",
-    "fetched_utc": "2026-11-01T17:31:55.489642+00:00",
+    "fetched_utc": "2026-11-01T17:56:44.815521+00:00",
     "ratios_as_displayed": {
       "Market Cap": "243",
       "Current Price": "154",
@@ -10542,7 +11437,8 @@
     "pe": 13.4,
     "roe_pct": 9.67,
     "roce_pct": 12.4,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.005,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.65,
     "quarterly_periods": [
       "Sep 2023",
@@ -10587,14 +11483,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 3,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ZENSARTECH": {
     "symbol": "ZENSARTECH",
     "company_name": "Zensar Technologies Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ZENSARTECH/",
-    "fetched_utc": "2026-11-01T17:31:57.303775+00:00",
+    "fetched_utc": "2026-11-01T17:56:46.639536+00:00",
     "ratios_as_displayed": {
       "Market Cap": "12,196",
       "Current Price": "536",
@@ -10610,7 +11510,8 @@
     "pe": 16.6,
     "roe_pct": 20.9,
     "roce_pct": 26.0,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.009,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 2.8,
     "quarterly_periods": [
       "Sep 2023",
@@ -10655,14 +11556,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ZODIAC": {
     "symbol": "ZODIAC",
     "company_name": "Zodiac Energy Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ZODIAC/",
-    "fetched_utc": "2026-11-01T17:31:59.130349+00:00",
+    "fetched_utc": "2026-11-01T17:56:48.474504+00:00",
     "ratios_as_displayed": {
       "Market Cap": "330",
       "Current Price": "218",
@@ -10678,7 +11583,8 @@
     "pe": 10.3,
     "roe_pct": 18.7,
     "roce_pct": 15.6,
-    "debt_to_equity": null,
+    "debt_to_equity": 1.508,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.34,
     "quarterly_periods": [
       "Sep 2023",
@@ -10723,14 +11629,18 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   },
   "ZYDUSLIFE": {
     "symbol": "ZYDUSLIFE",
     "company_name": "Zydus Lifesciences Ltd",
     "source": "Screener.in",
     "source_url": "https://www.screener.in/company/ZYDUSLIFE/",
-    "fetched_utc": "2026-11-01T17:32:00.946549+00:00",
+    "fetched_utc": "2026-11-01T17:56:50.288150+00:00",
     "ratios_as_displayed": {
       "Market Cap": "1,24,239",
       "Current Price": "1,246",
@@ -10746,7 +11656,8 @@
     "pe": 34.1,
     "roe_pct": 16.5,
     "roce_pct": 16.6,
-    "debt_to_equity": null,
+    "debt_to_equity": 0.316,
+    "debt_to_equity_method": "Calculated: borrowings / (equity share capital + reserves)",
     "dividend_yield_pct": 0.08,
     "quarterly_periods": [
       "Jun 2023",
@@ -10791,6 +11702,10 @@
     "promoter_pledge_pct": null,
     "pledge_field_reported": false,
     "quarterly_table_found": true,
-    "shareholding_table_found": true
+    "shareholding_table_found": true,
+    "fundamental_quality_score": 5,
+    "fundamental_score_criteria_available": 7,
+    "fundamental_score_max": 7,
+    "parser_version": 2
   }
 }
