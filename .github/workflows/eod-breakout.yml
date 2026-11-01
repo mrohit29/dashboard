@@ -1,0 +1,52 @@
+name: EOD NSE Breakout Scanner
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run initial history backfill once, then use daily"
+        required: true
+        default: "auto"
+        type: choice
+        options: [auto, backfill, daily]
+  schedule:
+    # 11:00 UTC = 16:30 IST, after the cash-market close and publication buffer.
+    - cron: "0 11 * * 1-5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-refresh
+  cancel-in-progress: false
+
+jobs:
+  eod-breakout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install pandas requests beautifulsoup4
+      - name: Run EOD breakout scanner
+        run: python scripts/eod_breakout_scanner.py --mode "${{ inputs.mode || 'auto' }}"
+      - name: Enrich EOD candidates with fundamentals
+        run: python scripts/enrich_eod_fundamentals.py
+      - name: Commit history, signals and fundamentals
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name "dashboard-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/eod_history.csv.gz data/eod_breakouts.json data/eod_fundamentals.json data/eod_fundamentals_cache.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh EOD breakout and fundamental data"
+          git fetch origin "$TARGET_BRANCH"
+          git rebase "origin/$TARGET_BRANCH"
+          git push origin "HEAD:$TARGET_BRANCH"
