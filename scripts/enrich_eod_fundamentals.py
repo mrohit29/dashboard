@@ -44,33 +44,52 @@ def ratio_map(soup):
     return out
 
 def table_rows(soup, table_id):
-    table=soup.find("table",id=table_id)
-    if not table:return [],[]
+    # Screener uses section/div IDs as anchors; the actual table is nested inside.
+    container=soup.find(id=table_id)
+    table=container if container and container.name=="table" else (container.find("table") if container else None)
+    if table is None:
+        # Fallback for markup changes where the anchor ID moved to a wrapper.
+        candidates=soup.select(f"#{table_id} table")
+        table=candidates[0] if candidates else None
+    if table is None:return [],[]
     header=[]
     for tr in table.select("thead tr"):
         cells=tr.find_all(["th","td"],recursive=False)
         if cells:header=[c.get_text(" ",strip=True) for c in cells]
     rows=[]
-    for tr in table.select("tbody tr"):
+    body_rows=table.select("tbody tr") or table.select("tr")
+    for tr in body_rows:
         cells=tr.find_all(["th","td"],recursive=False)
         if not cells:continue
-        vals=[c.get_text(" ",strip=True) for c in cells]
-        if len(vals)>=2:rows.append(vals)
-    if not header:
-        first=table.find("tr")
-        if first:
-            header=[c.get_text(" ",strip=True) for c in first.find_all(["th","td"],recursive=False)]
+        vals=[c.get_text(" ",strip=True).replace("\\xa0"," ").strip() for c in cells]
+        if len(vals)>=2:
+            # If there is no explicit thead, the first row is the date header.
+            if not header and all(re.search(r"\\b(?:Mar|Jun|Sep|Dec)\\b",v,re.I) for v in vals[1:]):
+                header=vals
+                continue
+            rows.append(vals)
     return header,rows
 
+def clean_label(value):
+    return re.sub(r"\\s+"," ",str(value).replace("\\xa0"," ").replace("+"," ")).strip(" .").lower()
+
 def find_row(rows,*labels):
+    wanted={clean_label(x) for x in labels}
     for row in rows:
-        label=row[0].strip().lower().replace(".","")
-        if any(label==x.lower() for x in labels):return row
+        if clean_label(row[0]) in wanted:return row
     return None
 
+def latest_value(row):
+    return number(row[-1]) if row and len(row)>1 else None
+
+def previous_value(row):
+    return number(row[-2]) if row and len(row)>2 else None
+
 def growth(row):
+    # Screener tables are ordered oldest-to-newest: compare latest with four
+    # quarters earlier (same quarter of the previous year).
     if not row or len(row)<6:return None
-    latest=number(row[1]); year_ago=number(row[5])
+    latest=number(row[-1]); year_ago=number(row[-5])
     if latest is None or year_ago in (None,0):return None
     return round((latest/year_ago-1)*100,2)
 
@@ -86,10 +105,9 @@ def parse_company(symbol,html,url):
     fii=find_row(s_rows,"FIIs","FII")
     dii=find_row(s_rows,"DIIs","DII")
     pledged=find_row(s_rows,"Pledged","Pledged shares","Promoter Pledge")
-    def latest(row):return number(row[1]) if row and len(row)>1 else None
+    def latest(row):return latest_value(row)
     def delta(row):
-        a=number(row[1]) if row and len(row)>1 else None
-        b=number(row[2]) if row and len(row)>2 else None
+        a=latest_value(row); b=previous_value(row)
         return round(a-b,2) if a is not None and b is not None else None
     # Screener labels and reported periods are retained so stale/missing fields are visible.
     return {
@@ -135,12 +153,26 @@ def main():
         try:
             age=(now-datetime.fromisoformat(fetched.replace("Z","+00:00"))).days if fetched else 9999
         except Exception:age=9999
-        if old and age<CACHE_DAYS:
+        # Do not preserve recent but structurally incomplete cache entries from
+        # the earlier parser (which looked for table IDs on <table> elements).
+        cache_complete=bool(old.get("quarterly_table_found") and old.get("shareholding_table_found"))
+        if old and age<CACHE_DAYS and cache_complete:
             fresh[symbol]=old; continue
         url="https://www.screener.in/company/"+quote(symbol,safe="")+"/"
         try:
-            response=session.get(url,timeout=25)
-            response.raise_for_status()
+            response=None
+            for attempt in range(4):
+                response=session.get(url,timeout=25)
+                if response.status_code==429 or response.status_code>=500:
+                    if attempt==3:response.raise_for_status()
+                    retry_after=response.headers.get("Retry-After")
+                    try:delay=min(60.0,float(retry_after)) if retry_after else (3.0*(2**attempt))
+                    except ValueError:delay=3.0*(2**attempt)
+                    print(f"[{i}/{len(symbols)}] {symbol}: HTTP {response.status_code}; retrying in {delay:.0f}s")
+                    time.sleep(delay)
+                    continue
+                response.raise_for_status()
+                break
             record=parse_company(symbol,response.text,url)
             if not record["ratios_as_displayed"] and not record["quarterly_table_found"]:
                 raise RuntimeError("Page loaded but expected financial tables were not found")
@@ -151,7 +183,7 @@ def main():
             if old:fresh[symbol]=old
             else:fresh[symbol]={"symbol":symbol,"source":"Screener.in","source_url":url,"status":"unavailable","error":str(exc)}
             print(f"[{i}/{len(symbols)}] {symbol}: unavailable - {exc}")
-        time.sleep(0.45)
+        time.sleep(1.25)
     CACHE.write_text(json.dumps(fresh,indent=2,ensure_ascii=False,allow_nan=False),encoding="utf-8")
     result={"as_of":payload.get("as_of"),"generated_utc":now.isoformat(),"source":"Screener.in public company pages",
       "cache_valid_days":CACHE_DAYS,"symbols_requested":len(symbols),
