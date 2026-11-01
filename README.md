@@ -12,6 +12,9 @@ The separate EOD scanner uses the official NSE CM UDiFF final bhavcopy archive a
 - Resistance is the highest daily high in the preceding window; the current session is excluded.
 - Confirmed breakout means a closing price above resistance; volume >=1.5x the prior 20-session average is highlighted.
 - Compressed history: \`data/eod_history.csv.gz\`; results: \`data/eod_breakouts.json\`; page: \`eod-scanner.html\`.
+- Historical breakout follow-through: `scripts/eod_breakout_backtest.py` writes `data/eod_breakout_backtest.json` with 5/10/20-session returns, win rates, and maximum favorable/adverse excursions.
+- Fundamental enrichment: `scripts/enrich_eod_fundamentals.py` validates YoY growth when the comparison base is positive, attempts a balance-sheet debt/equity calculation, and adds a transparent available-data quality score.
+- The EOD page supports click-to-sort on all displayed columns and shows historical breakout performance.
 
 This first version is a technical EOD screen. Market capitalisation, quarterly financials, FII/DII ownership and promoter pledging are not fabricated; they will be added as a separately sourced fundamental layer.
 
