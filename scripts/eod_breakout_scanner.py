@@ -106,18 +106,22 @@ def scan(d):
     latest=d.date.max(); rows=[]
     for symbol,g in d.groupby("symbol",sort=False):
         g=g.sort_values("date").drop_duplicates("date",keep="last")
-        if g.date.iloc[-1]!=latest or len(g)<253:continue
+        if g.date.iloc[-1]!=latest or len(g)<22:continue
         today=g.iloc[-1]; prev=g.iloc[:-1]
-        if len(prev)<252:continue
-        p20=prev.tail(20); avg_turn=float(p20.turnover.mean()); avg_vol=float(p20.volume.mean())
+        p20=prev.tail(20)
+        if len(p20)<20:continue
+        avg_turn=float(p20.turnover.mean()); avg_vol=float(p20.volume.mean())
         vm=float(today.volume/avg_vol) if avg_vol>0 else 0
-        sma50=float(prev.tail(49).close.mean()); sma200=float(prev.tail(199).close.mean())
+        sma50=float(prev.tail(50).close.mean()) if len(prev)>=50 else None
+        sma200=float(prev.tail(200).close.mean()) if len(prev)>=200 else None
         item={"symbol":str(symbol),"date":latest.strftime("%Y-%m-%d"),"close":sf(today.close),
               "volume":int(today.volume),"volume_multiple":sf(vm),
               "avg_turnover_cr_20d":sf(avg_turn/1e7),"sma50":sf(sma50),"sma200":sf(sma200),
-              "above_50dma":bool(today.close>sma50),"above_200dma":bool(today.close>sma200),
+              "above_50dma":bool(sma50 is not None and today.close>sma50),
+              "above_200dma":bool(sma200 is not None and today.close>sma200),
               "liquidity_flag":"LOW" if avg_turn<MIN_TURNOVER_CR*1e7 else "OK","ranges":{}}
         for label,n in WINDOWS.items():
+            if len(prev)<n:continue
             resistance=float(prev.tail(n).high.max())
             distance=(float(today.close)/resistance-1)*100
             touched=float(today.high)>resistance; close_break=float(today.close)>resistance
