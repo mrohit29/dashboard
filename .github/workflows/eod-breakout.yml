@@ -33,18 +33,20 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: pip install pandas requests
+        run: pip install pandas requests beautifulsoup4
       - name: Run EOD breakout scanner
         run: python scripts/eod_breakout_scanner.py --mode "\${{ inputs.mode || 'auto' }}"
-      - name: Commit history and signals
+      - name: Enrich EOD candidates with fundamentals
+        run: python scripts/enrich_eod_fundamentals.py
+      - name: Commit history, signals and fundamentals
         env:
           TARGET_BRANCH: \${{ github.ref_name }}
         run: |
           git config user.name "dashboard-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/eod_history.csv.gz data/eod_breakouts.json
+          git add data/eod_history.csv.gz data/eod_breakouts.json data/eod_fundamentals.json data/eod_fundamentals_cache.json
           git diff --cached --quiet && exit 0
-          git commit -m "Refresh EOD NSE breakout scan"
+          git commit -m "Refresh EOD breakout and fundamental data"
           git fetch origin "$TARGET_BRANCH"
           git rebase "origin/$TARGET_BRANCH"
           git push origin "HEAD:$TARGET_BRANCH"
