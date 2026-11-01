@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: \${{ github.ref }}
+          ref: ${{ github.ref }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -35,12 +35,12 @@ jobs:
       - name: Install dependencies
         run: pip install pandas requests beautifulsoup4
       - name: Run EOD breakout scanner
-        run: python scripts/eod_breakout_scanner.py --mode "\${{ inputs.mode || 'auto' }}"
+        run: python scripts/eod_breakout_scanner.py --mode "${{ inputs.mode || 'auto' }}"
       - name: Enrich EOD candidates with fundamentals
         run: python scripts/enrich_eod_fundamentals.py
       - name: Commit history, signals and fundamentals
         env:
-          TARGET_BRANCH: \${{ github.ref_name }}
+          TARGET_BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name "dashboard-bot"
           git config user.email "actions@users.noreply.github.com"
