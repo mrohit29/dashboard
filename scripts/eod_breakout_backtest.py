@@ -35,6 +35,7 @@ def main():
             for idx in signal[signal].index:
                 event={"symbol":symbol,"date":g.at[idx,"date"].strftime("%Y-%m-%d"),
                        "window":label,"close":round(float(closes.iloc[idx]),4),
+                       "resistance":round(float(resistance.iloc[idx]),4),
                        "volume_multiple":round(float(volumes.iloc[idx]/prior_avg_vol.iloc[idx]),3)}
                 for horizon in FORWARD:
                     end=idx+horizon
@@ -42,12 +43,16 @@ def main():
                         event[f"return_{horizon}d_pct"]=None
                         event[f"mfe_{horizon}d_pct"]=None
                         event[f"mae_{horizon}d_pct"]=None
+                        event[f"failed_below_resistance_{horizon}d"]=None
+                        event[f"retest_held_{horizon}d"]=None
                         continue
                     future=g.iloc[idx+1:end+1]
                     entry=float(closes.iloc[idx])
                     event[f"return_{horizon}d_pct"]=round((float(closes.iloc[end])/entry-1)*100,3)
                     event[f"mfe_{horizon}d_pct"]=round((float(future["high"].max())/entry-1)*100,3)
                     event[f"mae_{horizon}d_pct"]=round((float(future["low"].min())/entry-1)*100,3)
+                    event[f"failed_below_resistance_{horizon}d"]=bool((future["close"]<event["resistance"]).any())
+                    event[f"retest_held_{horizon}d"]=bool(((future["low"]<=event["resistance"]*1.01)&(future["close"]>event["resistance"])).any())
                 events.append(event)
     summaries={}
     for label in WINDOWS:
@@ -61,7 +66,9 @@ def main():
                 "average_return_pct":round(sum(vals)/len(vals),3) if vals else None,
                 "median_return_pct":round(float(pd.Series(vals).median()),3) if vals else None,
                 "average_mfe_pct":round(sum(e[f"mfe_{horizon}d_pct"] for e in subset if e[f"mfe_{horizon}d_pct"] is not None)/len(vals),3) if vals else None,
-                "average_mae_pct":round(sum(e[f"mae_{horizon}d_pct"] for e in subset if e[f"mae_{horizon}d_pct"] is not None)/len(vals),3) if vals else None
+                "average_mae_pct":round(sum(e[f"mae_{horizon}d_pct"] for e in subset if e[f"mae_{horizon}d_pct"] is not None)/len(vals),3) if vals else None,
+                "failure_rate_below_resistance_pct":round(sum(e[f"failed_below_resistance_{horizon}d"] for e in subset if e[f"failed_below_resistance_{horizon}d"] is not None)/len(vals)*100,2) if vals else None,
+                "retest_held_rate_pct":round(sum(e[f"retest_held_{horizon}d"] for e in subset if e[f"retest_held_{horizon}d"] is not None)/len(vals)*100,2) if vals else None
             }
     result={"generated_from_latest_session":df["date"].max().strftime("%Y-%m-%d"),
             "source":"NSE CM UDiFF final bhavcopy history",
