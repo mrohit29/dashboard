@@ -76,7 +76,7 @@ def main():
             "forward_horizons_sessions":list(FORWARD),
             "price_adjustment":"Raw bhavcopy prices; corporate actions such as splits and bonuses are not adjusted.",
             "methodology_note":"Only future sessions after the signal date are used. Incomplete forward windows are excluded from that horizon's sample. Historical performance is descriptive, not predictive.",
-            "event_count":len(events),"summary":summaries,"events":events}
+            "event_count":len(events),"summary":summaries}
     OUTPUT.write_text(json.dumps(result,indent=2,allow_nan=False),encoding="utf-8")
     print(json.dumps({"event_count":len(events),"summary":summaries},indent=2))
 
