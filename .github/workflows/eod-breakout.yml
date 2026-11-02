@@ -15,6 +15,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: market-refresh
@@ -52,3 +54,12 @@ jobs:
           git fetch origin "$TARGET_BRANCH"
           git rebase "origin/$TARGET_BRANCH"
           git push origin "HEAD:$TARGET_BRANCH"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload dashboard
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Deploy dashboard
+        uses: actions/deploy-pages@v4
