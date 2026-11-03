@@ -1,5 +1,5 @@
 {
-  "generated_from_latest_session": "2026-11-02",
+  "generated_from_latest_session": "2026-11-03",
   "source": "NSE CM UDiFF final bhavcopy history",
   "signal_definition": "Close above the highest high in the prior 21/63/126/252 sessions, with volume >=1.5x prior 20-session average.",
   "forward_horizons_sessions": [
@@ -9,134 +9,134 @@
   ],
   "price_adjustment": "Raw bhavcopy prices; corporate actions such as splits and bonuses are not adjusted.",
   "methodology_note": "Only future sessions after the signal date are used. Incomplete forward windows are excluded from that horizon's sample. Historical performance is descriptive, not predictive.",
-  "event_count": 17487,
+  "event_count": 17571,
   "summary": {
     "1_month": {
       "5_sessions": {
-        "sample_size": 9921,
-        "win_rate_pct": 45.23,
-        "average_return_pct": -0.476,
+        "sample_size": 9941,
+        "win_rate_pct": 45.24,
+        "average_return_pct": -0.477,
         "median_return_pct": -0.594,
-        "average_mfe_pct": 5.45,
-        "average_mae_pct": -5.051,
-        "failure_rate_below_resistance_pct": 53.69,
-        "retest_held_rate_pct": 64.2
+        "average_mfe_pct": 5.453,
+        "average_mae_pct": -5.054,
+        "failure_rate_below_resistance_pct": 53.68,
+        "retest_held_rate_pct": 64.18
       },
       "10_sessions": {
-        "sample_size": 9873,
-        "win_rate_pct": 44.13,
-        "average_return_pct": -0.678,
-        "median_return_pct": -1.035,
-        "average_mfe_pct": 7.352,
-        "average_mae_pct": -6.819,
-        "failure_rate_below_resistance_pct": 63.88,
-        "retest_held_rate_pct": 71.89
+        "sample_size": 9894,
+        "win_rate_pct": 44.06,
+        "average_return_pct": -0.691,
+        "median_return_pct": -1.04,
+        "average_mfe_pct": 7.353,
+        "average_mae_pct": -6.832,
+        "failure_rate_below_resistance_pct": 63.91,
+        "retest_held_rate_pct": 71.88
       },
       "20_sessions": {
-        "sample_size": 9650,
-        "win_rate_pct": 41.4,
-        "average_return_pct": -1.212,
-        "median_return_pct": -2.228,
-        "average_mfe_pct": 10.073,
-        "average_mae_pct": -9.27,
-        "failure_rate_below_resistance_pct": 73.33,
-        "retest_held_rate_pct": 78.46
+        "sample_size": 9663,
+        "win_rate_pct": 41.35,
+        "average_return_pct": -1.226,
+        "median_return_pct": -2.242,
+        "average_mfe_pct": 10.07,
+        "average_mae_pct": -9.28,
+        "failure_rate_below_resistance_pct": 73.35,
+        "retest_held_rate_pct": 78.44
       }
     },
     "3_month": {
       "5_sessions": {
-        "sample_size": 4658,
-        "win_rate_pct": 46.65,
-        "average_return_pct": -0.371,
-        "median_return_pct": -0.449,
-        "average_mfe_pct": 5.826,
-        "average_mae_pct": -5.464,
-        "failure_rate_below_resistance_pct": 53.18,
-        "retest_held_rate_pct": 64.3
+        "sample_size": 4668,
+        "win_rate_pct": 46.68,
+        "average_return_pct": -0.372,
+        "median_return_pct": -0.445,
+        "average_mfe_pct": 5.83,
+        "average_mae_pct": -5.469,
+        "failure_rate_below_resistance_pct": 53.15,
+        "retest_held_rate_pct": 64.25
       },
       "10_sessions": {
-        "sample_size": 4629,
-        "win_rate_pct": 46.06,
-        "average_return_pct": -0.521,
-        "median_return_pct": -0.767,
-        "average_mfe_pct": 7.924,
-        "average_mae_pct": -7.234,
-        "failure_rate_below_resistance_pct": 62.65,
-        "retest_held_rate_pct": 71.72
+        "sample_size": 4642,
+        "win_rate_pct": 45.97,
+        "average_return_pct": -0.539,
+        "median_return_pct": -0.771,
+        "average_mfe_pct": 7.92,
+        "average_mae_pct": -7.254,
+        "failure_rate_below_resistance_pct": 62.69,
+        "retest_held_rate_pct": 71.69
       },
       "20_sessions": {
-        "sample_size": 4540,
-        "win_rate_pct": 44.36,
-        "average_return_pct": -0.452,
-        "median_return_pct": -1.51,
-        "average_mfe_pct": 11.029,
-        "average_mae_pct": -9.532,
-        "failure_rate_below_resistance_pct": 71.67,
-        "retest_held_rate_pct": 78.57
+        "sample_size": 4550,
+        "win_rate_pct": 44.29,
+        "average_return_pct": -0.479,
+        "median_return_pct": -1.558,
+        "average_mfe_pct": 11.019,
+        "average_mae_pct": -9.55,
+        "failure_rate_below_resistance_pct": 71.71,
+        "retest_held_rate_pct": 78.53
       }
     },
     "6_month": {
       "5_sessions": {
-        "sample_size": 2554,
-        "win_rate_pct": 46.71,
-        "average_return_pct": -0.196,
-        "median_return_pct": -0.431,
-        "average_mfe_pct": 6.007,
-        "average_mae_pct": -5.197,
-        "failure_rate_below_resistance_pct": 51.57,
-        "retest_held_rate_pct": 63.04
+        "sample_size": 2562,
+        "win_rate_pct": 46.8,
+        "average_return_pct": -0.19,
+        "median_return_pct": -0.423,
+        "average_mfe_pct": 6.014,
+        "average_mae_pct": -5.201,
+        "failure_rate_below_resistance_pct": 51.52,
+        "retest_held_rate_pct": 63.0
       },
       "10_sessions": {
-        "sample_size": 2533,
-        "win_rate_pct": 47.89,
-        "average_return_pct": 0.045,
-        "median_return_pct": -0.426,
-        "average_mfe_pct": 8.16,
-        "average_mae_pct": -6.788,
-        "failure_rate_below_resistance_pct": 60.4,
-        "retest_held_rate_pct": 71.26
+        "sample_size": 2543,
+        "win_rate_pct": 47.78,
+        "average_return_pct": 0.02,
+        "median_return_pct": -0.432,
+        "average_mfe_pct": 8.157,
+        "average_mae_pct": -6.816,
+        "failure_rate_below_resistance_pct": 60.44,
+        "retest_held_rate_pct": 71.25
       },
       "20_sessions": {
-        "sample_size": 2464,
-        "win_rate_pct": 47.85,
-        "average_return_pct": 0.424,
-        "median_return_pct": -0.599,
-        "average_mfe_pct": 11.276,
-        "average_mae_pct": -8.76,
-        "failure_rate_below_resistance_pct": 69.36,
-        "retest_held_rate_pct": 78.33
+        "sample_size": 2472,
+        "win_rate_pct": 47.73,
+        "average_return_pct": 0.382,
+        "median_return_pct": -0.643,
+        "average_mfe_pct": 11.263,
+        "average_mae_pct": -8.789,
+        "failure_rate_below_resistance_pct": 69.42,
+        "retest_held_rate_pct": 78.28
       }
     },
     "1_year": {
       "5_sessions": {
-        "sample_size": 150,
-        "win_rate_pct": 34.67,
-        "average_return_pct": -1.686,
-        "median_return_pct": -2.107,
-        "average_mfe_pct": 4.829,
-        "average_mae_pct": -6.722,
-        "failure_rate_below_resistance_pct": 61.33,
-        "retest_held_rate_pct": 66.0
+        "sample_size": 156,
+        "win_rate_pct": 36.54,
+        "average_return_pct": -1.573,
+        "median_return_pct": -2.016,
+        "average_mfe_pct": 4.872,
+        "average_mae_pct": -6.658,
+        "failure_rate_below_resistance_pct": 60.26,
+        "retest_held_rate_pct": 66.03
       },
       "10_sessions": {
-        "sample_size": 136,
-        "win_rate_pct": 31.62,
-        "average_return_pct": -3.623,
-        "median_return_pct": -4.502,
-        "average_mfe_pct": 6.115,
-        "average_mae_pct": -9.382,
-        "failure_rate_below_resistance_pct": 72.79,
-        "retest_held_rate_pct": 72.06
+        "sample_size": 143,
+        "win_rate_pct": 30.77,
+        "average_return_pct": -3.978,
+        "median_return_pct": -4.898,
+        "average_mfe_pct": 6.072,
+        "average_mae_pct": -9.677,
+        "failure_rate_below_resistance_pct": 73.43,
+        "retest_held_rate_pct": 72.03
       },
       "20_sessions": {
-        "sample_size": 81,
-        "win_rate_pct": 23.46,
-        "average_return_pct": -9.665,
-        "median_return_pct": -12.481,
-        "average_mfe_pct": 7.849,
-        "average_mae_pct": -14.545,
-        "failure_rate_below_resistance_pct": 82.72,
-        "retest_held_rate_pct": 76.54
+        "sample_size": 86,
+        "win_rate_pct": 23.26,
+        "average_return_pct": -9.593,
+        "median_return_pct": -12.459,
+        "average_mfe_pct": 7.924,
+        "average_mae_pct": -14.562,
+        "failure_rate_below_resistance_pct": 82.56,
+        "retest_held_rate_pct": 76.74
       }
     }
   }
