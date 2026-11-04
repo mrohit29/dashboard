@@ -1,0 +1,4 @@
+# Local intraday market data (keep large/raw files out of Git history)
+data/intraday_5m/*.csv
+data/yahoo_60d/
+*.csv.gz
