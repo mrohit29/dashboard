@@ -35,7 +35,7 @@ python scripts/intraday_backtest.py --data-dir data/intraday_5m --output data/in
 - Default slippage: 2 bps per side. Default variable cost estimate: 6 bps per side plus ₹20 brokerage/order. These are placeholders, not an Angel One contract-note calculation.
 - Daily loss guard uses realized P&L from completed trades; open-position mark-to-market is not yet included.
 - Cash short trades are simulated as intraday shorts and must be squared off the same day.
-- The repository currently has daily history, not 5-minute history. Do not report strategy performance until real 5-minute files are supplied.
+- The repository has daily history but no 5-minute intraday history. Do not report intraday strategy performance until real 5-minute files are supplied. `scripts/download_dhan_5m.py` can retrieve DhanHQ 5-minute candles in 90-day request windows (Dhan documents up to five years for active instruments). It requires a valid `DHAN_ACCESS_TOKEN` environment variable and a user-maintained `instruments.csv` containing `symbol,security_id`; this is data retrieval only, not order execution.
 - Yahoo Finance intraday history is limited to the most recent 60 days; it is suitable only for a plumbing smoke test, not robust validation.
 
 ## Validation
@@ -46,3 +46,14 @@ python scripts/intraday_backtest.py --data-dir data/intraday_5m --output data/in
 5. Report by year, symbol, side, month, market regime and entry time.
 6. Include costs and adverse slippage; compare gross vs net.
 7. Paper trade before considering real-money use.
+
+
+## Historical research runner
+
+Use `scripts/intraday_research.py` after downloading or importing candle CSVs. It compares nine combinations (relative-volume thresholds 1.2x/1.5x/2.0x and targets 1R/1.5R/2R) using the same execution/cost assumptions. It divides all trading dates chronologically into 60% train, 20% validation and 20% untouched holdout. Parameter selection uses validation expectancy only (minimum 10 validation trades); holdout metrics are reported separately and must not be used for repeated tuning.
+
+```bash
+python scripts/intraday_research.py --data-dir data/intraday_5m --output data/intraday_research.json
+```
+
+The starting-capital point is included in equity drawdown calculations. The engine remains a first research baseline, not a validated live-trading system.
