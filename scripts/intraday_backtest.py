@@ -211,7 +211,12 @@ def apply_portfolio_limits(trades: list[dict[str, Any]], max_positions: int,
         entry_ts = pd.Timestamp(t["entry_time"])
         active = [x for x in day_trades if pd.Timestamp(x["exit_time"]) > entry_ts]
         realized = sum(x["net_pnl"] for x in day_trades if pd.Timestamp(x["exit_time"]) <= entry_ts)
-        if len(day_trades) >= max_trades_day or len(active) >= max_positions or realized <= -daily_loss_limit:
+        # Reserve each open trade's initial risk against the daily loss budget.
+        # This prevents adding fresh risk while existing positions already use
+        # the remaining daily loss allowance.
+        reserved_open_risk = sum(float(x["initial_risk"]) for x in active)
+        if (len(day_trades) >= max_trades_day or len(active) >= max_positions
+                or realized - reserved_open_risk <= -daily_loss_limit):
             continue
         if any(x["symbol"] == t["symbol"] for x in day_trades):
             continue
