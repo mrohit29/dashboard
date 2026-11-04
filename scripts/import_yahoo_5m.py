@@ -74,7 +74,9 @@ def main():
         for symbol, group in chunk.groupby("symbol", sort=False):
             path = output / f"{symbol}.csv"
             write_header = not path.exists()
-            group.drop_duplicates(subset=["timestamp"]).sort_values("timestamp").to_csv(
+            group[["timestamp", "open", "high", "low", "close", "volume"]].drop_duplicates(
+                subset=["timestamp"]
+            ).sort_values("timestamp").to_csv(
                 path, mode="a", header=write_header, index=False
             )
             seen.add(symbol)
