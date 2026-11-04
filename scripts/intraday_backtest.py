@@ -231,7 +231,12 @@ def summarize(trades: list[dict[str, Any]], capital: float) -> dict[str, Any]:
     t = pd.DataFrame(trades).sort_values("exit_time")
     pnl = t["net_pnl"].astype(float)
     wins, losses = pnl[pnl > 0], pnl[pnl < 0]
-    equity = capital + pnl.cumsum()
+    # Include starting capital as the initial equity point; otherwise a
+    # first-trade loss would incorrectly show zero drawdown.
+    equity = pd.concat(
+        [pd.Series([capital], dtype=float), capital + pnl.cumsum().reset_index(drop=True)],
+        ignore_index=True,
+    )
     peak = equity.cummax()
     drawdown = equity - peak
     gross_profit = float(wins.sum())
