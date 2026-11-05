@@ -33,9 +33,9 @@ python scripts/multifactor_backtest.py \
   --trades-csv data/multifactor_trades.csv
 ```
 
-The output JSON reports chronological 60% train / 20% validation / 20% holdout results. The script identifies the best validation expectancy only among combinations with at least 10 validation trades. Do not select or tune based on holdout results.
+The output JSON reports chronological 60% train / 20% validation / 20% holdout results. For a quick 50-symbol smoke test, use `--max-symbols 50`; this checks runtime and output plumbing, not strategy performance. Run without this flag for all available symbols. The script identifies the best validation expectancy only among combinations with at least 10 validation trades. Do not select or tune based on holdout results.
 
-The trades CSV contains validation and holdout trades for each factor combination and direction. The script excludes sample instrument files from the data directory.
+The trades CSV contains validation and holdout trades for each factor combination and direction. The script excludes sample instrument files from the data directory. It prints a progress line after each of the 33 configurations and writes an interim JSON checkpoint plus the current trade ledger after each configuration. The checkpoint is named `data/multifactor_research.json.checkpoint.json` and is removed after a successful completion.
 
 ## Important limitations
 
