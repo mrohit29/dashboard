@@ -23,4 +23,4 @@ jobs:
       - run: python -m pip install --upgrade pip pandas numpy requests
       - run: python -m py_compile scripts/intraday_backtest.py scripts/intraday_research.py scripts/download_dhan_5m.py scripts/multifactor_backtest.py
       - run: python scripts/test_intraday_backtest.py
-      - run: python -m unittest tests/test_multifactor_backtest.py
+      - run: python tests/test_multifactor_backtest.py
