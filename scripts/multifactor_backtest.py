@@ -12,6 +12,7 @@ import argparse
 import itertools
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -136,18 +137,22 @@ def make_candidates(df: pd.DataFrame, factors: tuple[str, ...], side: str,
     return out
 
 
-def evaluate(candidates, sessions, args):
-    selected = [c for c in candidates if c["session"] in sessions]
-    simulated = [
-        simulate_candidate(c, args.capital, args.risk,
-                           args.cost_bps_per_side, args.brokerage_per_order)
-        for c in selected
-    ]
-    trades = [t for t in simulated if t is not None]
+def evaluate_simulated(simulated, sessions, args):
+    """Apply portfolio constraints to already-simulated trades for one date split."""
+    trades = [t for t in simulated if t is not None and t["session"] in sessions]
     accepted = apply_portfolio_limits(
         trades, args.max_positions, args.max_trades_day, args.daily_loss_limit
     )
     return summarize(accepted, args.capital), accepted
+
+
+def write_checkpoint(path, payload):
+    """Atomically persist progress so an interrupted run still leaves useful results."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(payload, indent=2, allow_nan=False), encoding="utf-8")
+    tmp.replace(path)
 
 
 def main():
@@ -155,6 +160,7 @@ def main():
     p.add_argument("--data-dir", default="data/intraday_5m")
     p.add_argument("--output", default="data/multifactor_research.json")
     p.add_argument("--trades-csv", default="data/multifactor_trades.csv")
+    p.add_argument("--max-symbols", type=int, default=0, help="Optional smoke-test limit; 0 means all symbols.")
     p.add_argument("--capital", type=float, default=100000)
     p.add_argument("--risk", type=float, default=500)
     p.add_argument("--daily-loss-limit", type=float, default=1000)
@@ -170,6 +176,10 @@ def main():
     files = sorted(Path(args.data_dir).glob("*.csv"))
     files = [f for f in files if f.name.lower() not in
              {"instruments.csv", "instruments.example.csv", "download_failures.csv"}]
+    if args.max_symbols > 0:
+        files = files[:args.max_symbols]
+    if not files:
+        raise SystemExit(f"No symbol CSVs found in {args.data_dir}.")
     frames, failures, all_sessions = [], [], set()
     for path in files:
         try:
@@ -190,22 +200,44 @@ def main():
 
     rows = []
     best = None
+    ledgers = []
+    total_configs = 33
+    config_number = 0
     for size in (2, 3, 4):
         for factors in itertools.combinations(FACTORS, size):
             for side in ("LONG", "SHORT", "BOTH"):
-                candidates = []
+                config_number += 1
                 sides = ("LONG", "SHORT") if side == "BOTH" else (side,)
+                candidates = []
                 for frame in frames:
                     for direction in sides:
                         candidates.extend(make_candidates(
                             frame, factors, direction, 1.5, args.stop_atr,
                             args.max_stop_pct, args.slippage_bps
                         ))
-                metrics = {name: evaluate(candidates, ds, args)[0]
-                           for name, ds in splits.items()}
-                row = {"factors": list(factors), "factor_names": [FACTOR_LABELS[x] for x in factors],
-                       "side_mode": side, "reward_risk": 1.5, "stop_atr": args.stop_atr,
-                       **metrics}
+
+                # Expensive path is executed exactly once per candidate/configuration.
+                simulated = [
+                    simulate_candidate(c, args.capital, args.risk,
+                                       args.cost_bps_per_side, args.brokerage_per_order)
+                    for c in candidates
+                ]
+                metrics, accepted_by_split = {}, {}
+                for split_name, split_dates in splits.items():
+                    metrics[split_name], accepted_by_split[split_name] = evaluate_simulated(
+                        simulated, split_dates, args
+                    )
+
+                row = {
+                    "factors": list(factors),
+                    "factor_names": [FACTOR_LABELS[x] for x in factors],
+                    "side_mode": side,
+                    "reward_risk": 1.5,
+                    "stop_atr": args.stop_atr,
+                    "candidate_count": len(candidates),
+                    "simulated_trade_count": sum(x is not None for x in simulated),
+                    **metrics,
+                }
                 rows.append(row)
                 v = metrics["validation"]
                 if v.get("trade_count", 0) >= 10:
@@ -213,8 +245,37 @@ def main():
                     if best is None or key > best[0]:
                         best = (key, row)
 
+                for split_name in ("validation", "holdout_test"):
+                    for trade in accepted_by_split[split_name]:
+                        ledgers.append({
+                            **trade, "factors": "+".join(factors),
+                            "side_mode": side, "split": split_name,
+                        })
+
+                # Persist after every configuration; an interrupted run retains progress.
+                progress = {
+                    "strategy": "MULTIFACTOR_MOMENTUM_V1",
+                    "status": "in_progress",
+                    "completed_configurations": config_number,
+                    "total_configurations": total_configs,
+                    "data_period": {"first_session": dates[0], "last_session": dates[-1],
+                                    "sessions": len(dates)},
+                    "all_combinations": rows,
+                    "best_validation_candidate": best[1] if best else None,
+                    "parameters": vars(args),
+                }
+                write_checkpoint(str(args.output) + ".checkpoint.json", progress)
+                pd.DataFrame(ledgers).to_csv(args.trades_csv, index=False)
+                print(
+                    f"[{config_number}/{total_configs}] {'+'.join(factors)} | {side} "
+                    f"| candidates={len(candidates)} | validation trades="
+                    f"{metrics['validation'].get('trade_count', 0)}",
+                    flush=True,
+                )
+
     output = {
         "strategy": "MULTIFACTOR_MOMENTUM_V1",
+        "status": "completed",
         "data_period": {"first_session": dates[0], "last_session": dates[-1], "sessions": len(dates)},
         "split": {"train_sessions": len(splits["train"]), "validation_sessions": len(splits["validation"]),
                   "holdout_test_sessions": len(splits["holdout_test"]), "chronological": True},
@@ -239,25 +300,13 @@ def main():
         ],
     }
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-    Path(args.output).write_text(json.dumps(output, indent=2, allow_nan=False), encoding="utf-8")
-    # Export validation/holdout trade ledgers for every combination in a separate compact file.
-    ledgers = []
-    for row in rows:
-        factors = tuple(row["factors"])
-        sides = ("LONG", "SHORT") if row["side_mode"] == "BOTH" else (row["side_mode"],)
-        candidates = []
-        for frame in frames:
-            for direction in sides:
-                candidates.extend(make_candidates(frame, factors, direction, 1.5,
-                    args.stop_atr, args.max_stop_pct, args.slippage_bps))
-        for split_name in ("validation", "holdout_test"):
-            _, trades = evaluate(candidates, splits[split_name], args)
-            for trade in trades:
-                ledgers.append({**trade, "factors": "+".join(factors),
-                                "side_mode": row["side_mode"], "split": split_name})
+    write_checkpoint(args.output, output)
+    checkpoint_path = Path(str(args.output) + ".checkpoint.json")
+    if checkpoint_path.exists():
+        checkpoint_path.unlink()
     pd.DataFrame(ledgers).to_csv(args.trades_csv, index=False)
     print(json.dumps({"strategy": output["strategy"], "sessions": len(dates),
-                      "combinations_tested": len(rows), "best_validation_candidate": output["best_validation_candidate"],
+                      "combinations_tested": len(rows), "symbols_loaded": len(frames), "best_validation_candidate": output["best_validation_candidate"],
                       "output": args.output, "trades_csv": args.trades_csv}, indent=2))
 
 
