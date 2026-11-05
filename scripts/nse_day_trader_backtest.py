@@ -209,9 +209,11 @@ def main() -> None:
     args = p.parse_args()
 
     candidates, failures, symbols = [], [], 0
+    sessions_seen: set[str] = set()
     for path in sorted(Path(args.data_dir).glob("*.csv")):
         try:
             frame = add_features(load_symbol(path))
+            sessions_seen.update(frame["session"].unique().tolist())
             candidates.extend(build_candidates(frame, args.rvol, args.min_price,
                 args.min_avg_value, args.max_risk_pct, args.rr, args.slippage_bps))
             symbols += 1
@@ -223,7 +225,7 @@ def main() -> None:
     accepted = apply_risk_limits(simulated, args.max_positions,
                                  args.max_trades_day, args.daily_loss_limit)
 
-    all_dates = sorted({t["session"] for t in accepted})
+    all_dates = sorted(sessions_seen)
     split = int(len(all_dates) * 0.60)
     val_end = int(len(all_dates) * 0.80)
     train_dates = set(all_dates[:split])
