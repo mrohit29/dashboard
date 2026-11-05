@@ -115,7 +115,8 @@ def scan_frame(frame: pd.DataFrame, rvol_min: float = 1.5,
         return None, "insufficient indicator history"
     if float(last["close"]) < min_price:
         return None, "price below minimum"
-    avg_value = float((day["close"] * day["volume"]).tail(20).mean())
+    prior_to_signal = day[day["timestamp"] <= last_time]
+    avg_value = float((prior_to_signal["close"] * prior_to_signal["volume"]).tail(20).mean())
     if avg_value < min_avg_value:
         return None, "recent traded value below liquidity threshold"
 
