@@ -6,3 +6,6 @@ data/yahoo_60d/*.csv.gz
 
 # Generated local research scan output
 data/nse_day_trader_scan.json
+
+data/nse_day_trader_backtest.json
+data/nse_day_trader_trades.csv
