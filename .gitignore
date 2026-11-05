@@ -3,3 +3,6 @@ data/intraday_5m/*.csv
 data/yahoo_60d/*.csv
 data/yahoo_60d/*.csv.gz
 *.csv.gz
+
+# Generated local research scan output
+data/nse_day_trader_scan.json
