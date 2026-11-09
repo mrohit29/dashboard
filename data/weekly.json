@@ -1,7 +1,7 @@
 {
   "meta": {
     "status": "live",
-    "last_updated_utc": "2026-11-06T20:00:19.910493Z",
+    "last_updated_utc": "2026-11-09T23:04:02.659306Z",
     "sources": [
       "NSE FII/FPI & DII trading activity (provisional)",
       "NSE CM-UDiFF bhavcopy",
@@ -10,216 +10,81 @@
   },
   "weeks": [
     {
-      "week_ending": "2026-10-02",
-      "fii": -9484.22,
-      "dii": 10041.84,
-      "sessions": 1
-    },
-    {
-      "week_ending": "2026-10-09",
-      "fii": -30294.289999999997,
-      "dii": 30313.48,
+      "week_ending": "2026-11-06",
+      "fii": 45960.02,
+      "dii": -24196.52,
       "sessions": 5
     },
     {
-      "week_ending": "2026-10-16",
-      "fii": -8990.5,
-      "dii": 7812.8099999999995,
-      "sessions": 5
-    },
-    {
-      "week_ending": "2026-10-23",
-      "fii": -2697.37,
-      "dii": 10942.19,
-      "sessions": 4
-    },
-    {
-      "week_ending": "2026-10-30",
-      "fii": 6304.67,
-      "dii": 3109.79,
-      "sessions": 5
+      "week_ending": "2026-11-13",
+      "fii": 7211.97,
+      "dii": -7872.84,
+      "sessions": 2
     }
   ],
   "daily": [
     {
-      "date": "30-Oct-2026",
-      "fii_buy": 20564.02,
-      "fii_sell": 16965.48,
-      "fii_net": 3598.54,
-      "dii_buy": 16643.55,
-      "dii_sell": 17461.06,
-      "dii_net": -817.51
+      "date": "09-Nov-2026",
+      "fii_buy": 20310.99,
+      "fii_sell": 13098.77,
+      "fii_net": 7212.22,
+      "dii_buy": 12764.97,
+      "dii_sell": 19937.5,
+      "dii_net": -7172.53
     },
     {
-      "date": "29-Oct-2026",
-      "fii_buy": 13400.29,
-      "fii_sell": 14343.89,
-      "fii_net": -943.6,
-      "dii_buy": 18458.64,
-      "dii_sell": 16534.23,
-      "dii_net": 1924.41
+      "date": "08-Nov-2026",
+      "fii_buy": 52.39,
+      "fii_sell": 52.64,
+      "fii_net": -0.25,
+      "dii_buy": 331.11,
+      "dii_sell": 1031.42,
+      "dii_net": -700.31
     },
     {
-      "date": "28-Oct-2026",
-      "fii_buy": 16834.53,
-      "fii_sell": 15962.7,
-      "fii_net": 871.83,
-      "dii_buy": 17240.9,
-      "dii_sell": 16597.55,
-      "dii_net": 643.35
+      "date": "06-Nov-2026",
+      "fii_buy": 30455.63,
+      "fii_sell": 16705.81,
+      "fii_net": 13749.82,
+      "dii_buy": 18084.32,
+      "dii_sell": 24053.02,
+      "dii_net": -5968.7
     },
     {
-      "date": "27-Oct-2026",
-      "fii_buy": 24517.65,
-      "fii_sell": 20277.26,
-      "fii_net": 4240.39,
-      "dii_buy": 15702.74,
-      "dii_sell": 16952.77,
-      "dii_net": -1250.03
+      "date": "05-Nov-2026",
+      "fii_buy": 31797.86,
+      "fii_sell": 16823.18,
+      "fii_net": 14974.68,
+      "dii_buy": 22168.28,
+      "dii_sell": 32612.82,
+      "dii_net": -10444.54
     },
     {
-      "date": "26-Oct-2026",
-      "fii_buy": 9324.9,
-      "fii_sell": 10787.39,
-      "fii_net": -1462.49,
-      "dii_buy": 17389.57,
-      "dii_sell": 14780.0,
-      "dii_net": 2609.57
+      "date": "04-Nov-2026",
+      "fii_buy": 21607.38,
+      "fii_sell": 14323.35,
+      "fii_net": 7284.03,
+      "dii_buy": 16392.82,
+      "dii_sell": 20105.05,
+      "dii_net": -3712.23
     },
     {
-      "date": "23-Oct-2026",
-      "fii_buy": 14445.54,
-      "fii_sell": 13557.89,
-      "fii_net": 887.65,
-      "dii_buy": 19232.31,
-      "dii_sell": 15996.95,
-      "dii_net": 3235.36
+      "date": "03-Nov-2026",
+      "fii_buy": 20970.51,
+      "fii_sell": 14133.7,
+      "fii_net": 6836.81,
+      "dii_buy": 16723.91,
+      "dii_sell": 20402.76,
+      "dii_net": -3678.85
     },
     {
-      "date": "22-Oct-2026",
-      "fii_buy": 13627.54,
-      "fii_sell": 17086.24,
-      "fii_net": -3458.7,
-      "dii_buy": 16242.83,
-      "dii_sell": 13351.51,
-      "dii_net": 2891.32
-    },
-    {
-      "date": "21-Oct-2026",
-      "fii_buy": 17003.9,
-      "fii_sell": 15981.58,
-      "fii_net": 1022.32,
-      "dii_buy": 14931.57,
-      "dii_sell": 13317.25,
-      "dii_net": 1614.32
-    },
-    {
-      "date": "19-Oct-2026",
-      "fii_buy": 11240.64,
-      "fii_sell": 12389.28,
-      "fii_net": -1148.64,
-      "dii_buy": 14781.31,
-      "dii_sell": 11580.12,
-      "dii_net": 3201.19
-    },
-    {
-      "date": "16-Oct-2026",
-      "fii_buy": 19951.59,
-      "fii_sell": 18785.67,
-      "fii_net": 1165.92,
-      "dii_buy": 17201.8,
-      "dii_sell": 20863.08,
-      "dii_net": -3661.28
-    },
-    {
-      "date": "15-Oct-2026",
-      "fii_buy": 12735.59,
-      "fii_sell": 18020.96,
-      "fii_net": -5285.37,
-      "dii_buy": 19438.65,
-      "dii_sell": 16119.26,
-      "dii_net": 3319.39
-    },
-    {
-      "date": "14-Oct-2026",
-      "fii_buy": 16381.85,
-      "fii_sell": 18239.29,
-      "fii_net": -1857.44,
-      "dii_buy": 17428.61,
-      "dii_sell": 14758.17,
-      "dii_net": 2670.44
-    },
-    {
-      "date": "13-Oct-2026",
-      "fii_buy": 13465.39,
-      "fii_sell": 14770.52,
-      "fii_net": -1305.13,
-      "dii_buy": 16232.97,
-      "dii_sell": 13793.73,
-      "dii_net": 2439.24
-    },
-    {
-      "date": "12-Oct-2026",
-      "fii_buy": 12583.21,
-      "fii_sell": 14291.69,
-      "fii_net": -1708.48,
-      "dii_buy": 15506.73,
-      "dii_sell": 12461.71,
-      "dii_net": 3045.02
-    },
-    {
-      "date": "09-Oct-2026",
-      "fii_buy": 10373.99,
-      "fii_sell": 13942.89,
-      "fii_net": -3568.9,
-      "dii_buy": 15626.53,
-      "dii_sell": 10883.27,
-      "dii_net": 4743.26
-    },
-    {
-      "date": "08-Oct-2026",
-      "fii_buy": 15725.45,
-      "fii_sell": 28669.03,
-      "fii_net": -12943.58,
-      "dii_buy": 22987.97,
-      "dii_sell": 12284.86,
-      "dii_net": 10703.11
-    },
-    {
-      "date": "07-Oct-2026",
-      "fii_buy": 12577.96,
-      "fii_sell": 18699.33,
-      "fii_net": -6121.37,
-      "dii_buy": 18707.03,
-      "dii_sell": 14110.46,
-      "dii_net": 4596.57
-    },
-    {
-      "date": "06-Oct-2026",
-      "fii_buy": 11258.72,
-      "fii_sell": 14220.02,
-      "fii_net": -2961.3,
-      "dii_buy": 20146.4,
-      "dii_sell": 15057.48,
-      "dii_net": 5088.92
-    },
-    {
-      "date": "05-Oct-2026",
-      "fii_buy": 15674.61,
-      "fii_sell": 20373.75,
-      "fii_net": -4699.14,
-      "dii_buy": 20492.93,
-      "dii_sell": 15311.31,
-      "dii_net": 5181.62
-    },
-    {
-      "date": "01-Oct-2026",
-      "fii_buy": 12260.26,
-      "fii_sell": 21744.48,
-      "fii_net": -9484.22,
-      "dii_buy": 25420.04,
-      "dii_sell": 15378.2,
-      "dii_net": 10041.84
+      "date": "02-Nov-2026",
+      "fii_buy": 16499.46,
+      "fii_sell": 13384.78,
+      "fii_net": 3114.68,
+      "dii_buy": 14988.48,
+      "dii_sell": 15380.68,
+      "dii_net": -392.2
     }
   ]
 }
