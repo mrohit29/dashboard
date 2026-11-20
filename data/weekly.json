@@ -1,7 +1,7 @@
 {
   "meta": {
     "status": "live",
-    "last_updated_utc": "2026-11-19T21:42:07.641405Z",
+    "last_updated_utc": "2026-11-20T21:23:05.728236Z",
     "sources": [
       "NSE FII/FPI & DII trading activity (provisional)",
       "NSE CM-UDiFF bhavcopy",
@@ -23,12 +23,21 @@
     },
     {
       "week_ending": "2026-11-20",
-      "fii": 22338.25,
-      "dii": -7838.59,
-      "sessions": 4
+      "fii": 32646.670000000002,
+      "dii": -12698.39,
+      "sessions": 5
     }
   ],
   "daily": [
+    {
+      "date": "20-Nov-2026",
+      "fii_buy": 23596.4,
+      "fii_sell": 13287.98,
+      "fii_net": 10308.42,
+      "dii_buy": 18492.63,
+      "dii_sell": 23352.43,
+      "dii_net": -4859.8
+    },
     {
       "date": "19-Nov-2026",
       "fii_buy": 20706.95,
