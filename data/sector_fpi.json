@@ -73,5 +73,5 @@
       "flow_cr": -6204
     }
   ],
-  "warning": "No newer CDSL snapshot fetched: Could not identify a valid CDSL sector net-investment table"
+  "warning": "No newer CDSL snapshot fetched: 403 Client Error: Forbidden for url: https://www.cdslindia.com/Publications/ForeignPortInvestor.html"
 }

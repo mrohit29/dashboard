@@ -4,7 +4,7 @@
     "Stock screen: Screener institutional table not found"
   ],
   "warnings": [
-    "No newer CDSL snapshot fetched: Could not identify a valid CDSL sector net-investment table"
+    "No newer CDSL snapshot fetched: 403 Client Error: Forbidden for url: https://www.cdslindia.com/Publications/ForeignPortInvestor.html"
   ],
-  "updated_utc": "2026-11-24T23:10:18.533288Z"
+  "updated_utc": "2026-11-25T22:39:08.904808Z"
 }
